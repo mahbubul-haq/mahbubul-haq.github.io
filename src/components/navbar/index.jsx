@@ -1,0 +1,208 @@
+import { AppBar, IconButton } from "@mui/material"
+import { Toolbar } from "@mui/material"
+import { Typography } from "@mui/material"
+import { Box } from "@mui/material"
+import FlexBetween from "../FlexBetween"
+import BtnPrimary from "../BtnPrimary"
+import { BsMoonStars } from "react-icons/bs"
+import NavTab from "./NavTab"
+import { useTheme } from "@mui/material/styles"
+import { useEffect } from "react"
+import { useContext, useState } from "react"
+import { MainContext } from "../../context/MainContext"
+import { useMediaQuery } from "@mui/material"
+import Hamburger from "./Hamburger"
+import MobileNav from "./MobileNav"
+
+const Navbar = () => {
+
+    const { page, setPage } = useContext(MainContext);
+    const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+    const isMobileScreens = useMediaQuery('(max-width: 600px)');
+    const [open, setOpen] = useState(false);
+
+    const theme = useTheme();
+
+    useEffect(() => {
+        let el = document.querySelector('.app-container');
+        let el1 = document.querySelector('.myappbar');
+        let el2 = document.querySelector('.nav-background');
+        let event = el.addEventListener('scroll', () => {
+            if (el.scrollTop > 10) {
+                el1.style.paddingTop = '0';
+                el2.style.background = theme.palette.background.nav;
+                el2.style.top = '0';
+            }
+            else {
+                el1.style.paddingTop = isNonMobileScreens ? '1rem' : '0';
+                el2.style.background = 'transparent';
+                el2.style.top = '-5rem';
+
+            }
+        });
+
+        let event1 =window.addEventListener('resize', () => {
+            // check if min-left is 1000px
+            let ham = document.querySelector('.hamburger');
+            if (window.innerWidth >= 1000) {
+                setOpen(false);
+                ham?.classList.remove('is-active');
+            }
+
+        }); 
+
+        return () => {
+            el.removeEventListener('scroll', event);
+            window.removeEventListener('resize', event1);
+        }
+    }, []);
+
+    const handleOpen = () => {
+        let el = document.querySelector('.hamburger');
+
+        if (open) {
+            el.classList.remove('is-active');
+        }
+        else {
+            el.classList.add('is-active');
+        }
+        setOpen(!open);
+    }
+
+
+    return (
+        <AppBar position='sticky' className="myappbar" sx={{
+            boxShadow: 'none',
+            height: '5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            transition: 'all 0.3s ease-in',
+            WebkitTransition: 'all 0.3s ease-in',
+            MozTransition: 'all 0.3s ease-in',
+            OTransition: 'all 0.3s ease-in',
+            background: 'transparent',
+            paddingTop: isNonMobileScreens ? '1rem' : '0',
+
+        }}>
+            <Box className="nav-background" sx={{
+                transition: 'all 0.3s',
+                WebkitTransition: 'all 0.3s',
+                MozTransition: 'all 0.3s',
+                OTransition: 'all 0.3s',
+                position: 'absolute',
+                height: '100%',
+                width: '100%',
+                top: '-5rem',
+                backdropFilter: 'blur(30px)',
+            }}></Box>
+            <Toolbar disableGutters sx={{
+                flexGrow: 1,
+                display: 'flex',
+                justifyContent: 'center',
+
+
+            }} >
+                <FlexBetween sx={{
+                    flexGrow: 1,
+
+                    maxWidth: 2000,
+                    px: isNonMobileScreens ? '64px' : isMobileScreens ? '24px' : '32px',
+                    color: theme.palette.text.primary,
+
+                }}>
+
+                    <Typography variant='h3' sx={{
+                        fontWeight: 400,
+                    }}>Mahbubul Haque</Typography>
+                    {isNonMobileScreens ? (
+
+                        <FlexBetween sx={{
+                            gap: '3rem',
+                        }}>
+                            <NavTab
+                                onClick={() => setPage('home-page')}
+                                sx={{
+                                    "&&": {
+                                        "&::before": {
+                                            width: page === 'home-page' ? '75%' : '0%',
+                                        },
+                                    },
+                                }}>
+
+
+                                <Typography variant='menu'>Home Page</Typography>
+                            </NavTab>
+                            <NavTab
+                                sx={{
+                                    "&&": {
+                                        "&::before": {
+                                            width: page === 'about-me' ? '75%' : '0%',
+                                        },
+                                    },
+                                }}
+                                onClick={() => setPage('about-me')}
+                            >
+
+                                <Typography variant='menu'>About Me</Typography>
+                            </NavTab>
+                            <NavTab
+                                sx={{
+                                    "&&": {
+                                        "&::before": {
+                                            width: page === 'projects' ? '75%' : '0%',
+                                        },
+                                    },
+                                }}
+                                onClick={() => setPage('projects')}
+                            >
+
+                                <Typography variant='menu'>Projects</Typography>
+                            </NavTab>
+
+                            <BtnPrimary>
+                                <Typography variant='button'>Contact Me</Typography></BtnPrimary>
+                            <Box sx={{
+
+
+                            }}>
+                                <IconButton sx={{
+                                    color: theme.palette.text.primary,
+                                    padding: "1rem",
+                                }}>
+                                    <BsMoonStars fontSize='1.1rem' />
+                                </IconButton>
+                            </Box>
+
+                        </FlexBetween>
+                    ) : (
+                        // <IconButton sx={{
+                        //     color: theme.palette.text.primary,
+                        //     padding: "1rem",
+                        // }}>
+                        <>
+                          <MobileNav open={open && !isNonMobileScreens
+                        } setOpen={setOpen} />
+
+                            <Box onClick={handleOpen} sx={{
+                                zIndex: 2000,
+                            }}>
+
+                            <Hamburger multiplier={
+                                isMobileScreens ? 0.7 : 1
+                            }
+                            
+                        
+                        />
+                        </Box>
+                          
+                        </>
+                        // </IconButton>
+                    )}
+                </FlexBetween>
+            </Toolbar>
+        </AppBar>
+    )
+}
+
+export default Navbar

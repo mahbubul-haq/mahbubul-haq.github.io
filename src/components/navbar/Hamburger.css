@@ -1,0 +1,44 @@
+:root {
+    --multiplier: 0.5;
+    --hamburger-width: calc(30px * var(--multiplier));
+    --bar-height: calc(3.1px * var(--multiplier));
+    --bar-spacing: calc(6px * var(--multiplier));
+    --hamburger-color: #fff;
+}
+
+.hamburger {
+   
+    position: relative;
+    display: block;
+    width: var(--hamburger-width);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    appearance: none;
+    background: none;
+    
+}
+
+.hamburger .ham-bar, .hamburger::after, .hamburger::before {
+   
+    content: "";
+    display: block;
+    width: 100%;
+    height: var(--bar-height);
+    background-color: var(--hamburger-color);
+    margin: var(--bar-spacing) 0;
+    transition: 0.4s; 
+}
+
+.hamburger.is-active::after {
+    transform: rotate(45deg);
+    translate: 0 calc(-1 * var(--bar-spacing) * 1.5);
+}
+
+.hamburger.is-active .ham-bar {
+    opacity: 0;
+}
+.hamburger.is-active::before {
+    transform: rotate(-45deg);
+    translate: 0 calc(var(--bar-spacing) * 1.5);
+}
