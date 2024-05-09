@@ -1,16 +1,16 @@
 import Box from "@mui/material/Box";
 import CustomDrawer from "./CustomDrawer";
 import useTheme from "@mui/material/styles/useTheme";
-import Drawer from "@mui/material/Drawer";
-import { Divider, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import FlexBetween from "../FlexBetween";
 import { useContext } from "react";
 import { MainContext } from "../../context/MainContext";
 import BtnPrimary from "../BtnPrimary";
-import { BsMoonStars } from "react-icons/bs";
+import { LuDownload } from "react-icons/lu";
+
 import { LiaToggleOnSolid } from "react-icons/lia";
 import { LiaToggleOffSolid } from "react-icons/lia";
-import { Calculate } from "@mui/icons-material";
+
 
 const MobileNav = ({ open, setOpen }) => {
     const theme = useTheme();
@@ -28,7 +28,9 @@ const MobileNav = ({ open, setOpen }) => {
             }}>
                 <Box
                     sx={{
-                        maxHeight: "1200px",
+                        // maxHeight: "1600px",
+                        height: "100%",
+                        // maxHeight: "1000px",
                         minHeight: "500px",
                         display: "flex",
                         flexDirection: "column",
@@ -36,37 +38,10 @@ const MobileNav = ({ open, setOpen }) => {
                         
                     }}
                 >
-                    <Box>
-                        {/* <Box sx={{
-            display: 'flex',
-            flexDirection: isMobileScreens ? 'column' : 'row',
-            alignItems: isMobileScreens ? 'center' : 'flex-start',
-            gap: isMobileScreens ? '0.5rem' : '1rem',
-            paddingRight: isMobileScreens ? '0' : '5rem',
-            paddingTop: isMobileScreens ? '1rem' : '0',
-        }
-        }>
-            <img src="https://source.unsplash.com/random/100x100" alt="profile" style={{ borderRadius: '50%', width: '50px', height: '50px' }} loading="lazy"/>
-            <FlexBetween sx={{
-                "&&": {
-                    flexDirection: 'column',
-                    alignItems: isMobileScreens ? 'center' : 'flex-start',
-
-                }
-            }}>
-                <Typography sx={{
-                    fontSize: '1.2rem',
+                    <Box sx={{
+                        flexGrow: 1,
+                    }}>
                     
-                }}>Mahbubul Haque</Typography>
-                <Typography sx={{
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.3px',
-                    color: theme.palette.text.secondary
-                
-                }}>Web Developer</Typography>
-
-            </FlexBetween>
-        </Box> */}
 
                         <Box
                             sx={{
@@ -131,8 +106,32 @@ const MobileNav = ({ open, setOpen }) => {
                             >
                                 Projects
                             </Typography>
+
+                            <Typography
+                                component="a"
+                                href="#contact-me"
+                                variant="menu"
+                                sx={{
+                                    // overwriting the default anchor tag styles
+                                    textDecoration: "none",
+                                    color: theme.palette.text.primary,
+
+                                    cursor: "pointer",
+                                    "&:hover": {
+                                        background: "rgba(0,0,0,0.2)",
+                                    },
+                                    background:
+                                        page === "contact-me"
+                                            ? "rgba(0,0,0,0.2)"
+                                            : "transparent",
+                                    borderRadius: "50px",
+                                    padding: "0.8rem 1.2rem",
+                                }}
+                            >
+                                Contact Me
+                            </Typography>
                         </Box>
-                        <Divider
+                        {/* <Divider
                             sx={{
                                 width: "100%",
                                 color: theme.palette.text.primary,
@@ -140,20 +139,33 @@ const MobileNav = ({ open, setOpen }) => {
                                 mt: "3rem",
                                 opacity: 0.4,
                             }}
-                        />
+                        /> */}
 
                         <BtnPrimary
                             sx={{
                                 width: "100%",
                                 mt: "3rem",
+                                display: "flex",
+                                justifyContent: "center",
+                                gap: "0.5rem",
+                                "&&": {
+                                    // background: theme.palette.common.black,
+                                    // boxShadow: "none",
+                                    // color: theme.palette.text.secondary,
+                                    // "&:hover": {
+                                    //     background: "#1f1f1f",
+                                    // }
+                                }
                             }}
                         >
-                            <Typography variant="button">Contact Me</Typography>
+                            <LuDownload/>
+                            <Typography variant="button">Resume</Typography>
                         </BtnPrimary>
                     </Box>
                     <FlexBetween
                         sx={{
-                            paddingBottom: "1rem",
+                            paddingBottom: "0rem",
+                            
                         }}
                     >
                         <Typography variant="menu">Dark Mode</Typography>

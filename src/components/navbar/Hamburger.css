@@ -28,6 +28,9 @@
     background-color: var(--hamburger-color);
     margin: var(--bar-spacing) 0;
     transition: 0.4s; 
+    transform-origin: 50% 50%;
+    
+
 }
 
 .hamburger.is-active::after {

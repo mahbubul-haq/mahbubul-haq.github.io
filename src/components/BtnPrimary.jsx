@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
 
@@ -11,9 +11,6 @@ const BtnPrimary = styled(Button)(({ theme }) => (
         borderRadius: 9999,
         textTransform: "none",
         transition: "all 0.3s",
-        "&:hover": {
-            backgroundColor: theme.palette.primary.dark,
-        },
         fontWeight: 500,
         boxShadow: `0 4px 4px ${theme.palette.shadow.btnPrimary}`,
         "&:hover": {

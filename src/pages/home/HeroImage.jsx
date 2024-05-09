@@ -1,19 +1,21 @@
 import Box from "@mui/material/Box";
 import { useEffect } from "react";
+import GradientBall from "../../components/GradientBall";
+import useTheme from "@mui/material/styles/useTheme";
 
 const HeroImage = () => {
+    const theme = useTheme();
     useEffect(() => {
         let el = document.querySelector(".app-container");
         let el1 = document.querySelector(".hero-image-background");
         let el2 = document.querySelector(".hero-image-container");
 
+
         let event = el.addEventListener("scroll", () => {
-            el1.style.transform = `rotate(${
-                (Math.min(200, el.scrollTop) * 10) / el1.clientHeight
-            }deg)`;
-            el2.style.transform = `translateX(-${
-                (Math.min(200, el.scrollTop) * 20) / el2.clientHeight
-            }px)`;
+            el1.style.transform = `rotate(${(Math.min(200, el.scrollTop) * 10) / el1.clientHeight
+                }deg)`;
+            el2.style.transform = `translateX(-${(Math.min(200, el.scrollTop) * 20) / el2.clientHeight
+                }px)`;
         });
 
         return () => {
@@ -25,10 +27,44 @@ const HeroImage = () => {
         <Box
             sx={{
                 position: "relative",
-                width: "500px",
-                height: "500px",
+                width: "100%",
+                //ratio 1:1
+                height: "100%",
+
             }}
         >
+            <Box sx={{
+                position: "absolute",
+                left: "-50px",
+                bottom: -50,
+            }}>
+
+                <GradientBall width="150px" height="150px"
+                    background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.background.bubbleBottom} 100%)`}
+                />
+            </Box>
+
+            <Box sx={{
+                position: "absolute",
+                right: "-20px",
+                bottom: -20,
+            }}>
+
+                <GradientBall width="50px" height="50px"
+                    background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.primary.dark} 100%)`}
+                />
+            </Box>
+
+            <Box sx={{
+                position: "absolute",
+                left: "-80px",
+                top: -30,
+            }}>
+
+                <GradientBall width="100px" height="100px"
+                    background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.secondary.main} 100%)`}
+                />
+            </Box>
             {/* dummy element with position fixed */}
             <svg className="clipper">
                 <defs>

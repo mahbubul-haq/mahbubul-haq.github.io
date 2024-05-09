@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react'
+import { } from 'react'
 import './App.css'
 import Box from "@mui/material/Box";
 import useTheme from "@mui/material/styles/useTheme";
 
 import { MainState } from './context/MainContext.jsx';
 import Navbar from './components/navbar/index.jsx';
-import HeroImage from './pages/home/HeroImage.jsx';
-import Hamburger from './components/navbar/Hamburger.jsx';
+import HomePage from './pages/home/index.jsx';
 
 
 const App = () => {
@@ -27,17 +26,7 @@ const App = () => {
       }}>
         
         <Navbar />
-        {/* <HeroImage /> */}
-        
-        <Box sx={{
-          background: theme.palette.primary.main,
-          height: '100vh',
-          width: '10%',
-          mt: '5rem',
-          mx: 'auto'
-
-        }}
-        ></Box>
+        <HomePage />        
 
       </Box>
     </MainState>

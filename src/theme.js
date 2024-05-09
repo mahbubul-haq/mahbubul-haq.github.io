@@ -55,6 +55,8 @@ export const themeSettings = (mode) => {
                         alt: "#915AFF",
                         secondary: "#062E5F",
                         btnSecondary: "#000",
+                        bubbleTop: "#E4D6FF",
+                        bubbleBottom: "#5F29D1",
                     },
                     common: {
                         black: "#000",

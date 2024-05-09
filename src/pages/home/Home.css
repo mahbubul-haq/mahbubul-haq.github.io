@@ -1,0 +1,28 @@
+.pulse-indicator {
+    background-color: #e4ff6a;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: circle-pulse 2s infinite;
+}
+
+@keyframes circle-pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow:  0 0 0 #e4ff6a;
+    }
+    
+    /* 40% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 4px #e4ff6a48;
+    } */
+   
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px #e4ff6a00;
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 #e4ff6a00;
+    }
+}

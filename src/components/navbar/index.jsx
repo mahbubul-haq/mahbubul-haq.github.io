@@ -5,6 +5,7 @@ import { Box } from "@mui/material"
 import FlexBetween from "../FlexBetween"
 import BtnPrimary from "../BtnPrimary"
 import { BsMoonStars } from "react-icons/bs"
+import { HiMiniSun } from "react-icons/hi2";
 import NavTab from "./NavTab"
 import { useTheme } from "@mui/material/styles"
 import { useEffect } from "react"
@@ -14,9 +15,10 @@ import { useMediaQuery } from "@mui/material"
 import Hamburger from "./Hamburger"
 import MobileNav from "./MobileNav"
 
+
 const Navbar = () => {
 
-    const { page, setPage } = useContext(MainContext);
+    const { page, setPage, mode, setMode } = useContext(MainContext);
     const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
     const isMobileScreens = useMediaQuery('(max-width: 600px)');
     const [open, setOpen] = useState(false);
@@ -114,7 +116,9 @@ const Navbar = () => {
 
                     <Typography variant='h3' sx={{
                         fontWeight: 400,
-                    }}>Mahbubul Haque</Typography>
+                        fontSize: isNonMobileScreens ? '1.5rem' : '1.2rem',
+                    }}>
+                        Mahbubul Haque</Typography>
                     {isNonMobileScreens ? (
 
                         <FlexBetween sx={{
@@ -163,14 +167,22 @@ const Navbar = () => {
                             <BtnPrimary>
                                 <Typography variant='button'>Contact Me</Typography></BtnPrimary>
                             <Box sx={{
-
-
+                                height: '20px',
+                                width: '20px',
+                                overflow: 'visible',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
                             }}>
-                                <IconButton sx={{
+                                <IconButton
+                                    onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+                                 sx={{
+
                                     color: theme.palette.text.primary,
                                     padding: "1rem",
                                 }}>
-                                    <BsMoonStars fontSize='1.1rem' />
+                                    {mode === 'dark' ? <HiMiniSun fontSize='1.5rem' /> : <BsMoonStars fontSize='1.1rem' />}
+                                    
                                 </IconButton>
                             </Box>
 
