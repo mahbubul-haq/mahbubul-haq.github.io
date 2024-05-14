@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import { useEffect } from "react";
 import GradientBall from "../../components/GradientBall";
 import useTheme from "@mui/material/styles/useTheme";
+import "./Home.css";
 
 const HeroImage = () => {
     const theme = useTheme();
@@ -30,7 +31,11 @@ const HeroImage = () => {
                 width: "100%",
                 //ratio 1:1
                 height: "100%",
-
+                transition: "all 0.3s ease-out",
+                // "&:hover": {
+                //     transform: "scale(1.05)",
+                //     boxShadow: "0 0 10px 5px rgba(0,0,0,0.1)",
+                // },
             }}
         >
             <Box sx={{
@@ -114,10 +119,26 @@ const HeroImage = () => {
                     height: "100%",
                     bottom: "0.4rem",
                     left: "-2.5rem",
-                    transition: "all 0.3s linear",
+                    transition: "all 0.3s ease-out",
+                    // "&:hover": {
+                    //     transform: "scale(1.05)",
+                    //     //background blur
+                    //     //backdropFilter: "blur(5px)",
+                    //     "&::before": {
+                    //         content: "''",
+                    //         position: "absolute",
+                    //         width: "110%",
+                    //         height: "110%",
+                    //         top: "-5%",
+                    //         left: "-5%",
+                    //         filter: "blur(10px)",
+                    //         background: "rgba(0,0,0,0.1)",
+                    //     },
+                    // },
                 }}
             >
                 <img
+                    className="hero-image-img"
                     src="https://source.unsplash.com/random?Profile&Darkbackground"
                     alt="myImage"
                     style={{
@@ -125,6 +146,8 @@ const HeroImage = () => {
                         height: "100%",
                         objectFit: "cover",
                         clipPath: "url(#clipper-path)",
+                        transition: "all 0.3s ease-out",
+                        // overflow: "visible",
                     }}
                     loading="lazy"
                 />

@@ -33,8 +33,9 @@ export const themeSettings = (mode) => {
 
                     },
                     secondary: {
-                        light: "#BEFE4D",
+                        light: "#e4ff6a",
                         main: "#5CDB95",   // not used
+
 
                     },
                     text: {
@@ -50,9 +51,10 @@ export const themeSettings = (mode) => {
                     },
                     background: {
                         nav: 'rgba(143, 95, 240, 0.6)',
-                       
+                        skillChip: 'rgba(43, 245, 221, 0.2)',
                         default: "#6939D9",
                         alt: "#915AFF",
+                        dark: "#062E5F",
                         secondary: "#062E5F",
                         btnSecondary: "#000",
                         bubbleTop: "#E4D6FF",

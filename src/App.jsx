@@ -22,6 +22,7 @@ const App = () => {
         width: "100%",
         height: "100%",
         overflowY: "auto",
+        overflowX: "hidden",
         background: `linear-gradient(to bottom, ${theme.palette.background.default} 0%, ${theme.palette.background.alt} 100%)`,
       }}>
         
