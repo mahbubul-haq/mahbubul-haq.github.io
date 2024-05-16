@@ -161,26 +161,25 @@ export const skillsData = [
 ];
 
 export const proficiencies = [
-  "JavaScript",
-  "CSS",
-  "ReactJs",
-  "Express",
-  "Material UI",
-  "Bootstrap",
-  "Redux",
-  "HTML",
-  "SQL",
-  "MongoDB",
-  "Frontend",
-  "Backend",
-  "MERN Stack",
-  "C++",
-  "Python",
-  "Java",
-  "DSA",
-  "Problem Solving",
-  "OOP",
-  
+    "JavaScript",
+    "CSS",
+    "ReactJs",
+    "Express",
+    "Material UI",
+    "Bootstrap",
+    "Redux",
+    "HTML",
+    "SQL",
+    "MongoDB",
+    "Frontend",
+    "Backend",
+    "MERN Stack",
+    "C++",
+    "Python",
+    "Java",
+    "DSA",
+    "Problem Solving",
+    "OOP",
 ];
 
 export const lastUpdated = "December 26, 2022";
@@ -275,6 +274,114 @@ export const problemSolvingData = [
         username: "Mahbubul Haque",
         profileLink: "https://www.hackerrank.com/mdmahbubulhaq201",
         solveCount: 2,
+    },
+];
+
+export const portfolioProjects = [
+    {
+        title: "LearningOn - Online Learning Platform with Courses, Blogs & Tutors",
+        imageFileName: "learningon-homepage.svg",
+        technologies: [
+            "React",
+            "Express",
+            "MongoDB",
+            "Material UI",
+            "CSS",
+            "Redux",
+            "NodeJs",
+            "Stripe",
+            "socket.io",
+        ],
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/LearningOn",
+                text: "Github",
+            },
+            {
+                link: "https://mahbubul-haq.github.io/",
+                text: "Live",
+            },
+        ],
+    },
+
+    {
+        title: "Personal Portfolio Website",
+        imageFileName: "portfolio-homepage.svg",
+        technologies: ["React", "Material UI", "CSS"],
+        links: [
+            
+            {
+                link: "https://github.com/mahbubul-haq/mahbubul-haq.github.io",
+                text: "Github",
+            },
+            {
+                link: "https://mahbubul-haq.github.io/",
+                text: "Live",
+            },
+        ],
+    },
+
+    {
+        title: "Travel Bug - Travel & Tourism Website",
+        imageFileName: "travel-bug-homepage.PNG",
+        technologies: [
+            "React",
+            "Express",
+            "MongoDB",
+            "NodeJs",
+            "CSS",
+            "Stripe",
+            "JWT",
+        ],
+
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/Travel-Bug-Airbnb",
+                text: "Github",
+            },
+            {
+                link: "https://youtu.be/g-shwX9y4aI",
+                text: "Youtube",
+            },
+        ],
+    },
+    {
+        title: "RIDER - Ride Sharing & Car Rental Website",
+        imageFileName: "rider-homepage.png",
+        technologies: [
+            "Django",
+            "Oracle",
+            "Python",
+            "JavaScript",
+            "CSS",
+            "Bootstrap",
+            "Leaflet",
+        ],
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/RIDER-Ride-Sharing-and-Car-Rental-Service",
+                text: "Github",
+            },
+            {
+                link: "https://youtu.be/eiNzZp00KUg",
+                text: "Youtube",
+            },
+        ],
+    },
+    {
+        title: "Personal Portfolio Website - v1",
+        imageFileName: "portfolio-old-homepage.PNG",
+        technologies: ["React", "Bootstrap", "CSS"],
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/portfolio-website",
+                text: "Github",
+            },
+            {
+                link: "https://mahbubulhaque.netlify.app/",
+                text: "Live",
+            },
+        ],
     },
 ];
 

@@ -34,6 +34,7 @@ export const themeSettings = (mode) => {
                     },
                     secondary: {
                         light: "#e4ff6a",
+                        link: "#BEFE4D",
                         main: "#5CDB95",   // not used
 
 

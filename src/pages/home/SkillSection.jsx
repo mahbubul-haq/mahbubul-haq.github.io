@@ -55,7 +55,7 @@ const SkillSection = () => {
 
         // let event = window.addEventListener('resize', () => {
         //     let el = document.querySelector(".skills-fill-gap-image");
-            
+
         //     if (window.innerWidth >= 1300) {
         //         if (el) el.style.display = "flex";
         //     }
@@ -102,13 +102,14 @@ const SkillSection = () => {
             }}> <Box sx={{
                 display: "flex",
                 gap: "3rem",
+                mb: "3rem",
             }}>
                     <Box
                         className="skills-container"
                         sx={{
                             display: "flex", flexDirection: "column", gap: "3rem",
                             width: extraLargeScreens ? "60%" : isNonMobileScreens ? "100%" : "100%",
-                            
+
                         }}>
 
                         {skillsData.map((skill, index) => (
@@ -170,21 +171,21 @@ const SkillSection = () => {
 
                     </Box>
                     {/* {extraLargeScreens && */}
-                        <Box sx={{
-                            width: "40%",
-                            // display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            opacity: 0,
-                            transform: "translateX(4rem)",
-                            transition: "all 0.5s ease-out",
-                            display: extraLargeScreens ? "flex" : "none",
-                        }}
+                    <Box sx={{
+                        width: "40%",
+                        // display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        opacity: 0,
+                        transform: "translateX(4rem)",
+                        transition: "all 0.5s ease-out",
+                        display: extraLargeScreens ? "flex" : "none",
+                    }}
                         className="skills-fill-gap-image"
-                        >
+                    >
 
-                            <img src={sample} alt="sample" style={{ width: "100%", height: "auto" }} />
-                        </Box>
+                        <img src={sample} alt="sample" style={{ width: "100%", height: "auto" }} />
+                    </Box>
                     {/* } */}
                 </Box>
 

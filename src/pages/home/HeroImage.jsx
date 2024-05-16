@@ -11,12 +11,13 @@ const HeroImage = () => {
         let el1 = document.querySelector(".hero-image-background");
         let el2 = document.querySelector(".hero-image-container");
 
-
         let event = el.addEventListener("scroll", () => {
-            el1.style.transform = `rotate(${(Math.min(200, el.scrollTop) * 10) / el1.clientHeight
-                }deg)`;
-            el2.style.transform = `translateX(-${(Math.min(200, el.scrollTop) * 20) / el2.clientHeight
-                }px)`;
+            el1.style.transform = `rotate(${
+                (Math.min(200, el.scrollTop) * 10) / el1.clientHeight
+            }deg)`;
+            el2.style.transform = `translateX(-${
+                (Math.min(200, el.scrollTop) * 20) / el2.clientHeight
+            }px)`;
         });
 
         return () => {
@@ -38,35 +39,44 @@ const HeroImage = () => {
                 // },
             }}
         >
-            <Box sx={{
-                position: "absolute",
-                left: "-50px",
-                bottom: -50,
-            }}>
-
-                <GradientBall width="150px" height="150px"
+            <Box
+                sx={{
+                    position: "absolute",
+                    left: "-50px",
+                    bottom: -50,
+                }}
+            >
+                <GradientBall
+                    width="150px"
+                    height="150px"
                     background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.background.bubbleBottom} 100%)`}
                 />
             </Box>
 
-            <Box sx={{
-                position: "absolute",
-                right: "-20px",
-                bottom: -20,
-            }}>
-
-                <GradientBall width="50px" height="50px"
+            <Box
+                sx={{
+                    position: "absolute",
+                    right: "-20px",
+                    bottom: -20,
+                }}
+            >
+                <GradientBall
+                    width="50px"
+                    height="50px"
                     background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.primary.dark} 100%)`}
                 />
             </Box>
 
-            <Box sx={{
-                position: "absolute",
-                left: "-80px",
-                top: -30,
-            }}>
-
-                <GradientBall width="100px" height="100px"
+            <Box
+                sx={{
+                    position: "absolute",
+                    left: "-80px",
+                    top: -30,
+                }}
+            >
+                <GradientBall
+                    width="100px"
+                    height="100px"
                     background={`radial-gradient( circle at 10% 50%, ${theme.palette.background.bubbleTop} 10%, ${theme.palette.secondary.main} 100%)`}
                 />
             </Box>

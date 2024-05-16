@@ -10,8 +10,9 @@ const ProficientIn = () => {
 
     const theme = useTheme();
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
-    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     const extraSmallScreens = useMediaQuery('(max-width: 300px)');
+    const minWidth800 = useMediaQuery('(min-width: 800px)');
+    const maxWidth400 = useMediaQuery('(max-width: 400px)');
 
     useEffect(() => {
 
@@ -69,7 +70,7 @@ const ProficientIn = () => {
   return (
     <Box sx={{
         width: isMobileScreens ? "100%" : "100%",
-        marginTop: isMobileScreens ? "2rem" : isNonMobileScreens ? "2rem" : "2rem",
+        // marginTop: isMobileScreens ? "1rem" : isNonMobileScreens ? "1rem" : "1rem",
         display: isMobileScreens ? "block" : "block",
         // display: "none",
         opacity: 1,
@@ -182,7 +183,12 @@ const ProficientIn = () => {
                             // fontWeight: 600,
                             letterSpacing: "0.25px",
 
-                            // mb: "1rem",
+                           
+                            whiteSpace: "nowrap",
+                            // truncate text with ellipsis
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            width: minWidth800 ? "100%" : isMobileScreens ? (maxWidth400 ? "10ch" : "100%") : "9ch",
                         }}>
                             {skillName}
                         </Typography>

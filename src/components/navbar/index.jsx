@@ -75,7 +75,7 @@ const Navbar = () => {
     return (
         <AppBar position='sticky' className="myappbar" sx={{
             boxShadow: 'none',
-            height: '5rem',
+            height: isNonMobileScreens ? '5rem' : '4rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',

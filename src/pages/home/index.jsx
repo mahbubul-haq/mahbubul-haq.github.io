@@ -1,14 +1,13 @@
 import Box from "@mui/material/Box";
-import { Typography, useMediaQuery } from "@mui/material";
-import BtnPrimary from "../../components/BtnPrimary";
-import useTheme from "@mui/material/styles/useTheme";
-import FlexBetween from "../../components/FlexBetween";
+import {  useMediaQuery } from "@mui/material";
 
-import { LuDownload } from "react-icons/lu";
+import useTheme from "@mui/material/styles/useTheme";
+
 import "./Home.css";
-import HeroImage from "./HeroImage";
+
 import HeroSection from "./HeroSection";
 import SkillSection from "./SkillSection";
+import PortfolioProjects from "./PortfolioProjects";
 
 
 const HomePage = () => {
@@ -28,7 +27,7 @@ const HomePage = () => {
                 px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
 
                 mx: "auto",
-                pb: "5rem",
+                pb: isNonMobileScreens ? "10rem" : "5rem",
                 // height: 'calc(100vh - 5rem)',
             }}>
 
@@ -38,6 +37,7 @@ const HomePage = () => {
                 width: "100%",
                 background: theme.palette.background.dark,
                 py: isNonMobileScreens ? "5rem" : "3rem",
+                pb: isNonMobileScreens ? "10rem" : "5rem",
             }}>
                 <Box sx={{
                     mx: "auto",
@@ -48,6 +48,15 @@ const HomePage = () => {
 
                     <SkillSection />
                 </Box>
+            </Box>
+
+            <Box sx={{
+                mx: "auto",
+                py: isNonMobileScreens ? "5rem" : "3rem",
+                maxWidth: 2000,
+                px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
+            }}>
+                <PortfolioProjects />
             </Box>
 
         </Box>
