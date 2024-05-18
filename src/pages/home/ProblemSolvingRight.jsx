@@ -30,9 +30,9 @@ const ProblemSolvingRight = () => {
         });
 
         let els = document.querySelector(".home-competitive");
-        for (let i = 0; i < els.childNodes.length; i++) {
-            observer.observe(els.childNodes[i]);
-        }
+        els.childNodes.forEach((el) => {
+            observer.observe(el);
+        });
 
         return () => {
             els.childNodes.forEach((el) => {
@@ -196,21 +196,22 @@ const ProblemSolvingRight = () => {
                             ),
                         },
                     ].map((profile, index) => (
-                        <Tooltip
-                            title={`View ${profile.name} profile`}
-                            key={index}
-                        >
-                            <IconButton
+                        // <Tooltip
+                        //     title={`View ${profile.name} profile`}
+                        //     key={index}
+                        // >
+                            <IconButton key={index}
                                 onClick={() => {
                                     window.open(profile.link, "_blank");
                                 }}
                                 sx={{
                                     color: theme.palette.secondary.link,
                                 }}
+                                title={`View ${profile.name} profile`}
                             >
                                 {profile.icon}
                             </IconButton>
-                        </Tooltip>
+                        // </Tooltip>
                     ))}
                 </FlexBetween>
             </Box>
