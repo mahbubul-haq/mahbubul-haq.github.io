@@ -13,7 +13,7 @@ const ProjectCard = ({
     const maxwidth900 = useMediaQuery('(max-width: 900px)');
     const minWidth1400 = useMediaQuery('(min-width: 1400px)');
 
-    console.log(projectInfo);
+    // console.log(projectInfo);
 
     return (
         <Box sx={{

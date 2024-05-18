@@ -14,22 +14,27 @@ const HeroSection = () => {
 
     useEffect(() => {
         // add eventlistener to page onload
-        let heroImageMobile = document.querySelector(".hero-image-mobile");
-        let heroIntroName = document.querySelector(".hero-intro-name");
-        let heroIntroDescription = document.querySelector(
-            ".hero-intro-description"
-        );
-        let heroButtons = document.querySelector(".hero-buttons");
+        // console.log("hero section loaded");
 
-        if (heroImageMobile) heroImageMobile.style.transform = "scale(1)";
-        heroIntroName.style.opacity = 1;
-        heroIntroName.style.transform = "translateY(0)";
+        // let event1 = window.addEventListener("load", () => {
 
-        heroIntroDescription.style.opacity = 1;
-        heroIntroDescription.style.transform = "translateY(0)";
+            let heroImageMobile = document.querySelector(".hero-image-mobile");
+            let heroIntroName = document.querySelector(".hero-intro-name");
+            let heroIntroDescription = document.querySelector(
+                ".hero-intro-description"
+            );
+            let heroButtons = document.querySelector(".hero-buttons");
 
-        heroButtons.style.opacity = 1;
-        heroButtons.style.transform = "translateY(0)";
+            if (heroImageMobile) heroImageMobile.style.transform = "scale(1)";
+            heroIntroName.style.opacity = 1;
+            heroIntroName.style.transform = "translateY(0)";
+
+            heroIntroDescription.style.opacity = 1;
+            heroIntroDescription.style.transform = "translateY(0)";
+
+            heroButtons.style.opacity = 1;
+            heroButtons.style.transform = "translateY(0)";
+        // });
 
         let event = window.addEventListener("resize", () => {
             // check if min-left is 1000px
@@ -41,6 +46,7 @@ const HeroSection = () => {
 
         return () => {
             window.removeEventListener("resize", event);
+            // window.removeEventListener("load", event1);
         };
     }, []);
 
@@ -59,7 +65,7 @@ const HeroSection = () => {
         }
     }, [isNonMobileScreens]);
 
-   
+
 
     return (
         <Box
@@ -230,7 +236,7 @@ const HeroSection = () => {
                         transform: "translateX(100px)",
                         transition: "transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s",
                         opacity: 0,
-                       
+
 
                     }}>
 

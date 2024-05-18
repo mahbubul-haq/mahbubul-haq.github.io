@@ -39,7 +39,7 @@ const ProblemSolvingLeft = () => {
                             el.innerHTML = 1600 + "+";
                             clearInterval();
                         }
-                    }, 10);
+                    }, 8);
                 }
             });
         }, {
