@@ -110,7 +110,7 @@ const ProjectCard = ({
                                 justifyContent: "center",
                                 px: "0.8rem",
                                 borderRadius: "0.5rem",
-                                border: "1px solid #D7D7D7"
+                                border: `1px solid ${theme.palette.grey[500]}`
                             }}>
                             <Typography variant="body1" sx={{
                                 fontSize: "0.9rem",

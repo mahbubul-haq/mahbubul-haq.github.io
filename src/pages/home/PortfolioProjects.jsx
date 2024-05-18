@@ -60,18 +60,23 @@ const PortfolioProjects = () => {
       <Box
         className="portfolio-projects-cards"
         sx={{
-          display: "grid",
-          gridTemplateColumns: minWidth1400 ? "repeat(3, 1fr)" : maxwidth900 ? "1fr" : "repeat(2, 1fr)",
-          gap: "2rem",
-
+          // display: "grid",
+          // gridTemplateColumns: minWidth1400 ? "repeat(3, 1fr)" : maxwidth900 ? "1fr" : "repeat(2, 1fr)",
+          display: "flex",
+          justifyContent: "center",
+          gap: isMobileScreens ? "1rem" : "2rem",
+          flexWrap: "wrap",
+          width: "100%",
+          
         }}>
         {portfolioProjects.map((projectInfo, index) => (
           <Box key={index} sx={{
-            height: "100%",
-            width: "100%",
+            // height: "100%",
+            // width: "100%",
             opacity: 0,
-            transform: maxwidth900 ? "translateY(4rem)" : !minWidth1400 ? (index % 2 === 0? "translateX(-16rem)" : "translateX(16rem)") :
-              ((index - 1) % 3 == 0 ? "translateY(4rem)" : (index % 3 == 0 ? "translateX(-8rem)" : "translateX(8rem)")),
+            width: maxwidth900 ? "100%" : minWidth1400 ?  'calc(33.33% - 1.34rem)' : 'calc(50% - 1rem)' ,
+            transform: maxwidth900 ? "translateY(4rem)" : !minWidth1400 ? (index % 2 === 0? index == 4 ? "translateY(4rem)" : "translateX(-16rem)" : "translateX(16rem)") :
+              ((index - 1) % 3 == 0? index == 4 ?  "translateX(8rem)" : "translateY(4rem)" : (index % 3 == 0 ? "translateX(-8rem)" : "translateX(8rem)")),
             transition: "opacity 0.5s, transform 0.7s ease-out",
           }}>
             <ProjectCard projectInfo={projectInfo}

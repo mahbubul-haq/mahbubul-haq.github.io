@@ -8,6 +8,7 @@ import "./Home.css";
 import HeroSection from "./HeroSection";
 import SkillSection from "./SkillSection";
 import PortfolioProjects from "./PortfolioProjects";
+import ProblemSolving from "./ProblemSolving";
 
 
 const HomePage = () => {
@@ -59,6 +60,15 @@ const HomePage = () => {
                 <PortfolioProjects />
             </Box>
 
+            <Box sx={{
+                mx: "auto",
+                py: isNonMobileScreens ? "7rem" : "3rem",
+                maxWidth: 2000,
+                px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
+            }}>
+                <ProblemSolving />
+            </Box>
+            Bottom
         </Box>
     )
 }

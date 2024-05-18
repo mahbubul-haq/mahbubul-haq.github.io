@@ -60,6 +60,8 @@ export const themeSettings = (mode) => {
                         btnSecondary: "#000",
                         bubbleTop: "#E4D6FF",
                         bubbleBottom: "#5F29D1",
+                        homeCompetitive: "rgba(6, 46, 95, 0.7)",
+                        codeforcesPurple: "#b200aa",
                     },
                     common: {
                         black: "#000",
