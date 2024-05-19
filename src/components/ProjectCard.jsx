@@ -25,6 +25,8 @@ const ProjectCard = ({
             background: theme.palette.background.dark,
             borderRadius: "0.6rem",
             gap: isMobileScreens ? "0.1rem" : maxwidth900 ? "0.5rem" : "1rem",
+            transition: "all 0.3s ease-out",
+            
         }}>
             <Box>
                 <img src={`images/${projectInfo.imageFileName}`} alt="random" style={{

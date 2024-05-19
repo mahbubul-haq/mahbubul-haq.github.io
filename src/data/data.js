@@ -23,13 +23,14 @@ export const skillsData = [
                 progress: 80,
             },
             {
-                name: "HTML",
-                progress: 90,
-            },
-            {
                 name: "CSS",
                 progress: 90,
             },
+            {
+                name: "HTML",
+                progress: 90,
+            },
+            
         ],
     },
 
@@ -156,6 +157,10 @@ export const skillsData = [
                 name: "SDLC Models",
                 progress: 80,
             },
+            {
+                name: "UI/UX Basics",
+                progress: 80,
+            }
         ],
     },
 ];
