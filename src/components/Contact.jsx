@@ -9,9 +9,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import StyledTextField from "./StyledTextField";
 import BtnPrimary from "./BtnPrimary";
 import { BsSend } from "react-icons/bs";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { sendEmail } from "../utilities/SendEmail";
-import { useState } from "react";
+import React, { useState } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
@@ -46,10 +47,19 @@ const Contact = () => {
     const maxwidth700 = useMediaQuery('(max-width: 700px)');
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("Email sent successfully");
+    const recaptchaRef = React.createRef();
+
+    console.log(import.meta.env.VITE_ReCAPTCHA_SITE_KEY);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
+        if (!recaptchaRef.current.getValue()) {
+            setMessage("Please verify that you are not a robot!");
+            setOpen(true);
+            return;
+        }
+
         const res = await sendEmail(e.target);
         if (res.success) {
             setMessage("Email sent successfully");
@@ -194,6 +204,7 @@ const Contact = () => {
                         required
                         name="message"
                     />
+                    <ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY} />
                     <BtnPrimary
                         component="button"
                         type="submit"
