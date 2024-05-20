@@ -6,6 +6,7 @@ import { TbWorldCode } from "react-icons/tb";
 import { SiCodeforces, SiLeetcode } from "react-icons/si";
 import FlexBetween from "../../components/FlexBetween";
 import { useEffect } from "react";
+import { LuExternalLink } from "react-icons/lu";
 
 
 const ProblemSolvingLeft = () => {
@@ -99,7 +100,7 @@ const ProblemSolvingLeft = () => {
                     ? "2rem 0 4rem 0"
                     : "3rem 3rem 4rem 0rem",
 
-                paddingBottom: maxWidth950 ? "6rem" : "4rem",
+                paddingBottom: maxWidth950 ? "6rem" : "3rem",
                 display: "flex",
                 flexDirection: "column",
                 gap: "3rem",
@@ -251,6 +252,35 @@ const ProblemSolvingLeft = () => {
                     </FlexBetween>
                 </FlexBetween>
             </FlexBetween>
+
+            <Box
+                
+             sx={{
+                // border: "1px solid",
+                borderRadius: "0.25rem",
+                px: "0.5rem",
+                // mt: "2rem",
+                cursor: "pointer",
+                transition: "all 0.3s",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontWeight: 500,
+                
+                "&:hover": {
+                    outline: "1px solid",
+                    
+                },
+                color: "#0A4900"
+                
+            }}
+            onClick={() => {
+                window.open("https://github.com/mahbubul-haq/MySolvedProblems", "_blank");
+            }}
+            >
+                View Problem solving stats
+                <LuExternalLink />
+            </Box>
 
         </Box>
     )

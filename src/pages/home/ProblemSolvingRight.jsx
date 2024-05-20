@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useTheme from "@mui/material/styles/useTheme";
 import { SiCodeforces, SiLeetcode } from "react-icons/si";
@@ -9,7 +8,6 @@ import FlexBetween from "../../components/FlexBetween";
 
 import { useEffect } from "react";
 
-
 const ProblemSolvingRight = () => {
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const theme = useTheme();
@@ -17,8 +15,6 @@ const ProblemSolvingRight = () => {
     const maxWidth450 = useMediaQuery("(max-width: 450px)");
 
     useEffect(() => {
-
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 let el = entry.target;
@@ -39,9 +35,7 @@ const ProblemSolvingRight = () => {
                 observer.unobserve(el);
             });
         };
-    }
-        , []);
-
+    }, []);
 
     return (
         <Box
@@ -71,7 +65,9 @@ const ProblemSolvingRight = () => {
                 sx={{
                     fontSize: "1.5rem",
                     fontWeight: 500,
-                    transition: !maxWidth950 ? "all 0.5s ease-out 0.5s" : "all 0.5s ease-out 0.1s",
+                    transition: !maxWidth950
+                        ? "all 0.5s ease-out 0.5s"
+                        : "all 0.5s ease-out 0.1s",
                     transform: "translateY(3rem)",
                     opacity: 0,
                 }}
@@ -86,37 +82,55 @@ const ProblemSolvingRight = () => {
                     lineHeight: "1.5",
                     // opacity: 0.9,
                     letterSpacing: "0px",
-                    transition: !maxWidth950 ? "all 0.7s ease-out 1.4s" : "all 0.7s ease-out 0.4s",
+                    transition: !maxWidth950
+                        ? "all 0.7s ease-out 1.4s"
+                        : "all 0.7s ease-out 0.4s",
                     transform: "translateY(3rem)",
                     opacity: 0,
-                    color: theme.palette.text.secondary,
+                    color: theme.palette.grey[300],
+                    // paragraph spacing
                 }}
             >
-                I find it fascinating to solve problems and puzzles. I have
-                a huge experience in solving problems in different online
-                judges. I was a competitive programmer and became <span
+                I possess extensive experience in Data Structures and Algorithms
+                (DSA) and problem-solving. As a competitive programmer, I
+                achieved the rank of {" "}
+                <span
                     onClick={() => {
-                        window.open("https://codeforces.com/profile/F__", "_blank");
+                        window.open(
+                            "https://codeforces.com/profile/F__",
+                            "_blank"
+                        );
                     }}
                     style={{
-
                         background: theme.palette.background.codeforcesPurple,
                         fontWeight: 500,
                         letterSpacing: "0.2px",
                         cursor: "pointer",
-
-
-                    }}>candidate master(purple coder)</span> in Codeforces with maximum rating <b>1914</b>.
-                <br />
-
-
+                    }}
+                >
+                    Candidate Master (Purple Coder)
+                </span>{" "}
+                on Codeforces with a peak rating of <b>1914</b>.
+                <span
+                    style={{
+                        display: "block",
+                        height: "0.75rem",
+                    }}
+                />
+                I leverage the analytical and problem-solving skills honed
+                through competitive programming to tackle real-world problems in
+                a more efficient and optimized manner.
             </Typography>
+            <Box></Box>
+
             <Box
                 sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "1rem",
-                    transition: !maxWidth950 ? "all 1s ease-out 1.8s" : "all 1s ease-out 0.8s",
+                    gap: "2rem",
+                    transition: !maxWidth950
+                        ? "all 1s ease-out 1.8s"
+                        : "all 1s ease-out 0.8s",
                     transform: "translateY(3rem)",
                     opacity: 0,
                 }}
@@ -127,6 +141,9 @@ const ProblemSolvingRight = () => {
                         gap: "0.5rem",
                         color: theme.palette.secondary.link,
                         cursor: "pointer",
+                        "&:hover": {
+                            color: theme.palette.secondary.linkHover,
+                        },
                     }}
                     onClick={() => {
                         window.open(
@@ -148,7 +165,7 @@ const ProblemSolvingRight = () => {
                     </Typography>
                     <LuExternalLink />
                 </FlexBetween>
-                <Box
+                {/* <Box
                     onClick={() => {
                         window.open("https://github.com/mahbubul-haq/MySolvedProblems", "_blank");
                     }}
@@ -168,10 +185,11 @@ const ProblemSolvingRight = () => {
 
                     }}>Problem solving stats</Typography>
                     <LuExternalLink />
-                </Box>
+                </Box> */}
+
                 <FlexBetween
                     sx={{
-                        gap: "1rem",
+                        gap: "2rem",
                         width: "fit-content",
                         flexWrap: "wrap",
                     }}
@@ -182,7 +200,7 @@ const ProblemSolvingRight = () => {
                             link: "https://codeforces.com/profile/F__",
                             icon: (
                                 <SiCodeforces
-                                    size={isMobileScreens ? 20 : 25}
+                                    size={isMobileScreens ? 15 : 20}
                                 />
                             ),
                         },
@@ -190,9 +208,7 @@ const ProblemSolvingRight = () => {
                             name: "LeetCode",
                             link: "https://leetcode.com/u/mahbubulhaque/",
                             icon: (
-                                <SiLeetcode
-                                    size={isMobileScreens ? 20 : 25}
-                                />
+                                <SiLeetcode size={isMobileScreens ? 15 : 20} />
                             ),
                         },
                     ].map((profile, index) => (
@@ -200,23 +216,32 @@ const ProblemSolvingRight = () => {
                         //     title={`View ${profile.name} profile`}
                         //     key={index}
                         // >
-                            <IconButton key={index}
-                                onClick={() => {
-                                    window.open(profile.link, "_blank");
-                                }}
-                                sx={{
-                                    color: theme.palette.secondary.link,
-                                }}
-                                title={`View ${profile.name} profile`}
-                            >
-                                {profile.icon}
-                            </IconButton>
+                        <Box
+                            key={index}
+                            onClick={() => {
+                                window.open(profile.link, "_blank");
+                            }}
+                            sx={{
+                                color: theme.palette.secondary.link,
+                                cursor: "pointer",
+                                "&:hover": {
+                                    color: theme.palette.secondary.linkHover,
+                                },
+                                display: "flex",
+                                gap: "0.5rem",
+                                alignItems: "center",
+                            }}
+                            title={`View ${profile.name} profile`}
+                        >
+                            {profile.icon}
+                            {profile.name}
+                        </Box>
                         // </Tooltip>
                     ))}
                 </FlexBetween>
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default ProblemSolvingRight
+export default ProblemSolvingRight;
