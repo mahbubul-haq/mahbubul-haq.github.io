@@ -331,6 +331,7 @@ export const portfolioProjects = [
     {
         title: "Travel Bug - Travel & Tourism Website",
         imageFileName: "travel-bug-homepage.PNG",
+        embedLink: "https://www.youtube.com/embed/g-shwX9y4aI",
         technologies: [
             "React",
             "Express",
@@ -356,6 +357,7 @@ export const portfolioProjects = [
     {
         title: "RIDER - Ride Sharing & Car Rental Website",
         imageFileName: "rider-homepage.png",
+        embedLink: "https://www.youtube.com/embed/eiNzZp00KUg",
         technologies: [
             "Django",
             "Oracle",
@@ -392,6 +394,60 @@ export const portfolioProjects = [
             },
         ],
         year: 2022,
+    },
+];
+
+export const otherProjects = [
+    {
+        title: "Smart Room Simulation",
+        imageFileName: "smart-room-simulation.PNG",
+        technologies: ["C", "Atmega32", "Microcontroller", "Embedded System", "Proteus"],
+        embedLink: "https://www.youtube.com/embed/iGjB0XKjxSU",
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/Smart-Room-Simulation",
+                text: "Github",
+            },
+            {
+                link: "https://youtu.be/iGjB0XKjxSU",
+                text: "Youtube",
+            },
+        ],
+        year: 2021,
+    },
+    {
+        title: "Network Car Racing Game",
+        imageFileName: "network-car-racing-game.PNG",
+        technologies: ["Java", "JavaFX", "Socket Programming"],
+        embedLink: "https://www.youtube.com/embed/8uobXJ6C7NY",
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/Network-Car-Racing-Game",
+                text: "Github",
+            },
+            {
+                link: "https://youtu.be/8uobXJ6C7NY",
+                text: "Youtube",
+            },
+        ],
+        year: 2018,
+    },
+    {
+        title: "DX BALL Game",
+        imageFileName: "dx-ball-game.PNG",
+        technologies: ["C", "iGraphics.h"],
+        embedLink: "https://www.youtube.com/embed/MobiPt_rQKo",
+        links: [
+            {
+                link: "https://github.com/mahbubul-haq/DX-BALL-Game",
+                text: "Github",
+            },
+            {
+                link: "https://youtu.be/MobiPt_rQKo",
+                text: "Youtube",
+            },
+        ],
+        year: 2017,
     },
 ];
 

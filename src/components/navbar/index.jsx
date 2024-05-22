@@ -70,6 +70,7 @@ const Navbar = () => {
         else {
             el.classList.add('is-active');
         }
+        
         setOpen(!open);
     }
 
@@ -209,7 +210,7 @@ const Navbar = () => {
                         // }}>
                         <>
                             <MobileNav open={open && !isNonMobileScreens
-                            } setOpen={setOpen} />
+                            } setOpen={setOpen} handleOpen={() => handleOpen()} />
 
                             <Box onClick={handleOpen} sx={{
                                 zIndex: 2000,

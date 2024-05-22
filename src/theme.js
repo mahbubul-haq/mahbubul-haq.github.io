@@ -76,6 +76,7 @@ export const themeSettings = (mode) => {
                 : {
                     primary: {
                         light: "#FFC96A",
+                        mainLight: "#FFB082",
                         main: "#FF8943",
                         dark: "#FF6A12",
 
@@ -87,6 +88,7 @@ export const themeSettings = (mode) => {
                         linkHover: "#58E117",
                         main70: "#5CDB95B3",
                         main40: "#5CDB9540",
+                        dark: "#2DA540"
 
                     },
                     text: {
@@ -106,6 +108,7 @@ export const themeSettings = (mode) => {
                         default: "#6939D9",
                         alt: "#915AFF",
                         dark: "#062E5F",
+                        // dark: "rgba(0, 0, 0, 0.2)",
                         secondary: "#062E5F",
                         btnSecondary: "#000",
                         bubbleTop: "#E4D6FF",

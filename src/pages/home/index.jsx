@@ -23,6 +23,7 @@ const HomePage = () => {
     const theme = useTheme();
 
     useEffect(() => {
+        document.querySelector(".app-container").scrollTo(0, 0);
         let homeHeroImage = document.querySelector(".home-hero-image");
         if (!homeHeroImage) return;
         homeHeroImage.style.transform = "scale(1)";

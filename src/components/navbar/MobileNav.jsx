@@ -10,12 +10,14 @@ import { LuDownload } from "react-icons/lu";
 
 import { LiaToggleOnSolid } from "react-icons/lia";
 import { LiaToggleOffSolid } from "react-icons/lia";
+import { useNavigate } from "react-router-dom";
 
 
-const MobileNav = ({ open, setOpen }) => {
+const MobileNav = ({ open, setOpen, handleOpen }) => {
     const theme = useTheme();
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const { page, setPage, mode, setMode } = useContext(MainContext);
+    const navigate = useNavigate();
     // const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
     useEffect(() => {
@@ -62,7 +64,12 @@ const MobileNav = ({ open, setOpen }) => {
                             }}
                         >
                             <Typography
-                                onClick={() => setPage("home-page")}
+                                onClick={() => {
+                                    setPage("home-page");
+                                    navigate("/");
+                                    setOpen(false);
+                                    handleOpen();
+                                }}
                                 variant="menu"
                                 sx={{
                                     cursor: "pointer",
@@ -81,7 +88,12 @@ const MobileNav = ({ open, setOpen }) => {
                                 Home Page
                             </Typography>
                             <Typography
-                                onClick={() => setPage("about-me")}
+                                onClick={() => {
+                                    setPage("about-me");
+                                    navigate("/about");
+                                    setOpen(false);
+                                    handleOpen();
+                                }}
                                 variant="menu"
                                 sx={{
                                     cursor: "pointer",
@@ -99,7 +111,12 @@ const MobileNav = ({ open, setOpen }) => {
                                 About Me
                             </Typography>
                             <Typography
-                                onClick={() => setPage("projects")}
+                                onClick={() => {
+                                    setPage("projects");
+                                    navigate("/projects");
+                                    setOpen(false);
+                                    handleOpen();
+                                }}
                                 variant="menu"
                                 sx={{
                                     cursor: "pointer",
@@ -119,8 +136,12 @@ const MobileNav = ({ open, setOpen }) => {
 
                             <Typography
                                 component="a"
-                                href="#contact-me"
+                                href="#contact"
                                 variant="menu"
+                                onClick={() => {
+                                    setOpen(false);
+                                    handleOpen();
+                                }}
                                 sx={{
                                     // overwriting the default anchor tag styles
                                     textDecoration: "none",
