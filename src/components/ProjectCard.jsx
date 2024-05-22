@@ -61,7 +61,14 @@ const ProjectCard = ({
                         fontWeight: 600,
                         minHeight: maxwidth900 ? "auto" : minWidth1400 ? "3rem" : "3rem",
                     }}>
-                        {projectInfo.title}
+                        {projectInfo.title} <span style={{
+                            verticalAlign: "middle",
+                            fontSize: isMobileScreens ? "0.8rem" : "0.9rem",
+                            // textAlign: "right",
+                            // display: "inline-block",
+                            opacity: 1,
+                            color: theme.palette.primary.light,
+                        }}> &mdash; {projectInfo.year}</span>
                     </Typography>
 
                     <Box sx={{

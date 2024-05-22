@@ -307,6 +307,7 @@ export const portfolioProjects = [
                 text: "Live",
             },
         ],
+        year: 2023,
     },
 
     {
@@ -324,6 +325,7 @@ export const portfolioProjects = [
                 text: "Live",
             },
         ],
+        year: 2024,
     },
 
     {
@@ -349,6 +351,7 @@ export const portfolioProjects = [
                 text: "Youtube",
             },
         ],
+        year: 2022,
     },
     {
         title: "RIDER - Ride Sharing & Car Rental Website",
@@ -372,6 +375,7 @@ export const portfolioProjects = [
                 text: "Youtube",
             },
         ],
+        year: 2020,
     },
     {
         title: "Personal Portfolio Website - v1",
@@ -387,6 +391,7 @@ export const portfolioProjects = [
                 text: "Live",
             },
         ],
+        year: 2022,
     },
 ];
 

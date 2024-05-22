@@ -2,10 +2,11 @@ import { Box, Typography } from "@mui/material";
 import { LuDownload } from "react-icons/lu";
 import BtnPrimary from "../../components/BtnPrimary";
 import FlexBetween from "../../components/FlexBetween";
-import HeroImage from "./HeroImage";
+
 import { useMediaQuery } from "@mui/material";
 import useTheme from "@mui/material/styles/useTheme";
 import { useEffect } from "react";
+
 
 const HeroSection = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
@@ -73,11 +74,11 @@ const HeroSection = () => {
             sx={{
                 display: "flex",
                 flexDirection: isNonMobileScreens ? "row" : "column",
-                gap: "1rem",
+                gap: isNonMobileScreens ? "0" : "1rem",
                 justifyContent: "space-between",
                 width: "100%",
                 // minHeight: "500px",
-
+                
                 mx: "auto",
             }}
         >
@@ -103,6 +104,7 @@ const HeroSection = () => {
                 sx={{
                     width: isNonMobileScreens ? "50%" : "100%",
                     alignSelf: "center",
+                    pb: "5rem",
                 }}
             >
                 <Typography
@@ -117,7 +119,7 @@ const HeroSection = () => {
                         transition: "transform 0.5s, opacity 0.5s",
                     }}
                 >
-                    Hi, I&apos;m Mahbub - Web Developer
+                    Hi, I&apos;m Mahbub &mdash; Web Developer
                 </Typography>
 
                 <Typography
@@ -200,7 +202,9 @@ const HeroSection = () => {
                             gap: "1rem",
                         }}
                     >
-                        <Box className="pulse-indicator"></Box>
+                        <Box className="pulse-indicator">
+                            <Box className="pulse-indicator-inner"></Box>
+                        </Box>
                         Available for work
                     </FlexBetween>
                 </FlexBetween>
@@ -208,7 +212,7 @@ const HeroSection = () => {
             {isNonMobileScreens && (
                 <Box
                     sx={{
-                        width: "45%",
+                        width: "50%",
                         position: "relative",
                         mt: "2rem",
 
@@ -221,15 +225,16 @@ const HeroSection = () => {
                         },
 
                         //style for anyting inside the box
-                        "& > *": {
-                            position: "absolute",
-                            top: 0,
-                            right: 0,
-                            width: "90%",
-                            height: "90%",
-                        },
+                        // "& > *": {
+                        //     position: "absolute",
+                        //     top: 0,
+                        //     right: 0,
+                        //     width: "100%",
+                        //     height: "100%",
+                        // },
                     }}
-                > <Box
+                > 
+                {/* <Box
                     className="hero-image"
                     sx={{
                         // add scale and translate both transform
@@ -237,11 +242,23 @@ const HeroSection = () => {
                         transition: "transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s",
                         opacity: 0,
 
+                        height: "100%",
+                        width: "100%",
+                    }}> */}
 
-                    }}>
-
-                        <HeroImage />
-                    </Box>
+                        {/* <HeroImage /> */}
+                        {/* <HeroImage1 /> */}
+                        {/* <img src="https://source.unsplash.com/random/800x600" 
+                        alt="random"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            borderRadius: "50%",
+                           
+                        }} /> */}
+                        
+                    {/* </Box> */}
                 </Box>
             )}
         </Box>

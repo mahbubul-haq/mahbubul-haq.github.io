@@ -14,6 +14,7 @@ import { MainContext } from "../../context/MainContext"
 import { useMediaQuery } from "@mui/material"
 import Hamburger from "./Hamburger"
 import MobileNav from "./MobileNav"
+import { useNavigate } from "react-router-dom"
 
 
 const Navbar = () => {
@@ -24,6 +25,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     const theme = useTheme();
+    const navigate = useNavigate();
 
     useEffect(() => {
         let el = document.querySelector('.app-container');
@@ -43,7 +45,7 @@ const Navbar = () => {
             }
         });
 
-        let event1 =window.addEventListener('resize', () => {
+        let event1 = window.addEventListener('resize', () => {
             // check if min-left is 1000px
             let ham = document.querySelector('.hamburger');
             if (window.innerWidth >= 1000) {
@@ -51,7 +53,7 @@ const Navbar = () => {
                 ham?.classList.remove('is-active');
             }
 
-        }); 
+        });
 
         return () => {
             el.removeEventListener('scroll', event);
@@ -125,7 +127,11 @@ const Navbar = () => {
                             gap: '3rem',
                         }}>
                             <NavTab
-                                onClick={() => setPage('home-page')}
+                                onClick={() => {
+                                    setPage('home-page')
+                                    navigate('/');
+                                }
+                                }
                                 sx={{
                                     "&&": {
                                         "&::before": {
@@ -145,7 +151,10 @@ const Navbar = () => {
                                         },
                                     },
                                 }}
-                                onClick={() => setPage('about-me')}
+                                onClick={() => {
+                                    setPage('about-me');
+                                    navigate('/about');
+                                }}
                             >
 
                                 <Typography variant='menu'>About Me</Typography>
@@ -158,13 +167,19 @@ const Navbar = () => {
                                         },
                                     },
                                 }}
-                                onClick={() => setPage('projects')}
+                                onClick={() => {
+                                    setPage('projects');
+                                    navigate('/projects');
+                                }}
                             >
 
                                 <Typography variant='menu'>Projects</Typography>
                             </NavTab>
 
-                            <BtnPrimary>
+                            <BtnPrimary
+                                href="#contact" 
+                                // component='a'
+                                >
                                 <Typography variant='button'>Contact Me</Typography></BtnPrimary>
                             <Box sx={{
                                 height: '20px',
@@ -176,13 +191,13 @@ const Navbar = () => {
                             }}>
                                 <IconButton
                                     onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-                                 sx={{
+                                    sx={{
 
-                                    color: theme.palette.text.primary,
-                                    padding: "1rem",
-                                }}>
+                                        color: theme.palette.text.primary,
+                                        padding: "1rem",
+                                    }}>
                                     {mode === 'dark' ? <HiMiniSun fontSize='1.5rem' /> : <BsMoonStars fontSize='1.1rem' />}
-                                    
+
                                 </IconButton>
                             </Box>
 
@@ -193,21 +208,21 @@ const Navbar = () => {
                         //     padding: "1rem",
                         // }}>
                         <>
-                          <MobileNav open={open && !isNonMobileScreens
-                        } setOpen={setOpen} />
+                            <MobileNav open={open && !isNonMobileScreens
+                            } setOpen={setOpen} />
 
                             <Box onClick={handleOpen} sx={{
                                 zIndex: 2000,
                             }}>
 
-                            <Hamburger multiplier={
-                                isMobileScreens ? 0.7 : 1
-                            }
-                            
-                        
-                        />
-                        </Box>
-                          
+                                <Hamburger multiplier={
+                                    isMobileScreens ? 0.7 : 1
+                                }
+
+
+                                />
+                            </Box>
+
                         </>
                         // </IconButton>
                     )}

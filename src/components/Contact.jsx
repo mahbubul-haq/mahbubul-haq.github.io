@@ -49,8 +49,6 @@ const Contact = () => {
     const [message, setMessage] = useState("Email sent successfully");
     const recaptchaRef = React.createRef();
 
-    console.log(import.meta.env.VITE_ReCAPTCHA_SITE_KEY);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -65,6 +63,7 @@ const Contact = () => {
             setMessage("Email sent successfully");
             setOpen(true);
             e.target.reset();
+            recaptchaRef.current.reset();
         }
         else {
             console.log(res.error);
@@ -204,7 +203,7 @@ const Contact = () => {
                         required
                         name="message"
                     />
-                    <ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY} />
+                    <ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY} theme="dark" />
                     <BtnPrimary
                         component="button"
                         type="submit"
@@ -218,7 +217,7 @@ const Contact = () => {
                                 width: "fit-content",
                                 display: "flex",
                                 alignItems: "center",
-                                alignSelf: maxwidth700 ? "center" : "flex-start",
+                                alignSelf: maxwidth700 ? "flex-start" : "flex-start",
                                 gap: "0.7rem",
                                 borderRadius: "0.5rem",
                                 mt: "0l5rem",

@@ -48,6 +48,7 @@ const ProblemSolvingRight = () => {
                 marginTop: maxWidth950 ? "-3rem" : 0,
                 height: "100%",
                 background: theme.palette.background.homeCompetitive,
+                // background: "rgba(0, 0, 0, 0.2)",
                 padding: isMobileScreens ? "1rem" : "2rem",
                 backdropFilter: "blur(10px)",
                 borderRadius: "1.25rem",
