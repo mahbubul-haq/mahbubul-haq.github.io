@@ -120,7 +120,14 @@ const Navbar = () => {
                     <Typography variant='h3' sx={{
                         fontWeight: 400,
                         fontSize: isNonMobileScreens ? '1.5rem' : '1.2rem',
-                    }}>
+                        cursor: 'pointer',
+                    }}
+                    onClick={() => {
+                        setPage('home-page')
+                        navigate('/');
+                    }
+                    }
+                    >
                         Mahbubul Haque</Typography>
                     {isNonMobileScreens ? (
 

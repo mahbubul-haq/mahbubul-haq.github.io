@@ -24,3 +24,8 @@ svg.clipper {
   width: 0;
   height: 0;
 }
+
+.about-highlight-text {
+  color: white;
+  font-weight: 500;
+}

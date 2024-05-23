@@ -93,7 +93,8 @@ export const themeSettings = (mode) => {
                     },
                     text: {
                         primary: "#fff",
-                        secondary: "#E2E2E2",
+                        // secondary: "#E2E2E2",
+                        secondary: "#D1D5DB",
                         btnPrimary: "#000",
                     },
                     shadow: {
@@ -126,7 +127,9 @@ export const themeSettings = (mode) => {
                         100: "#F3F4F6",
                         200: "#E5E7EB",
                         300: "#D1D5DB",
+                        350: "#B8C2CC",
                         400: "#9CA3AF",
+                        450: "#82909E",
                         500: "#6B7280",
                         600: "#4B5563",
                         700: "#374151",

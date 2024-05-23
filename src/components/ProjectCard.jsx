@@ -73,6 +73,7 @@ const ProjectCard = ({
                             border: "none",
                             borderRadius: "0.6rem",
                             aspectRatio: "16/9",
+                            backgroundColor: theme.palette.common.black,
                         }}
                         loading="lazy"
                     />

@@ -11,7 +11,8 @@ import PortfolioProjects from "./PortfolioProjects";
 import ProblemSolving from "./ProblemSolving";
 import Contact from "../../components/Contact";
 import { useEffect } from "react";
-
+import { MainContext } from "../../context/MainContext";
+import { useContext } from "react";
 
 const HomePage = () => {
 
@@ -19,10 +20,12 @@ const HomePage = () => {
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     const maxWidth700 = useMediaQuery('(max-width: 700px)');
     const maxWidht950 = useMediaQuery('(max-width: 950px)');
+    const { setPage } = useContext(MainContext);
 
     const theme = useTheme();
 
     useEffect(() => {
+        setPage("home-page");
         document.querySelector(".app-container").scrollTo(0, 0);
         let homeHeroImage = document.querySelector(".home-hero-image");
         if (!homeHeroImage) return;
