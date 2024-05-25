@@ -94,7 +94,8 @@ const Navbar = () => {
     return (
         <AppBar position='sticky' className="myappbar" sx={{
             boxShadow: 'none',
-            height: isNonMobileScreens ? '5rem' : '10vh',
+            //height: isNonMobileScreens ? '5rem' : '10vh',
+            height: isNonMobileScreens ? '5rem' : '4rem',
             // minHeight: isNonMobileScreens ? '5rem' : '4rem',
             
 
@@ -151,7 +152,15 @@ const Navbar = () => {
                         }
                         }
                     >
-                        Mahbubul Haque</Typography>
+                        {isNonMobileScreens ? 'Mahbubul Haque' : <img
+                            src="images/logo-mh-hexagon.svg"
+                            alt="MH"
+                            style={{
+                                height: '2rem',
+                                width: '2rem',
+                            }}
+                        />}
+                        </Typography>
                     {isNonMobileScreens ? (
 
                         <FlexBetween sx={{
@@ -254,6 +263,14 @@ const Navbar = () => {
                         <>
                             <MobileNav open={open && !isNonMobileScreens
                             } setOpen={setOpen} handleOpen={() => handleOpen()} />
+                            
+                            <Typography sx={{
+                                fontSize: '1rem',
+                                fontWeight: 400,
+
+                            }}>
+                                {page === 'home-page' ? 'Home' : page === 'about-me' ? 'About' : 'Projects'}
+                            </Typography>
 
                             <Box onClick={handleOpen} sx={{
                                 zIndex: 2000,

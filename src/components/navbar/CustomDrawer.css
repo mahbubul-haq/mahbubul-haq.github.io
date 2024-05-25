@@ -4,6 +4,7 @@
     visibility: hidden;
 
     height: 100vh;
+    height: 100dvh;
     flex-direction: row-reverse;
     position: fixed;
     left: 0;

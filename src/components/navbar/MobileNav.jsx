@@ -3,7 +3,7 @@ import CustomDrawer from "./CustomDrawer";
 import useTheme from "@mui/material/styles/useTheme";
 import { Typography, useMediaQuery } from "@mui/material";
 import FlexBetween from "../FlexBetween";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { MainContext } from "../../context/MainContext";
 import BtnPrimary from "../BtnPrimary";
 import { LuDownload } from "react-icons/lu";
@@ -20,14 +20,14 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
     const navigate = useNavigate();
     // const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
-    useEffect(() => {
-        let addressBarHeight = window.innerHeight - document.documentElement.clientHeight;
-        let mobileNavMenu = document.querySelector(".mobile-nav-menu");
-        if (mobileNavMenu) {
-            mobileNavMenu.style.marginTop = `${100 + addressBarHeight}px`;
+    // useEffect(() => {
+    //     let addressBarHeight = window.innerHeight - document.documentElement.clientHeight;
+    //     let mobileNavMenu = document.querySelector(".mobile-nav-menu");
+    //     if (mobileNavMenu) {
+    //         mobileNavMenu.style.marginTop = `${100 + addressBarHeight}px`;
 
-        }
-    }, []);
+    //     }
+    // }, []);
 
     return (
         <CustomDrawer open={open} setOpen={setOpen}>
@@ -57,7 +57,7 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
 
                         <Box className="mobile-nav-menu"
                             sx={{
-                                marginTop: "6rem",
+                                marginTop: "4rem",
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: "0.5rem",
