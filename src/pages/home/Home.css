@@ -1,6 +1,6 @@
 .pulse-indicator {
     background-color: "transparent";
-    border: 2px solid #FFF965;
+    border:3px solid #FFF965;
     padding: 0px;
     width: 16px;
     height: 16px;
@@ -30,11 +30,15 @@
 
 @keyframes circle-inner {
     0% {
-        transform: scale(0);
+        transform: scale(1.1);
+        padding: 0;
+    }
+    15% {
+        transform: scale(1.1);
         padding: 0;
     }
     30% {
-        transform: scale(0.6);
+        transform: scale(0.8);
         padding: 0px;
     }
     40% {
@@ -43,28 +47,32 @@
     }
 
     50% {
-        transform: scale(1);
+        transform: scale(1.1);
         padding: 0px;
     }
 
     60% {
-        transform: scale(1);
+        transform: scale(1.1);
         padding: 0px;
     }
     70% {
-        transform: scale(0.9);
+        transform: scale(0.8);
         
     }
-    100% {
-        transform: scale(0);
+    80% {
+        transform: scale(0.6);
        
+    }
+    100% {
+        transform: scale(1.1);
+        padding: 0px;
     }
 
 }
 
 @keyframes circle-outer {
     0% {
-        transform: scale(0);
+        transform: scale(0.6);
         padding: 0;
     }
     /* 30% {
@@ -77,23 +85,20 @@
     }
 
     50% {
-        transform: scale(1);
+        transform: scale(1.2);
         padding: 0px;
     }
 
     60% {
-        transform: scale(1);
+        transform: scale(1.2);
         padding: 0px;
     }
    
 
-    /* 70% {
-        transform: scale(0.9);
-        padding: 2px;
-    } */
+    
     100% {
-        transform: scale(0);
-        padding: 4px;
+        transform: scale(0.6);
+        padding: 0px;
     }
 }
 

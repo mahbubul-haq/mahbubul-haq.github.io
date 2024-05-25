@@ -165,7 +165,7 @@ const HeroSection = () => {
                     <BtnPrimary
                         sx={{
                             "&&": {
-                                background: mode == "dark" ? theme.palette.secondary.dark : theme.palette.common.black,
+                                background: mode == "dark" ? "#ababab" : theme.palette.common.black,
                                 width: isNonMobileScreens ? "auto" : "100%",
                                 boxShadow: "none",
                                 borderRadius: "0.5rem",
@@ -178,7 +178,7 @@ const HeroSection = () => {
                                 padding: "1.7rem 1.5rem",
                                 "&:hover": {
 
-                                    background: "#1f1f1f",
+                                    background: mode === "dark" ? "#8f8f8f" : "#2f2f2f",
                                 },
                             },
                         }}

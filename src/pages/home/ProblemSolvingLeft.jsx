@@ -24,17 +24,17 @@ const ProblemSolvingLeft = () => {
             entries.forEach((entry) => {
                 let el = entry.target;
                 if (entry.isIntersecting) {
-                    let count = Number(el.getAttribute("data-count"));
+                    let count = Number(el.getAttribute("datacount"));
                     setInterval(() => {
                         if (count < 1000) {
                             count += 10;
                             el.innerHTML = count;
-                            el.setAttribute("data-count", count);
+                            el.setAttribute("datacount", count);
                         }
                         else if (count < 1600) {
                             count += 25;
                             el.innerHTML = count;
-                            el.setAttribute("data-count", count);
+                            el.setAttribute("datacount", count);
                         }
                         else {
                             el.innerHTML = 1600 + "+";
@@ -54,14 +54,14 @@ const ProblemSolvingLeft = () => {
             entries.forEach((entry) => {
                 let el = entry.target;
                 if (entry.isIntersecting) {
-                    let count = Number(el.getAttribute("data-count"));
-                    let target = Number(el.getAttribute("data-target"));
+                    let count = Number(el.getAttribute("datacount"));
+                    let target = Number(el.getAttribute("datatarget"));
                     setInterval(() => {
                         if (count < target) {
                             if (target > 800) count += 5;
                             else count += 1;
                             el.innerHTML = count;
-                            el.setAttribute("data-count", count);
+                            el.setAttribute("datacount", count);
                         }
                         else {
                             el.innerHTML = target + "+";
@@ -134,7 +134,7 @@ const ProblemSolvingLeft = () => {
                         lineHeight: "0.8",
                     }}
                     className="total-solved-count"
-                    data-count="0"
+                    datacount="0"
                 >
                     0
                 </Typography>
@@ -194,8 +194,8 @@ const ProblemSolvingLeft = () => {
                             fontWeight: 600,
                         }}
                         className="codeforces-count"
-                        data-count="0"
-                        data-target="880"
+                        datacount="0"
+                        datatarget="880"
                     >
                         0
                     </Typography>
@@ -229,8 +229,8 @@ const ProblemSolvingLeft = () => {
                             fontWeight: 600,
                         }}
                         className="leetcode-count"
-                        data-count="0"
-                        data-target="190"
+                        datacount="0"
+                        datatarget="190"
                     >
                         0
                     </Typography>
