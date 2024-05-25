@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import useTheme from '@mui/material/styles/useTheme';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { proficiencies } from '../../data/data';
+import { useContext } from 'react';
+import { MainContext } from '../../context/MainContext';
 
 const ProficientIn = () => {
 
@@ -13,6 +15,7 @@ const ProficientIn = () => {
     const extraSmallScreens = useMediaQuery('(max-width: 300px)');
     const minWidth800 = useMediaQuery('(min-width: 800px)');
     const maxWidth400 = useMediaQuery('(max-width: 400px)');
+    const { mode } = useContext(MainContext);
 
     useEffect(() => {
 
@@ -84,7 +87,7 @@ const ProficientIn = () => {
             fontWeight: 600,
             fontSize: "1rem",
             letterSpacing: "0.5px",
-
+            color: mode == "dark" ? theme.palette.text.tertiary : theme.palette.text.secondary,
         }}>
             Proficient In
 

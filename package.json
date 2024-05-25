@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://mahbubul-haq.github.io/gh-pages",
+  "homepage": "https://mahbubul-haq.github.io",
   "type": "module",
   "scripts": {
     "predeploy": "vite build",

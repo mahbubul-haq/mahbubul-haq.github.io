@@ -2,7 +2,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useTheme from "@mui/material/styles/useTheme";
-
+import {MainContext} from "../../context/MainContext";
+import {useContext} from "react";
 
 const notableCourses = [
     "OOP with C++ and Java",
@@ -30,6 +31,7 @@ const notableCourses = [
 const Education = () => {
 
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
+    const {mode} = useContext(MainContext);
     const theme = useTheme();
 
 
@@ -66,7 +68,7 @@ const Education = () => {
                     <Typography
                         variant="h3"
                         sx={{
-                            color: theme.palette.grey[200],
+                            color: mode == "dark" ? theme.palette.grey[300] : theme.palette.grey[200],
                             fontWeight: 500,
                             fontSize: isMobileScreens ? "1.4rem" : "2rem",
                         }}
@@ -77,7 +79,7 @@ const Education = () => {
                     <Typography
                         variant="body1"
                         sx={{
-                            color: theme.palette.grey[300],
+                            color: theme.palette.text.secondary,
                             fontWeight: 500,
                             fontSize: isMobileScreens ? "1.1rem" : "1.3rem",
                         }}
@@ -88,7 +90,7 @@ const Education = () => {
                     <Typography
                         variant="body1"
                         sx={{
-                            color: theme.palette.grey[300],
+                            color: theme.palette.text.secondary,
                             fontWeight: 400,
                         }}
                     >
@@ -129,7 +131,7 @@ const Education = () => {
                                     color: theme.palette.text.secondary,
                                     fontWeight: 400,
                                     fontSize: "1rem",
-                                    border: `1px solid ${theme.palette.grey[450]}`,
+                                    border: `1px solid ${mode == "dark"? theme.palette.grey[600] : theme.palette.grey[450]}`,
                                     borderRadius: "0.5rem",
                                     padding: "0.25rem 0.5rem",
                                     width: "fit-content",

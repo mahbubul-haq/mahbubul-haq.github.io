@@ -6,10 +6,13 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useTheme from "@mui/material/styles/useTheme";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { MainContext } from "../../context/MainContext";
+import { useContext } from "react";
 
 const Interests = () => {
     const theme = useTheme();
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
+    const { mode } = useContext(MainContext);
 
     return (
         <Box
@@ -21,7 +24,7 @@ const Interests = () => {
         >
             <Box
                 sx={{
-                    border: `1px solid ${theme.palette.grey[450]}`,
+                    border: `1px solid ${mode== "dark" ? theme.palette.grey[600] : theme.palette.grey[450]}`,
                     borderRadius: "0.5rem",
                     padding: isMobileScreens ? "0.5rem" : "1rem",
                 }}
@@ -48,7 +51,7 @@ const Interests = () => {
 
             <Box
                 sx={{
-                    border: `1px solid ${theme.palette.grey[450]}`,
+                    border: `1px solid ${mode== "dark" ? theme.palette.grey[600] : theme.palette.grey[450]}`,
                     borderRadius: "0.5rem",
                     padding: isMobileScreens ? "0.5rem" : "1rem",
                 }}
@@ -76,7 +79,7 @@ const Interests = () => {
 
             <Box
                 sx={{
-                    border: `1px solid ${theme.palette.grey[450]}`,
+                    border: `1px solid ${mode== "dark" ? theme.palette.grey[600] : theme.palette.grey[450]}`,
                     borderRadius: "0.5rem",
                     padding: isMobileScreens ? "0.5rem" : "1rem",
                 }}
@@ -98,12 +101,13 @@ const Interests = () => {
                     <span className="about-highlight-text">Bioinformatics</span>, {" "}
                     <span className="about-highlight-text">Physics</span>, {" "}
                     <span className="about-highlight-text">Biology</span>, {" "}
-                    <span className="about-highlight-text">History</span>, {" "}
-                    and many more subjects. Though our <i>stay</i> in this world is short,
-                    I think there is ample time to explore some of these topics which can help us to understand the mystery of the universe.
+                    <span className="about-highlight-text">History</span> {" "}- {" "}
+                    the list goes on!
+                    Despite life&apos;s brevity, I believe there&apos;s ample time to delve into these diverse subjects which can help us to unravel the mystery of the universe.
                 </Typography>
             </Box>
         </Box>
+
     );
 };
 

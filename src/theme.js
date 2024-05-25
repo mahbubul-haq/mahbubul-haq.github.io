@@ -12,9 +12,10 @@ export const themeSettings = (mode) => {
             ...(mode === "dark"
                 ? {
                     primary: {
-                        light: "#FFC96A",
-                        main: "#FF8943",
-                        dark: "#FF6A12",
+                        light: "#FFC96AFA",
+                        mainLight: "#FFB082",
+                        main: "#FF8943FA",
+                        dark: "#FF6A12FA",
 
                     },
                     secondary: {
@@ -24,12 +25,15 @@ export const themeSettings = (mode) => {
                         linkHover: "#58E117",
                         main70: "#5CDB95B3",
                         main40: "#5CDB9540",
+                        dark: "#2DA540"
 
                     },
                     text: {
-                        primary: "#fff",
-                        secondary: "#E2E2E2",
+                        primary: "#f2f2f2",
+                        // secondary: "#E2E2E2",
+                        secondary: "#bbb",
                         btnPrimary: "#000",
+                        tertiary: "#ddd",
                     },
                     shadow: {
                         btnPrimary: "rgba(0, 0, 0, 0.25)",
@@ -38,16 +42,17 @@ export const themeSettings = (mode) => {
                         
                     },
                     background: {
-                        nav: 'rgba(143, 95, 240, 0.6)',
-                        skillChip: 'rgba(43, 245, 221, 0.2)',
+                        nav: 'rgba(50, 50, 50, 0.6)',
+                        skillChip: 'rgba(100, 100, 100, 0.2)',
                         default: "#121212",
-                        alt: "#131313",
-                        dark: "#050505",
+                        alt: "#141414",
+                        dark: "#252525",
+                        // dark: "rgba(0, 0, 0, 0.2)",
                         secondary: "#062E5F",
                         btnSecondary: "#000",
                         bubbleTop: "#E4D6FF",
                         bubbleBottom: "#5F29D1",
-                        homeCompetitive: "rgba(6, 46, 95, 0.7)",
+                        homeCompetitive: "rgba(50, 50, 50, 0.9)",
                         codeforcesPurple: "#b200aa",
                     },
                     common: {
@@ -60,7 +65,9 @@ export const themeSettings = (mode) => {
                         100: "#F3F4F6",
                         200: "#E5E7EB",
                         300: "#D1D5DB",
+                        350: "#B8C2CC",
                         400: "#9CA3AF",
+                        450: "#82909E",
                         500: "#6B7280",
                         600: "#4B5563",
                         700: "#374151",
@@ -68,10 +75,12 @@ export const themeSettings = (mode) => {
                         900: "#111827",
                         1000: "#0F0F0F",
                     },
+
                     error : {
-                        background: "#F8AC82",
                         main: "#FF0000",
+                        background: "#F8AC82",
                     },
+                   
                 }
                 : {
                     primary: {
@@ -94,7 +103,8 @@ export const themeSettings = (mode) => {
                     text: {
                         primary: "#fff",
                         // secondary: "#E2E2E2",
-                        secondary: "#D1D5DB",
+                        secondary: "#ddd",
+                        tertiary: "#E2E2E2",
                         btnPrimary: "#000",
                     },
                     shadow: {

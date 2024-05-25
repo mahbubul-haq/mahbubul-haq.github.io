@@ -10,17 +10,17 @@ import Interests from "./Interests";
 import Contact from "../../components/Contact";
 import { Divider } from "@mui/material";
 
+
 const AboutMe = () => {
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-    const { setPage } = useContext(MainContext);
+    const { setPage, mode } = useContext(MainContext);
     const maxWidth700 = useMediaQuery("(max-width: 700px)");
-
     const theme = useTheme();
 
     useEffect(() => {
         setPage("about-me");
-        document.querySelector(".app-container").scrollTo(0, 0);
+        
 
         let observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -36,25 +36,10 @@ const AboutMe = () => {
             observer.observe(element);
         });
 
-        // let observerEducation = new IntersectionObserver((entries) => {
-        //     entries.forEach((entry) => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.opacity = 1;
-        //             entry.target.style.transform = "translateY(0)";
-        //         }
-        //     });
-        // }, { threshold: 0 });
-
-        // let aboutEducation = document.querySelector(".about-element-education");
-
-        // observerEducation.observe(aboutEducation);
-
         return () => {
             aboutElements.forEach((element) => {
                 observer.unobserve(element);
             });
-
-            // observerEducation.unobserve(aboutEducation);
         };
     }, []);
 
@@ -80,10 +65,9 @@ const AboutMe = () => {
                 <Box
                     sx={{
                         width: "100%",
-                        // height: isNonMobileScreens ? "100vh" : "auto",
                     }}
                 >
-                    <Typography
+                    {/* <Typography
                         sx={{
                             color: theme.palette.text.secondary,
                             fontWeight: 500,
@@ -99,7 +83,7 @@ const AboutMe = () => {
                         className="about-element"
                     >
                         Web Developer
-                    </Typography>
+                    </Typography> */}
 
                     <Typography
                         variant="body1"
@@ -127,7 +111,7 @@ const AboutMe = () => {
                         </span>
                         <span
                             style={{
-                                color: theme.palette.grey[350],
+                                color: theme.palette.text.secondary,
                                 fontSize: isMobileScreens ? "1.2rem" : "1.7rem",
                                 fontWeight: 500,
                                 display: "block",
@@ -139,41 +123,48 @@ const AboutMe = () => {
                             }}
                             className="about-element"
                         >
-                            A web developer who focuses on writing clean,
-                            elegant and efficient code
+                            A web developer crafting elegant, readable, and performant code
                         </span>{" "}
-                            
                     </Typography>
 
-                    <Box sx={{
-                        display: "flex",
-                        gap: isMobileScreens ? "1rem" : "2rem",
-                        pl: isMobileScreens ? "0" : "2rem",
-                        mt: "2rem",
-                        transform: "translateY(2rem)",
-                        opacity: 0,
-                        transition: "all 0.3s ease-out 0.4s",
-                    }}
-                    className="about-element"
+                    <Box
+                        sx={{
+                            display: "flex",
+                            gap: isMobileScreens ? "1rem" : "2rem",
+                            pl: isMobileScreens ? "0" : "2rem",
+                            mt: "2rem",
+                            transform: "translateY(2rem)",
+                            opacity: 0,
+                            transition: "all 0.3s ease-out 0.4s",
+                        }}
+                        className="about-element"
                     >
-                      <Box sx={{
-                          display: "flex",
-                          alignItems: "center",
-                      }}>
-                      <Divider orientation="vertical" sx={{
-                          height: isMobileScreens ? "95%" : "30%",
-                          // minHeight: "30%",
-                          backgroundColor: isMobileScreens ? theme.palette.secondary.main70 : theme.palette.secondary.main,
-                          // color: theme.palette.grey[400],
-                          width: isMobileScreens ? "2px" : "4px",
-                      }}
-                      />
-                      </Box>
-                      <Typography sx={{
-                          color: theme.palette.text.secondary,
-                          fontSize: "1.1rem",
-                      }}>
-                      I have a natural inclination to{" "}
+                        <Box
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                            }}
+                        >
+                            <Divider
+                                orientation="vertical"
+                                sx={{
+                                    height: isMobileScreens ? "95%" : "30%",
+                                    // minHeight: "30%",
+                                    backgroundColor: isMobileScreens
+                                        ? theme.palette.secondary.main70
+                                        : theme.palette.secondary.main,
+                                    // color: theme.palette.grey[400],
+                                    width: isMobileScreens ? "2px" : "4px",
+                                }}
+                            />
+                        </Box>
+                        <Typography
+                            sx={{
+                                color: theme.palette.text.secondary,
+                                fontSize: "1.1rem",
+                            }}
+                        >
+                            I have a natural inclination to{" "}
                             <span className="about-highlight-text">
                                 analyze and optimize
                             </span>{" "}
@@ -199,51 +190,40 @@ const AboutMe = () => {
                                 evolving into a better version of myself, both
                                 personally and professionally.
                             </span>
-                            </Typography>
+                        </Typography>
                     </Box>
                 </Box>
-                {/* <Box
+                <Typography
+                    variant="h1"
                     sx={{
-                        width: "100%",
-                        transform: isNonMobileScreens ? "translateY(4rem)" : "translateY(0)",
-                        opacity: isNonMobileScreens ? 0 : 1,
-                        transition: "all 0.3s ease-out 1s",
-
+                        color: theme.palette.grey[200],
+                        fontSize: isMobileScreens ? "2rem" : "2.5rem",
+                        fontWeight: 400,
+                        my: isMobileScreens ? "1.5rem" : "3rem",
+                        mt: isMobileScreens ? "3rem" : "5rem",
+                        transform: "translateY(4rem)",
+                        opacity: 0,
+                        transition: isNonMobileScreens
+                            ? "all 0.3s ease-out 0s"
+                            : "all 0.5s ease-out",
                     }}
-                    className="about-element-education"
-                > */}
-                    <Typography
-                        variant="h1"
-                        sx={{
-                            color: theme.palette.grey[200],
-                            fontSize: isMobileScreens ? "2rem" : "2.5rem",
-                            fontWeight: 400,
-                            my: isMobileScreens ? "1.5rem" : "3rem",
-                            mt: isMobileScreens ? "3rem" : "5rem",
-                            transform: "translateY(4rem)",
-                            opacity: 0,
-                            transition: isNonMobileScreens
-                                ? "all 0.3s ease-out 0s"
-                                : "all 0.5s ease-out",
-                        }}
-                        className="about-element"
-                    >
-                        Education
-                    </Typography>
-                    <Box
-                        sx={{
-                            border: `1px solid ${theme.palette.grey[450]}`,
-                            borderRadius: "0.5rem",
-                            padding: isMobileScreens ? "0.5rem" : "1rem",
-                            transform: "translateY(4rem)",
-                            opacity: 0,
-                            transition: "all 0.5s ease-out 0.2s",
-                        }}
-                        className="about-element"
-                    >
-                        <Education />
-                    </Box>
-                {/* </Box> */}
+                    className="about-element"
+                >
+                    Education
+                </Typography>
+                <Box
+                    sx={{
+                        border: `1px solid ${mode== "dark" ? theme.palette.grey[600] : theme.palette.grey[450]}`,
+                        borderRadius: "0.5rem",
+                        padding: isMobileScreens ? "0.5rem" : "1rem",
+                        transform: "translateY(4rem)",
+                        opacity: 0,
+                        transition: "all 0.5s ease-out 0.2s",
+                    }}
+                    className="about-element"
+                >
+                    <Education />
+                </Box>
                 <Typography
                     variant="h1"
                     sx={{

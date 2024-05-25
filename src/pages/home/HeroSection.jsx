@@ -6,10 +6,13 @@ import FlexBetween from "../../components/FlexBetween";
 import { useMediaQuery } from "@mui/material";
 import useTheme from "@mui/material/styles/useTheme";
 import { useEffect } from "react";
-
+import { MainContext } from "../../context/MainContext";
+import { useContext } from "react";
 
 const HeroSection = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+    const { mode} = useContext(MainContext);
+  
 
     const theme = useTheme();
 
@@ -162,7 +165,7 @@ const HeroSection = () => {
                     <BtnPrimary
                         sx={{
                             "&&": {
-                                background: theme.palette.common.black,
+                                background: mode == "dark" ? theme.palette.secondary.dark : theme.palette.common.black,
                                 width: isNonMobileScreens ? "auto" : "100%",
                                 boxShadow: "none",
                                 borderRadius: "0.5rem",
@@ -171,7 +174,7 @@ const HeroSection = () => {
                                 justifyContent: "center",
 
                                 gap: "0.5rem",
-                                color: "text.secondary",
+                                color: mode == "dark" ? theme.palette.grey[1000] : "text.secondary",
                                 padding: "1.7rem 1.5rem",
                                 "&:hover": {
 

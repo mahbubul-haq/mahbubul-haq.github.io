@@ -69,6 +69,7 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     navigate("/");
                                     setOpen(false);
                                     handleOpen();
+                                    document.getQuerySelector(".app-container").scrollTo(0, 0);
                                 }}
                                 variant="menu"
                                 sx={{
@@ -93,6 +94,7 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     navigate("/about");
                                     setOpen(false);
                                     handleOpen();
+                                    document.getQuerySelector(".app-container").scrollTo(0, 0);
                                 }}
                                 variant="menu"
                                 sx={{
@@ -116,6 +118,7 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     navigate("/projects");
                                     setOpen(false);
                                     handleOpen();
+                                    document.getQuerySelector(".app-container").scrollTo(0, 0);
                                 }}
                                 variant="menu"
                                 sx={{

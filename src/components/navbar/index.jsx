@@ -59,7 +59,23 @@ const Navbar = () => {
             el.removeEventListener('scroll', event);
             window.removeEventListener('resize', event1);
         }
-    }, []);
+    }, [mode]);
+
+    useEffect(() => {
+        let el = document.querySelector('.nav-background');
+        el.style.background = theme.palette.background.nav;
+    }, [mode]);
+
+    useEffect(() => {
+        let el = document.querySelector('.hamburger');
+
+        if (open) {
+            el?.classList.add('is-active');
+        }
+        else {
+            el?.classList.remove('is-active');
+        }
+    }, [open]);
 
     const handleOpen = () => {
         let el = document.querySelector('.hamburger');
@@ -70,7 +86,7 @@ const Navbar = () => {
         else {
             el.classList.add('is-active');
         }
-        
+
         setOpen(!open);
     }
 
@@ -92,9 +108,7 @@ const Navbar = () => {
         }}>
             <Box className="nav-background" sx={{
                 transition: 'all 0.3s',
-                WebkitTransition: 'all 0.3s',
-                MozTransition: 'all 0.3s',
-                OTransition: 'all 0.3s',
+
                 position: 'absolute',
                 height: '100%',
                 width: '100%',
@@ -122,11 +136,17 @@ const Navbar = () => {
                         fontSize: isNonMobileScreens ? '1.5rem' : '1.2rem',
                         cursor: 'pointer',
                     }}
-                    onClick={() => {
-                        setPage('home-page')
-                        navigate('/');
-                    }
-                    }
+                        onClick={() => {
+                            if (page != 'home-page') {
+                                document.querySelector(".app-container").scrollTo(0, 0);
+
+                            }
+
+                            setPage('home-page')
+                            navigate('/');
+
+                        }
+                        }
                     >
                         Mahbubul Haque</Typography>
                     {isNonMobileScreens ? (
@@ -136,6 +156,10 @@ const Navbar = () => {
                         }}>
                             <NavTab
                                 onClick={() => {
+                                    if (page != 'home-page') {
+                                        document.querySelector(".app-container").scrollTo(0, 0);
+
+                                    }
                                     setPage('home-page')
                                     navigate('/');
                                 }
@@ -160,10 +184,15 @@ const Navbar = () => {
                                     },
                                 }}
                                 onClick={() => {
+                                    if (page != 'about-me') {
+                                        document.querySelector(".app-container").scrollTo(0, 0);
+
+                                    }
                                     setPage('about-me');
                                     navigate('/about');
                                 }}
                             >
+                                
 
                                 <Typography variant='menu'>About Me</Typography>
                             </NavTab>
@@ -176,6 +205,10 @@ const Navbar = () => {
                                     },
                                 }}
                                 onClick={() => {
+                                    if (page != 'projects') {
+                                        document.querySelector(".app-container").scrollTo(0, 0);
+
+                                    }
                                     setPage('projects');
                                     navigate('/projects');
                                 }}
@@ -185,9 +218,9 @@ const Navbar = () => {
                             </NavTab>
 
                             <BtnPrimary
-                                href="#contact" 
-                                // component='a'
-                                >
+                                href="#contact"
+                            // component='a'
+                            >
                                 <Typography variant='button'>Contact Me</Typography></BtnPrimary>
                             <Box sx={{
                                 height: '20px',

@@ -19,7 +19,7 @@ const Projects = () => {
 
   useEffect(() => {
     setPage("projects");
-    document.querySelector(".app-container").scrollTo(0, 0);
+    
     let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

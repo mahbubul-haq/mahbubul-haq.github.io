@@ -8,13 +8,15 @@ import useTheme from '@mui/material/styles/useTheme'
 import icons from '../../data/skillicons'
 import ProficientIn from './ProficientIn'
 import sample from "../../assets/images/sample.svg"
-
+import { MainContext } from '../../context/MainContext'
+import { useContext } from 'react'
 
 const SkillSection = () => {
 
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     const extraLargeScreens = useMediaQuery('(min-width: 1300px)');
+    const { mode } = useContext(MainContext);
 
     const theme = useTheme();
 
@@ -127,6 +129,7 @@ const SkillSection = () => {
                                     fontSize: "1rem",
                                     letterSpacing: "0.5px",
                                     mb: "1rem",
+                                    color: mode == "dark" ? theme.palette.text.tertiary : theme.palette.text.secondary,
                                 }}>
                                     {skill.skillType}
                                 </Typography>
@@ -141,7 +144,7 @@ const SkillSection = () => {
                                             gap: "0.6rem",
                                             alignItems: "center",
                                             p: isMobileScreens ? "0.5rem 0.7rem" : "0.7rem 1rem",
-                                            backgroundColor: "rgba(0,0,0,0.1)",
+                                           
                                             width: "fit-content",
                                             borderRadius: "0.3rem",
                                             background: theme.palette.background.skillChip,
@@ -149,7 +152,7 @@ const SkillSection = () => {
                                             {!isMobileScreens && <Box sx={{
                                                 color: icons[item.name]?.color,
                                                 fontSize: "1.5rem",
-
+                                                opacity: mode == "dark" ? icons[item.name].opacity? icons[item.name].opacity : 1 : 1,
                                                 display: "flex",
                                                 alignItems: "center",
                                             }}>
@@ -158,6 +161,7 @@ const SkillSection = () => {
                                             <Typography sx={{
                                                 fontSize: "1rem",
                                                 opacity: 0.9,
+                                                color: theme.palette.text.tertiary,
                                             }}>
                                                 {item.name}
                                             </Typography>

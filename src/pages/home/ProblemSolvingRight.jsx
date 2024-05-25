@@ -71,6 +71,7 @@ const ProblemSolvingRight = () => {
                         : "all 0.5s ease-out 0.1s",
                     transform: "translateY(3rem)",
                     opacity: 0,
+                    color: theme.palette.text.tertiary,
                 }}
             >
                 Competitive Programming & Problem Solving
@@ -88,7 +89,7 @@ const ProblemSolvingRight = () => {
                         : "all 0.7s ease-out 0.4s",
                     transform: "translateY(3rem)",
                     opacity: 0,
-                    color: theme.palette.grey[300],
+                    color: theme.palette.text.secondary,
                     // paragraph spacing
                 }}
             >

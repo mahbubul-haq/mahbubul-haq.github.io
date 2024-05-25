@@ -4,6 +4,8 @@ import useTheme from "@mui/material/styles/useTheme";
 import FlexBetween from './FlexBetween';
 import { LuExternalLink } from 'react-icons/lu';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { MainContext } from '../context/MainContext';
+import { useContext } from 'react';
 
 const ProjectCard = ({
     projectInfo,
@@ -15,6 +17,7 @@ const ProjectCard = ({
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     const maxwidth900 = useMediaQuery('(max-width: 900px)');
     const minWidth1400 = useMediaQuery('(min-width: 1400px)');
+    const {mode} = useContext(MainContext);
 
     // console.log(projectInfo);
 
@@ -44,7 +47,7 @@ const ProjectCard = ({
                 justifyContent: "center",
                 alignItems: "flex-end",
                 
-                color: theme.palette.common.white,
+                color: theme.palette.common.black,
                 zIndex: 1000,
                 pb: "0.05rem",
             }}>
@@ -74,8 +77,10 @@ const ProjectCard = ({
                             borderRadius: "0.6rem",
                             aspectRatio: "16/9",
                             backgroundColor: theme.palette.common.black,
+                            opacity: mode == "dark"? 0.7 : 0.9,
                         }}
                         loading="lazy"
+                        
                     />
 
                 ) : (
@@ -84,7 +89,7 @@ const ProjectCard = ({
                     width: projectsPage && isNonMobileScreens ? "90%" : "100%",
                     aspectRatio: "16/9",
                     objectFit: "cover",
-                    opacity: 0.7,
+                    opacity: mode == "dark"? 0.5 : 0.7,
 
 
                 }}
@@ -193,7 +198,7 @@ const ProjectCard = ({
                             }}>
                             <Typography variant="body1" sx={{
                                 fontSize: "0.9rem",
-                                color: theme.palette.text.primary,
+                                color: theme.palette.text.tertiary,
                             }}>
                                 {tech}
                             </Typography>

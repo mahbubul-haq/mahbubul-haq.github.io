@@ -26,6 +26,7 @@ svg.clipper {
 }
 
 .about-highlight-text {
-  color: white;
-  font-weight: 500;
+  /* color: #EFEFEF; */
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }

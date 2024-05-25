@@ -20,31 +20,31 @@ const HomePage = () => {
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     const maxWidth700 = useMediaQuery('(max-width: 700px)');
     const maxWidht950 = useMediaQuery('(max-width: 950px)');
-    const { setPage } = useContext(MainContext);
+    const { setPage, mode } = useContext(MainContext);
 
     const theme = useTheme();
 
     useEffect(() => {
         setPage("home-page");
-        document.querySelector(".app-container").scrollTo(0, 0);
+        
         let homeHeroImage = document.querySelector(".home-hero-image");
         if (!homeHeroImage) return;
         homeHeroImage.style.transform = "scale(1)";
-        homeHeroImage.style.opacity = 1;
+        homeHeroImage.style.opacity = mode == "dark" ? 0.5 : 1;
     }
-        , [])
+        , [mode])
 
     useEffect(() => {
         let homeHeroImage = document.querySelector(".home-hero-image");
         if (isNonMobileScreens && homeHeroImage) {
             homeHeroImage.style.transform = "scale(1)";
-            homeHeroImage.style.opacity = 1;
+            homeHeroImage.style.opacity = mode == "dark" ? 0.5 : 1;
         }
         else if (homeHeroImage){
             homeHeroImage.style.transform = "scale(0)";
             homeHeroImage.style.opacity = 0;
         }
-    }, [isNonMobileScreens])
+    }, [isNonMobileScreens, mode])
 
     
     return (
@@ -76,7 +76,7 @@ const HomePage = () => {
                         top: 0,
                         bottom: "0rem",
                         right: 0,
-                        background: 'rgba(0, 0, 0, 0.1)',
+                        background: mode === "dark"? 'rgba(0, 0, 0, 0)' : 'rgba(0, 0, 0, 0.1)',
                         // clipPath: 'ellipse(94% 76% at 94% 50%)',
                         clipPath: 'polygon(34% 0, 100% 0%, 100% 100%, 0 100%)',
                         display: "flex",
