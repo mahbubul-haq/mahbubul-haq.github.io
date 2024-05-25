@@ -137,10 +137,10 @@ const Navbar = () => {
                         cursor: 'pointer',
                     }}
                         onClick={() => {
-                            if (page != 'home-page') {
-                                document.querySelector(".app-container").scrollTo(0, 0);
 
-                            }
+                            document.querySelector(".app-container").scrollTo(0, 0);
+
+
 
                             setPage('home-page')
                             navigate('/');
@@ -156,10 +156,10 @@ const Navbar = () => {
                         }}>
                             <NavTab
                                 onClick={() => {
-                                    if (page != 'home-page') {
-                                        document.querySelector(".app-container").scrollTo(0, 0);
 
-                                    }
+                                    document.querySelector(".app-container").scrollTo(0, 0);
+
+
                                     setPage('home-page')
                                     navigate('/');
                                 }
@@ -184,15 +184,15 @@ const Navbar = () => {
                                     },
                                 }}
                                 onClick={() => {
-                                    if (page != 'about-me') {
-                                        document.querySelector(".app-container").scrollTo(0, 0);
 
-                                    }
+                                    document.querySelector(".app-container").scrollTo(0, 0);
+
+
                                     setPage('about-me');
                                     navigate('/about');
                                 }}
                             >
-                                
+
 
                                 <Typography variant='menu'>About Me</Typography>
                             </NavTab>
@@ -205,10 +205,10 @@ const Navbar = () => {
                                     },
                                 }}
                                 onClick={() => {
-                                    if (page != 'projects') {
-                                        document.querySelector(".app-container").scrollTo(0, 0);
 
-                                    }
+                                    document.querySelector(".app-container").scrollTo(0, 0);
+
+
                                     setPage('projects');
                                     navigate('/projects');
                                 }}
