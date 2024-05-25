@@ -43,7 +43,7 @@ const Interests = () => {
                     variant="body1"
                     sx={{ color: theme.palette.text.secondary, fontWeight: 400 }}
                 >
-                    Website paves the way to show your work to the world. I want to 
+                    Websites pave the way to show your work to the world. I want to 
                     use my creativity and expertise to build websites that serve
                     people to make their life easier.
                 </Typography>

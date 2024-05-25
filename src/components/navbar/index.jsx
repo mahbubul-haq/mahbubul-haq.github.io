@@ -254,6 +254,7 @@ const Navbar = () => {
 
                             <Box onClick={handleOpen} sx={{
                                 zIndex: 2000,
+                                
                             }}>
 
                                 <Hamburger multiplier={

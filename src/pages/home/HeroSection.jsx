@@ -163,6 +163,7 @@ const HeroSection = () => {
                     }}
                 >
                     <BtnPrimary
+                        component={isNonMobileScreens ? "button" : "a"}
                         sx={{
                             "&&": {
                                 background: mode == "dark" ? "#ababab" : theme.palette.common.black,
@@ -183,16 +184,13 @@ const HeroSection = () => {
                             },
                         }}
 
+                        href={isNonMobileScreens ? null : "#contact"}
+
                         onClick={() => {
                             if (isNonMobileScreens) {
                                 // download resume from public/files
         
                                 window.open("/files/Resume - Mahbubul Haque.pdf", "_blank");
-                            } else {
-                                // go to the contact id section
-                                document.getElementById("contact").scrollIntoView({
-                                    behavior: "smooth",
-                                });
                             }
                         }}
                     >
@@ -240,41 +238,9 @@ const HeroSection = () => {
                             paddingBottom: "100%",
                         },
 
-                        //style for anyting inside the box
-                        // "& > *": {
-                        //     position: "absolute",
-                        //     top: 0,
-                        //     right: 0,
-                        //     width: "100%",
-                        //     height: "100%",
-                        // },
                     }}
                 >
-                    {/* <Box
-                    className="hero-image"
-                    sx={{
-                        // add scale and translate both transform
-                        transform: "translateX(100px)",
-                        transition: "transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s",
-                        opacity: 0,
-
-                        height: "100%",
-                        width: "100%",
-                    }}> */}
-
-                    {/* <HeroImage /> */}
-                    {/* <HeroImage1 /> */}
-                    {/* <img src="https://source.unsplash.com/random/800x600" 
-                        alt="random"
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            borderRadius: "50%",
-                           
-                        }} /> */}
-
-                    {/* </Box> */}
+                   
                 </Box>
             )}
         </Box>

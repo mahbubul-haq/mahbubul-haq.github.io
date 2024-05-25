@@ -49,7 +49,7 @@ const Education = () => {
             >
                 {true && (
                     <img
-                        src="images/buet-logo.png"
+                        src={mode == "dark" ? "images/buet-logo.png" : "images/buet-logo-light-mode.png"}
                         style={{
                             width: "100px",
                             height: "100px",
