@@ -40,7 +40,7 @@ const Navbar = () => {
             else {
                 el1.style.paddingTop = isNonMobileScreens ? '1rem' : '0';
                 el2.style.background = 'transparent';
-                el2.style.top = '-5rem';
+                el2.style.top = isNonMobileScreens ? '-5rem' : '-10vh';
 
             }
         });
@@ -94,7 +94,10 @@ const Navbar = () => {
     return (
         <AppBar position='sticky' className="myappbar" sx={{
             boxShadow: 'none',
-            height: isNonMobileScreens ? '5rem' : '4rem',
+            height: isNonMobileScreens ? '5rem' : '10vh',
+            // minHeight: isNonMobileScreens ? '5rem' : '4rem',
+            
+
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
