@@ -20,6 +20,8 @@ const AboutMe = () => {
 
     useEffect(() => {
         setPage("about-me");
+        // remove # from url
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
         
 
         let observer = new IntersectionObserver((entries) => {

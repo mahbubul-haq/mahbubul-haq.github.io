@@ -25,7 +25,8 @@ export const themeSettings = (mode) => {
                         linkHover: "#58E117",
                         main70: "#5CDB95B3",
                         main40: "#5CDB9540",
-                        dark: "#2DA540"
+                        dark: "#2DA540",
+                        darker: "#063D04",
 
                     },
                     text: {
@@ -77,7 +78,7 @@ export const themeSettings = (mode) => {
                     },
 
                     error : {
-                        main: "#FF0000",
+                        main: "#880B0B",
                         background: "#F8AC82",
                     },
                    
@@ -97,8 +98,8 @@ export const themeSettings = (mode) => {
                         linkHover: "#58E117",
                         main70: "#5CDB95B3",
                         main40: "#5CDB9540",
-                        dark: "#2DA540"
-
+                        dark: "#2DA540",
+                        darker: "#063D04",
                     },
                     text: {
                         primary: "#fff",
@@ -149,7 +150,7 @@ export const themeSettings = (mode) => {
                     },
 
                     error : {
-                        main: "#FF0000",
+                        main: "#880B0B",
                         background: "#F8AC82",
                     },
                    

@@ -268,12 +268,12 @@ const Contact = () => {
             }}>
                 <Alert onClose={() => setOpen(false)} severity={
                     message === "Email sent successfully" ? "success" : "error"
-
                 }
+                    color={message === "Email sent successfully" ? theme.palette.secondary.darker : theme.palette.error.main}
                     sx={{
                         width: '100%',
                         background: message === "Email sent successfully" ? theme.palette.secondary.main : theme.palette.error.background,
-
+                        color: message ==="Email sent successfully" ? theme.palette.secondary.darker : theme.palette.error.main,
                     }}>
                     {message}
                 </Alert>

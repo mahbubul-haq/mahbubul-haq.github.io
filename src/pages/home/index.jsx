@@ -25,6 +25,10 @@ const HomePage = () => {
     const theme = useTheme();
 
     useEffect(() => {
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    }, [])
+
+    useEffect(() => {
         setPage("home-page");
         
         let homeHeroImage = document.querySelector(".home-hero-image");
