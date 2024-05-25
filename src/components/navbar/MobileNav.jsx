@@ -34,7 +34,7 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
             <Box sx={{
                 height: "100%",
                 padding: isMobileScreens ? "24px" : "32px",
-                background: theme.palette.background.default,
+                background: mode == "dark" ? theme.palette.background.dark : theme.palette.background.default,
                 minWidth: "300px",
                 overflowY: "auto",
             }}>
@@ -47,13 +47,13 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
-                        
+
                     }}
                 >
                     <Box sx={{
                         flexGrow: 1,
                     }}>
-                    
+
 
                         <Box className="mobile-nav-menu"
                             sx={{
@@ -75,11 +75,11 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                 sx={{
                                     cursor: "pointer",
                                     "&:hover": {
-                                        background: "rgba(0,0,0,0.2)",
+                                        background: mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)",
                                     },
                                     background:
-                                        page === "home-page"
-                                            ? "rgba(0,0,0,0.2)"
+                                        page === "home-page" ?
+                                            mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)"
                                             : "transparent",
 
                                     borderRadius: "50px",
@@ -100,11 +100,11 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                 sx={{
                                     cursor: "pointer",
                                     "&:hover": {
-                                        background: "rgba(0,0,0,0.2)",
+                                        background: mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)",
                                     },
                                     background:
-                                        page === "about-me"
-                                            ? "rgba(0,0,0,0.2)"
+                                        page === "about-me" ?
+                                            mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)"
                                             : "transparent",
                                     borderRadius: "50px",
                                     padding: "0.8rem 1.2rem",
@@ -124,11 +124,11 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                 sx={{
                                     cursor: "pointer",
                                     "&:hover": {
-                                        background: "rgba(0,0,0,0.2)",
+                                        background: mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)",
                                     },
                                     background:
-                                        page === "projects"
-                                            ? "rgba(0,0,0,0.2)"
+                                        page === "projects" ?
+                                            mode == "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(0,0,0,0.2)"
                                             : "transparent",
                                     borderRadius: "50px",
                                     padding: "0.8rem 1.2rem",
@@ -191,15 +191,18 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     // }
                                 }
                             }}
+                            onClick={() => {
+                                window.open("files/Resume - Mahbubul Haque.pdf", "_blank");
+                            }}
                         >
-                            <LuDownload/>
+                            <LuDownload />
                             <Typography variant="button">Resume</Typography>
                         </BtnPrimary>
                     </Box>
                     <FlexBetween
                         sx={{
                             paddingBottom: "0rem",
-                            
+
                         }}
                     >
                         <Typography variant="menu">Dark Mode</Typography>
@@ -217,26 +220,26 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     color: theme.palette.text.secondary,
                                 }} fontSize="3rem" />
                             ) : (
-                                
+
                                 <LiaToggleOnSolid style={{
                                     color: theme.palette.secondary.main,
                                     position: "relative",
                                 }} fontSize="3rem">
-                                    
+
                                 </LiaToggleOnSolid>
                             )}
-                        <Typography
-                            variant="menu"
-                            sx={{
-                                position: "absolute",
-                                top: `calc(50% - 0.14rem)`, // `calc(50% - 0.5rem)
-                                left: `calc(50% + ${mode == 'light' ? '-0.68rem' : '0.68rem'})`, // `calc(50% - 0.5rem)
-                                transform: "translate(-50%, -50%)",
-                                fontSize: "0.5rem",
-                            }}
-                        >
-                            {mode === "light" ? "OFF" : "ON"}
-                        </Typography>
+                            <Typography
+                                variant="menu"
+                                sx={{
+                                    position: "absolute",
+                                    top: `calc(50% - 0.14rem)`, // `calc(50% - 0.5rem)
+                                    left: `calc(50% + ${mode == 'light' ? '-0.68rem' : '0.68rem'})`, // `calc(50% - 0.5rem)
+                                    transform: "translate(-50%, -50%)",
+                                    fontSize: "0.5rem",
+                                }}
+                            >
+                                {mode === "light" ? "OFF" : "ON"}
+                            </Typography>
 
                         </Box>
                     </FlexBetween>

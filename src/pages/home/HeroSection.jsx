@@ -11,8 +11,8 @@ import { useContext } from "react";
 
 const HeroSection = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-    const { mode} = useContext(MainContext);
-  
+    const { mode } = useContext(MainContext);
+
 
     const theme = useTheme();
 
@@ -22,22 +22,22 @@ const HeroSection = () => {
 
         // let event1 = window.addEventListener("load", () => {
 
-            let heroImageMobile = document.querySelector(".hero-image-mobile");
-            let heroIntroName = document.querySelector(".hero-intro-name");
-            let heroIntroDescription = document.querySelector(
-                ".hero-intro-description"
-            );
-            let heroButtons = document.querySelector(".hero-buttons");
+        let heroImageMobile = document.querySelector(".hero-image-mobile");
+        let heroIntroName = document.querySelector(".hero-intro-name");
+        let heroIntroDescription = document.querySelector(
+            ".hero-intro-description"
+        );
+        let heroButtons = document.querySelector(".hero-buttons");
 
-            if (heroImageMobile) heroImageMobile.style.transform = "scale(1)";
-            heroIntroName.style.opacity = 1;
-            heroIntroName.style.transform = "translateY(0)";
+        if (heroImageMobile) heroImageMobile.style.transform = "scale(1)";
+        heroIntroName.style.opacity = 1;
+        heroIntroName.style.transform = "translateY(0)";
 
-            heroIntroDescription.style.opacity = 1;
-            heroIntroDescription.style.transform = "translateY(0)";
+        heroIntroDescription.style.opacity = 1;
+        heroIntroDescription.style.transform = "translateY(0)";
 
-            heroButtons.style.opacity = 1;
-            heroButtons.style.transform = "translateY(0)";
+        heroButtons.style.opacity = 1;
+        heroButtons.style.transform = "translateY(0)";
         // });
 
         let event = window.addEventListener("resize", () => {
@@ -81,7 +81,7 @@ const HeroSection = () => {
                 justifyContent: "space-between",
                 width: "100%",
                 // minHeight: "500px",
-                
+
                 mx: "auto",
             }}
         >
@@ -182,6 +182,19 @@ const HeroSection = () => {
                                 },
                             },
                         }}
+
+                        onClick={() => {
+                            if (isNonMobileScreens) {
+                                // download resume from public/files
+        
+                                window.open("/files/Resume - Mahbubul Haque.pdf", "_blank");
+                            } else {
+                                // go to the contact id section
+                                document.getElementById("contact").scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }
+                        }}
                     >
                         {isNonMobileScreens && (
                             <LuDownload
@@ -236,8 +249,8 @@ const HeroSection = () => {
                         //     height: "100%",
                         // },
                     }}
-                > 
-                {/* <Box
+                >
+                    {/* <Box
                     className="hero-image"
                     sx={{
                         // add scale and translate both transform
@@ -249,9 +262,9 @@ const HeroSection = () => {
                         width: "100%",
                     }}> */}
 
-                        {/* <HeroImage /> */}
-                        {/* <HeroImage1 /> */}
-                        {/* <img src="https://source.unsplash.com/random/800x600" 
+                    {/* <HeroImage /> */}
+                    {/* <HeroImage1 /> */}
+                    {/* <img src="https://source.unsplash.com/random/800x600" 
                         alt="random"
                         style={{
                             width: "100%",
@@ -260,7 +273,7 @@ const HeroSection = () => {
                             borderRadius: "50%",
                            
                         }} /> */}
-                        
+
                     {/* </Box> */}
                 </Box>
             )}
