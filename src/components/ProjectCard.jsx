@@ -134,17 +134,27 @@ const ProjectCard = ({
                         }}>  &mdash; {projectInfo.year}</span> */}
                     </Typography>
                     {projectsPage &&
-                        <Typography variant="body1" sx={{
-                            fontSize: "0.9rem",
+                        // <Typography variant="body1" sx={{
+                        //     fontSize: "0.9rem",
+                        //     color: theme.palette.text.secondary,
+                        //     // fontWeight: 400,
+                        //     lineHeight: "1.5",
+                        //     opacity: 0.8,
+                        //     letterSpacing: "0.2px",
+                        //     mt: "1.5rem",
+                        // }}>
+                        //     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, sed assumenda vero blanditiis perferendis quae laborum vitae minima iusto at optio ullam voluptatum tempora alias excepturi. Repudiandae tenetur dolor pariatur iste repellendus quae sapiente. Ut aspernatur excepturi, eos maxime dicta sunt, aliquam distinctio laudantium cumque ipsum doloribus nisi numquam aut!
+                        // </Typography>
+                        <ul style={{
+                            marginTop: "1.5rem",
                             color: theme.palette.text.secondary,
-                            // fontWeight: 400,
-                            lineHeight: "1.5",
-                            opacity: 0.8,
-                            letterSpacing: "0.2px",
-                            mt: "1.5rem",
+                            display: "block"
                         }}>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, sed assumenda vero blanditiis perferendis quae laborum vitae minima iusto at optio ullam voluptatum tempora alias excepturi. Repudiandae tenetur dolor pariatur iste repellendus quae sapiente. Ut aspernatur excepturi, eos maxime dicta sunt, aliquam distinctio laudantium cumque ipsum doloribus nisi numquam aut!
-                        </Typography>
+                            <li>That was awesomeest projecto that I have doneo</li>
+                            <li>That was awesomeest projecto that I have doneo</li>
+                            <li>That was awesomeest projecto that I have doneo</li>
+                            <li>That was awesomeest projecto that I have doneo</li>
+                        </ul>
                     }
                     <Box sx={{
                         display: "flex",

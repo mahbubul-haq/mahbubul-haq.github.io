@@ -11,16 +11,11 @@ import { useContext } from "react";
 
 const HeroSection = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-    const { mode } = useContext(MainContext);
-
+    const { mode, scrollToContact } = useContext(MainContext);
 
     const theme = useTheme();
 
     useEffect(() => {
-        // add eventlistener to page onload
-        // console.log("hero section loaded");
-
-        // let event1 = window.addEventListener("load", () => {
 
         let heroImageMobile = document.querySelector(".hero-image-mobile");
         let heroIntroName = document.querySelector(".hero-intro-name");
@@ -38,10 +33,8 @@ const HeroSection = () => {
 
         heroButtons.style.opacity = 1;
         heroButtons.style.transform = "translateY(0)";
-        // });
 
         let event = window.addEventListener("resize", () => {
-            // check if min-left is 1000px
 
             let heroImageMobile = document.querySelector(".hero-image-mobile");
             if (heroImageMobile) heroImageMobile.style.transform = "scale(1)";
@@ -50,7 +43,7 @@ const HeroSection = () => {
 
         return () => {
             window.removeEventListener("resize", event);
-            // window.removeEventListener("load", event1);
+
         };
     }, []);
 
@@ -69,8 +62,7 @@ const HeroSection = () => {
         }
     }, [isNonMobileScreens]);
 
-
-
+    
     return (
         <Box
             component="section"
@@ -80,8 +72,6 @@ const HeroSection = () => {
                 gap: isNonMobileScreens ? "0" : "1rem",
                 justifyContent: "space-between",
                 width: "100%",
-                // minHeight: "500px",
-
                 mx: "auto",
             }}
         >
@@ -163,7 +153,6 @@ const HeroSection = () => {
                     }}
                 >
                     <BtnPrimary
-                        component={isNonMobileScreens ? "button" : "a"}
                         sx={{
                             "&&": {
                                 background: mode == "dark" ? "#ababab" : theme.palette.common.black,
@@ -184,13 +173,12 @@ const HeroSection = () => {
                             },
                         }}
 
-                        href={isNonMobileScreens ? null : "#contact"}
-
                         onClick={() => {
                             if (isNonMobileScreens) {
-                                // download resume from public/files
-        
                                 window.open("/files/Resume - Mahbubul Haque.pdf", "_blank");
+                            }
+                            else {
+                                scrollToContact();
                             }
                         }}
                     >

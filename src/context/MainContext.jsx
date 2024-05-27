@@ -12,8 +12,18 @@ export const MainState = (props) => {
         setmode(mode);
     };
 
+    const scrollToContact = () => {
+        let container = document.querySelector(".app-container");
+        let contact = document.querySelector("#contact");
+    
+        container.scrollTo({
+          top: contact.offsetTop,
+          behavior: "smooth",
+        });
+      };
+
     return (
-        <MainContext.Provider value={{ page, setPage, mode, setMode }}>
+        <MainContext.Provider value={{ page, setPage, mode, setMode, scrollToContact }}>
             {props.children}
         </MainContext.Provider>
     );

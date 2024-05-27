@@ -7,15 +7,12 @@ import { MainContext } from "../../context/MainContext";
 import { useContext, useEffect } from "react";
 import Experience from "./Experience";
 import Interests from "./Interests";
-import Contact from "../../components/Contact";
 import { Divider } from "@mui/material";
-
 
 const AboutMe = () => {
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
     const { setPage, mode } = useContext(MainContext);
-    const maxWidth700 = useMediaQuery("(max-width: 700px)");
     const theme = useTheme();
 
     useEffect(() => {
@@ -49,6 +46,7 @@ const AboutMe = () => {
         <Box
             sx={{
                 width: "100%",
+                mb: isNonMobileScreens ? "10rem" : "5rem",
             }}
         >
             <Box
@@ -279,33 +277,6 @@ const AboutMe = () => {
                     className="about-element"
                 >
                     <Interests />
-                </Box>
-            </Box>
-
-            <Box
-                id="contact"
-                sx={{
-                    width: "100%",
-                    background: theme.palette.background.dark,
-                    py: isNonMobileScreens ? "3rem" : "3rem",
-                    mt: isNonMobileScreens ? "10rem" : "5rem",
-                    // pb: isNonMobileScreens ? "10rem" : "5rem",
-                    borderTopLeftRadius: maxWidth700 ? "2rem" : "4rem",
-                    borderTopRightRadius: maxWidth700 ? "2rem" : "4rem",
-                }}
-            >
-                <Box
-                    sx={{
-                        mx: "auto",
-                        maxWidth: 2000,
-                        px: isNonMobileScreens
-                            ? "64px"
-                            : isMobileScreens
-                            ? "16px"
-                            : "32px",
-                    }}
-                >
-                    <Contact />
                 </Box>
             </Box>
         </Box>

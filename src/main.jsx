@@ -5,11 +5,8 @@ import { MainState } from './context/MainContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
     <MainState>
-
       <App />
     </MainState>
-
-  </React.StrictMode>,
+</React.StrictMode>
 )

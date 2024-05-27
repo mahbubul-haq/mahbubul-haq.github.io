@@ -5,21 +5,18 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import useTheme from "@mui/material/styles/useTheme";
 import { useEffect } from "react";
-import Contact from "../../components/Contact";
 import { MainContext } from "../../context/MainContext";
 import { useContext } from "react";
 
 const Projects = () => {
   const isMobileScreens = useMediaQuery("(max-width: 600px)");
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-  const maxWidth700 = useMediaQuery("(max-width: 700px)");
   const { setPage } = useContext(MainContext);
 
   const theme = useTheme();
 
   useEffect(() => {
     setPage("projects");
-    window.history.pushState("", document.title, window.location.pathname + window.location.search);
     
     let observer = new IntersectionObserver(
       (entries) => {
@@ -55,6 +52,7 @@ const Projects = () => {
     <Box
       sx={{
         width: "100%",
+      
       }}
     >
       <Box
@@ -102,10 +100,6 @@ const Projects = () => {
                 transform: "translateY(4rem)",
                 transition: "opacity 0.7s ease-out 0.2s , transform 0.7s ease-out 0.2s, box-shadow 0.3s ease-out 0s",
               }}
-              // onMouseEnter={
-              //   (e) => handleHover(e, `projects-portfolios-${index}`)
-              // }
-              // onMouseLeave={(e) => handleLeave(e, `projects-portfolios-${index}`)}
             >
               <ProjectCard
                 projectInfo={projectInfo}
@@ -149,10 +143,7 @@ const Projects = () => {
                 transform: "translateY(4rem)",
                 transition: "opacity 0.7s ease-out 0.2s , transform 0.7s ease-out 0.2s, box-shadow 0.3s ease-out 0s",
               }}
-              // onMouseEnter={
-              //   (e) => handleHover(e, `projects-other-${index}`)
-              // }
-              // onMouseLeave={(e) => handleLeave(e, `projects-other-${index}`)}
+              
             >
               <ProjectCard
                 projectInfo={projectInfo}
@@ -161,26 +152,6 @@ const Projects = () => {
               />
             </Box>
           ))}
-        </Box>
-      </Box>
-      <Box
-        id="contact"
-        sx={{
-          width: "100%",
-          background: theme.palette.background.dark,
-          py: isNonMobileScreens ? "3rem" : "3rem",
-          // pb: isNonMobileScreens ? "10rem" : "5rem",
-          borderTopLeftRadius: maxWidth700 ? "2rem" : "4rem",
-          borderTopRightRadius: maxWidth700 ? "2rem" : "4rem",
-        }}>
-        <Box sx={{
-          mx: "auto",
-          maxWidth: 2000,
-          px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
-        }}
-        >
-
-          <Contact />
         </Box>
       </Box>
     </Box>

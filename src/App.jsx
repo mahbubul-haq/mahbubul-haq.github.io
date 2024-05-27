@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
 import Box from "@mui/material/Box";
-import useTheme from "@mui/material/styles/useTheme";
 
 import Navbar from "./components/navbar/index.jsx";
 import HomePage from "./pages/home/index.jsx";
@@ -17,11 +16,13 @@ import Projects from "./pages/projects/index.jsx";
 import { Fab } from "@mui/material";
 import { BiArrowToTop } from "react-icons/bi";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Contact from "./components/Contact.jsx";
 
 const App = () => {
-  const theme = useTheme();
   const isMobileScreens = useMediaQuery("(max-width: 600px)");
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const maxWidth700 = useMediaQuery("(max-width: 700px)");
+
 
   const { mode } = useContext(MainContext);
 
@@ -61,9 +62,10 @@ const App = () => {
           overflowY: "auto",
           overflowX: "hidden",
           scrollBehavior: "smooth",
-          background: `linear-gradient(to bottom, ${theme.palette.background.default} 0%, ${theme.palette.background.alt} 100%)`,
+          background: `linear-gradient(to bottom, ${theme => theme.palette.background.default} 0%, ${theme => theme.palette.background.alt} 100%)`,
         }}
       >
+
         <Router>
           <Navbar />
           <Routes basename="/">
@@ -71,6 +73,27 @@ const App = () => {
             <Route path="/about" element={<AboutMe />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
+
+          <Box
+            id="contact"
+            sx={{
+              width: "100%",
+              background: theme => theme.palette.background.dark,
+              py: isNonMobileScreens ? "3rem" : "3rem",
+              // pb: isNonMobileScreens ? "10rem" : "5rem",
+              borderTopLeftRadius: maxWidth700 ? "2rem" : "4rem",
+              borderTopRightRadius: maxWidth700 ? "2rem" : "4rem",
+            }}>
+            <Box sx={{
+              mx: "auto",
+              maxWidth: 2000,
+              px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
+            }}
+            >
+
+              <Contact />
+            </Box>
+          </Box>
           <Box className="to-top"
             sx={{
               cursor: "pointer",

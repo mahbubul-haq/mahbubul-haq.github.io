@@ -9,7 +9,6 @@ import HeroSection from "./HeroSection";
 import SkillSection from "./SkillSection";
 import PortfolioProjects from "./PortfolioProjects";
 import ProblemSolving from "./ProblemSolving";
-import Contact from "../../components/Contact";
 import { useEffect } from "react";
 import { MainContext } from "../../context/MainContext";
 import { useContext } from "react";
@@ -18,15 +17,10 @@ const HomePage = () => {
 
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
-    const maxWidth700 = useMediaQuery('(max-width: 700px)');
     const maxWidht950 = useMediaQuery('(max-width: 950px)');
     const { setPage, mode } = useContext(MainContext);
 
     const theme = useTheme();
-
-    useEffect(() => {
-        window.history.pushState("", document.title, window.location.pathname + window.location.search);
-    }, [])
 
     useEffect(() => {
         setPage("home-page");
@@ -48,9 +42,8 @@ const HomePage = () => {
             homeHeroImage.style.transform = "scale(0)";
             homeHeroImage.style.opacity = 0;
         }
-    }, [isNonMobileScreens, mode])
+    }, [isNonMobileScreens, mode]);
 
-    
     return (
 
         <Box sx={{
@@ -65,13 +58,10 @@ const HomePage = () => {
                 pt: isNonMobileScreens ? "5rem" : "0",
                 pb: "0",
                 overflow: "hidden",
-                // //no scroll on overflowY
-                // overflowY: "hidden",
-                // height: 'calc(100vh - 5rem)',
                 position: "relative",
-                // border: "5px solid red",
+              
             }}>
-
+                
                 <HeroSection />
                 {isNonMobileScreens &&
                     <Box sx={{
@@ -145,29 +135,6 @@ const HomePage = () => {
             }}>
                 <ProblemSolving />
             </Box>
-
-            <Box
-                id="contact"
-                sx={{
-                    width: "100%",
-                    background: theme.palette.background.dark,
-                    py: isNonMobileScreens ? "3rem" : "3rem",
-                    // pb: isNonMobileScreens ? "10rem" : "5rem",
-                    borderTopLeftRadius: maxWidth700 ? "2rem" : "4rem",
-                    borderTopRightRadius: maxWidth700 ? "2rem" : "4rem",
-                }}>
-                <Box sx={{
-                    mx: "auto",
-                    maxWidth: 2000,
-                    px: isNonMobileScreens ? "64px" : isMobileScreens ? "16px" : "32px",
-                }}
-                >
-
-                    <Contact />
-                </Box>
-            </Box>
-
-
 
         </Box>
     )

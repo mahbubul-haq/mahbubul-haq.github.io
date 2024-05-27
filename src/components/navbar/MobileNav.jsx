@@ -16,18 +16,8 @@ import { useNavigate } from "react-router-dom";
 const MobileNav = ({ open, setOpen, handleOpen }) => {
     const theme = useTheme();
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
-    const { page, setPage, mode, setMode } = useContext(MainContext);
+    const { page, setPage, mode, setMode, scrollToContact } = useContext(MainContext);
     const navigate = useNavigate();
-    // const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
-
-    // useEffect(() => {
-    //     let addressBarHeight = window.innerHeight - document.documentElement.clientHeight;
-    //     let mobileNavMenu = document.querySelector(".mobile-nav-menu");
-    //     if (mobileNavMenu) {
-    //         mobileNavMenu.style.marginTop = `${100 + addressBarHeight}px`;
-
-    //     }
-    // }, []);
 
     return (
         <CustomDrawer open={open} setOpen={setOpen}>
@@ -138,12 +128,11 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                             </Typography>
 
                             <Typography
-                                component="a"
-                                href="#contact"
                                 variant="menu"
                                 onClick={() => {
                                     setOpen(false);
                                     handleOpen();
+                                    scrollToContact();
                                 }}
                                 sx={{
                                     // overwriting the default anchor tag styles

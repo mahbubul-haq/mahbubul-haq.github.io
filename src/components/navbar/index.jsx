@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom"
 
 const Navbar = () => {
 
-    const { page, setPage, mode, setMode } = useContext(MainContext);
+    const { page, setPage, mode, setMode, scrollToContact } = useContext(MainContext);
     const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
     const isMobileScreens = useMediaQuery('(max-width: 600px)');
     const [open, setOpen] = useState(false);
@@ -230,8 +230,7 @@ const Navbar = () => {
                             </NavTab>
 
                             <BtnPrimary
-                                href="#contact"
-                            // component='a'
+                                onClick={scrollToContact}
                             >
                                 <Typography variant='button'>Contact Me</Typography></BtnPrimary>
                             <Box sx={{
