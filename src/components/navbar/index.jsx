@@ -102,10 +102,7 @@ const Navbar = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            transition: 'all 0.3s ease-in',
-            WebkitTransition: 'all 0.3s ease-in',
-            MozTransition: 'all 0.3s ease-in',
-            OTransition: 'all 0.3s ease-in',
+            transition: isNonMobileScreens ? 'all 0.3s ease-in' : 'all 0s ease-in',
             background: 'transparent',
             paddingTop: isNonMobileScreens ? '1rem' : '0',
 
@@ -230,7 +227,11 @@ const Navbar = () => {
                             </NavTab>
 
                             <BtnPrimary
-                                onClick={scrollToContact}
+                                onClick={ (e) => {
+                                    e.preventDefault();
+                                    scrollToContact();
+
+                                }}
                             >
                                 <Typography variant='button'>Contact Me</Typography></BtnPrimary>
                             <Box sx={{
@@ -255,17 +256,15 @@ const Navbar = () => {
 
                         </FlexBetween>
                     ) : (
-                        // <IconButton sx={{
-                        //     color: theme.palette.text.primary,
-                        //     padding: "1rem",
-                        // }}>
+                        
                         <>
                             <MobileNav open={open && !isNonMobileScreens
                             } setOpen={setOpen} handleOpen={() => handleOpen()} />
                             
                             <Typography sx={{
-                                fontSize: '1rem',
-                                fontWeight: 400,
+                                fontSize: '1.2rem',
+                                fontWeight: 500,
+                                color: theme.palette.text.tertiary,
 
                             }}>
                                 {page === 'home-page' ? 'Home' : page === 'about-me' ? 'About' : 'Projects'}
@@ -285,7 +284,6 @@ const Navbar = () => {
                             </Box>
 
                         </>
-                        // </IconButton>
                     )}
                 </FlexBetween>
             </Toolbar>

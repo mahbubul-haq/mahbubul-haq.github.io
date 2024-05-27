@@ -7,7 +7,6 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import useTheme from '@mui/material/styles/useTheme'
 import icons from '../../data/skillicons'
 import ProficientIn from './ProficientIn'
-import sample from "../../assets/images/sample.svg"
 import { MainContext } from '../../context/MainContext'
 import { useContext } from 'react'
 
@@ -188,7 +187,7 @@ const SkillSection = () => {
                         className="skills-fill-gap-image"
                     >
 
-                        <img src={sample} alt="sample" style={{ width: "100%", height: "auto" }} />
+                        <img src="images/skill-section-image1.svg" alt="Skills Image" style={{ width: "100%", height: "auto" }} />
                     </Box>
                     {/* } */}
                 </Box>

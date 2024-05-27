@@ -46,7 +46,7 @@ const AboutMe = () => {
         <Box
             sx={{
                 width: "100%",
-                mb: isNonMobileScreens ? "10rem" : "5rem",
+                mb: isMobileScreens ? "5rem" : "10rem",
             }}
         >
             <Box
@@ -97,7 +97,7 @@ const AboutMe = () => {
                         <span
                             style={{
                                 color: theme.palette.grey[200],
-                                fontSize: isMobileScreens ? "1.7rem" : "2rem",
+                                fontSize: isMobileScreens ? "1.8rem" : "2rem",
                                 fontWeight: 700,
                                 display: "block",
                                 marginBottom: "0rem",
@@ -112,7 +112,7 @@ const AboutMe = () => {
                         <span
                             style={{
                                 color: theme.palette.text.secondary,
-                                fontSize: isMobileScreens ? "1.2rem" : "1.7rem",
+                                fontSize: isMobileScreens ? "1.4rem" : "1.7rem",
                                 fontWeight: 500,
                                 display: "block",
                                 marginBottom: "1.5rem",

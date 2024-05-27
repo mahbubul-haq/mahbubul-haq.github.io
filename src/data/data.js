@@ -308,6 +308,10 @@ export const portfolioProjects = [
             },
         ],
         year: 2023,
+        descriptionList: [
+            "LearningOn provides a platform for publishing courses, blogs and tutoring services.",
+            "Stripe payment gateway, jwt authentication, real time notification using socket.io, responsive design.",
+        ],
     },
 
     {
@@ -326,6 +330,10 @@ export const portfolioProjects = [
             },
         ],
         year: 2024,
+        descriptionList: [
+            "My personal portfolio website. Contains my professional and academic experience.",
+            "Responsive design, dark mode, skills, projects, experience, resume, contact",
+        ],
     },
 
     {
@@ -353,6 +361,10 @@ export const portfolioProjects = [
             },
         ],
         year: 2022,
+        descriptionList: [
+            "It was a 3 member team project for Software Development Sessional course.",
+            "I contributed in ERD, Class Diagram, Backend, Frontend, Hosting(everything), Messaging.",
+        ],
     },
     {
         title: "RIDER - Ride Sharing & Car Rental Website",
@@ -378,6 +390,10 @@ export const portfolioProjects = [
             },
         ],
         year: 2020,
+        descriptionList: [
+            "My project for Database Sessional course.",
+            "Map integration using Leaflet, GeoLocation, raw SQL queries, Oracle PL/SQL.",
+        ]
     },
     {
         title: "Personal Portfolio Website - v1",
@@ -394,6 +410,10 @@ export const portfolioProjects = [
             },
         ],
         year: 2022,
+        descriptionList: [
+            "Previous version of my personal portfolio website. Contains my professional and academic experience.",
+            "Responsive design, dark mode, resume, projects, experience, skills.",
+        ],
     },
 ];
 
@@ -414,6 +434,10 @@ export const otherProjects = [
             },
         ],
         year: 2021,
+        descriptionList: [
+            "My project for Microcontroller Sessional course.",
+            "Simulation of a smart room with different sensors, automatic, manual and remote controls.",
+        ],
     },
     {
         title: "Network Car Racing Game",
@@ -431,6 +455,10 @@ export const otherProjects = [
             },
         ],
         year: 2018,
+        descriptionList: [
+            "My project for Object Oriented Programming Language Sessional course.",
+            "Multiplayer 2D Car racing game which can be played by connecting two devices.",
+        ],
     },
     {
         title: "DX BALL Game",
@@ -448,6 +476,10 @@ export const otherProjects = [
             },
         ],
         year: 2017,
+        descriptionList: [
+            "It was a 2 member team project for Structured Programming Language Sessional course.",
+            "Developed single player multilevel 2D game using iGraphics library.",
+        ],
     },
 ];
 

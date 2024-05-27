@@ -36,7 +36,7 @@ const HomePage = () => {
         let homeHeroImage = document.querySelector(".home-hero-image");
         if (isNonMobileScreens && homeHeroImage) {
             homeHeroImage.style.transform = "scale(1)";
-            homeHeroImage.style.opacity = mode == "dark" ? 0.5 : 1;
+            homeHeroImage.style.opacity = mode == "dark" ? 0.5 : 0.8;
         }
         else if (homeHeroImage){
             homeHeroImage.style.transform = "scale(0)";

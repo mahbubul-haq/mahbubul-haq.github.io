@@ -129,7 +129,8 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
 
                             <Typography
                                 variant="menu"
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setOpen(false);
                                     handleOpen();
                                     scrollToContact();

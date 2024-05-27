@@ -59,7 +59,7 @@ const Projects = () => {
         sx={{
           maxWidth: 2000,
           mx: "auto",
-          mb: isNonMobileScreens ? "10rem" : "5rem",
+          mb: isMobileScreens ? "5rem" : "10rem",
           px: isNonMobileScreens
             ? "64px"
             : isMobileScreens

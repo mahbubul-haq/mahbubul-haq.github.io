@@ -4,12 +4,16 @@ import React from "react";
 export const MainContext = createContext();
 
 export const MainState = (props) => {
-    const [page, setPage] = React.useState("home-page");
+    const [page, setpage] = React.useState(localStorage.getItem("page") || "home-page");
     const [mode, setmode] = React.useState(localStorage.getItem("mode") || "light");
 
     const setMode = (mode) => {
         localStorage.setItem("mode", mode);
         setmode(mode);
+    };
+    const setPage = (page) => {
+        localStorage.setItem("page", page);
+        setpage(page);
     };
 
     const scrollToContact = () => {
@@ -17,7 +21,7 @@ export const MainState = (props) => {
         let contact = document.querySelector("#contact");
     
         container.scrollTo({
-          top: contact.offsetTop,
+          top: contact.offsetTop - 100,
           behavior: "smooth",
         });
       };

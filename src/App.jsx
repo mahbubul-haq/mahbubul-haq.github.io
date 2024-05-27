@@ -74,6 +74,8 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
           </Routes>
 
+          {/* Routes end here */}
+
           <Box
             id="contact"
             sx={{
@@ -94,6 +96,9 @@ const App = () => {
               <Contact />
             </Box>
           </Box>
+
+          {/* To top button */}
+
           <Box className="to-top"
             sx={{
               cursor: "pointer",

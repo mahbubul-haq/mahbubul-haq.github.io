@@ -41,6 +41,11 @@ const profiles = [
     },
 ]
 
+const handleFocus = (e) => {
+    e.preventDefault();
+    // e.target.focus();
+}
+
 const Contact = () => {
 
     const theme = useTheme();
@@ -51,7 +56,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (!recaptchaRef.current.getValue()) {
             setMessage("Please verify that you are not a robot!");
             setOpen(true);
@@ -59,6 +64,7 @@ const Contact = () => {
         }
 
         const res = await sendEmail(e.target);
+
         if (res.success) {
             setMessage("Email sent successfully");
             setOpen(true);
@@ -66,7 +72,7 @@ const Contact = () => {
             recaptchaRef.current.reset();
         }
         else {
-            console.log(res.error);
+            // console.log(res.error);
             setMessage("Failed to send email!");
             setOpen(true);
         }
@@ -190,9 +196,11 @@ const Contact = () => {
                         Email me from here
                     </Typography>
                     <input type="hidden" name="to_name" value="Mahbubul Haque" />
-                    <StyledTextField placeholder="Name " name="from_name" />
+                    <StyledTextField placeholder="Name " name="from_name" onFocus={handleFocus} />
                     <StyledTextField placeholder="Email address"
-                        type="email" name="from_email" />
+                        type="email" name="from_email"
+                        onFocus={handleFocus}
+                    />
                     {/* <StyledTextField placeholder="Subject"  name="subject" /> */}
                     <StyledTextField placeholder="Message (required)" multiline rows={4}
                         InputProps={{
@@ -202,6 +210,7 @@ const Contact = () => {
                         }}
                         required
                         name="message"
+                        onFocus={handleFocus}
                     />
                     <ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY} theme="dark" />
                     <BtnPrimary
@@ -273,7 +282,7 @@ const Contact = () => {
                     sx={{
                         width: '100%',
                         background: message === "Email sent successfully" ? theme.palette.secondary.main : theme.palette.error.background,
-                        color: message ==="Email sent successfully" ? theme.palette.secondary.darker : theme.palette.error.main,
+                        color: message === "Email sent successfully" ? theme.palette.secondary.darker : theme.palette.error.main,
                     }}>
                     {message}
                 </Alert>
