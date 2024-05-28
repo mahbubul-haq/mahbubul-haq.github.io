@@ -10,6 +10,7 @@ import { useEffect } from "react";
 
 const ProblemSolvingRight = () => {
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
     const theme = useTheme();
     const maxWidth950 = useMediaQuery("(max-width: 950px)");
     const maxWidth450 = useMediaQuery("(max-width: 450px)");
@@ -105,9 +106,10 @@ const ProblemSolvingRight = () => {
                     }}
                     style={{
                         background: theme.palette.background.codeforcesPurple,
-                        fontWeight: 500,
+                        fontWeight: 600,
                         letterSpacing: "0.2px",
                         cursor: "pointer",
+                        color: isNonMobileScreens ? theme.palette.text.primary : theme.palette.text.tertiary,
                     }}
                 >
                     Candidate Master (Purple Coder)

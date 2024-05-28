@@ -97,7 +97,7 @@ const Navbar = () => {
             //height: isNonMobileScreens ? '5rem' : '10vh',
             height: isNonMobileScreens ? '5rem' : '4rem',
             // minHeight: isNonMobileScreens ? '5rem' : '4rem',
-            
+
 
             display: 'flex',
             flexDirection: 'column',
@@ -128,6 +128,7 @@ const Navbar = () => {
 
                     maxWidth: 2000,
                     px: isNonMobileScreens ? '64px' : isMobileScreens ? '24px' : '32px',
+                    paddingRight: isNonMobileScreens ? '64px' : 0,
                     color: theme.palette.text.primary,
 
                 }}>
@@ -153,11 +154,12 @@ const Navbar = () => {
                             src="images/M.svg"
                             alt="MH"
                             style={{
-                                height: '2rem',
-                                width: '2rem',
+                                height: '2.5rem',
+                                width: '2.5rem',
+                                marginRight: '0.5rem',
                             }}
                         />}
-                        </Typography>
+                    </Typography>
                     {isNonMobileScreens ? (
 
                         <FlexBetween sx={{
@@ -227,7 +229,7 @@ const Navbar = () => {
                             </NavTab>
 
                             <BtnPrimary
-                                onClick={ (e) => {
+                                onClick={(e) => {
                                     e.preventDefault();
                                     scrollToContact();
 
@@ -256,11 +258,11 @@ const Navbar = () => {
 
                         </FlexBetween>
                     ) : (
-                        
+
                         <>
                             <MobileNav open={open && !isNonMobileScreens
                             } setOpen={setOpen} handleOpen={() => handleOpen()} />
-                            
+
                             <Typography sx={{
                                 fontSize: '1.2rem',
                                 fontWeight: 500,
@@ -269,20 +271,30 @@ const Navbar = () => {
                             }}>
                                 {page === 'home-page' ? 'Home' : page === 'about-me' ? 'About' : 'Projects'}
                             </Typography>
-
-                            <Box onClick={handleOpen} sx={{
+                            <Box sx={{
+                                height: isNonMobileScreens ? "5rem" : "4rem",
+                                pl: "0.5rem",
+                                paddingRight: isNonMobileScreens ? '0' : isMobileScreens ? '24px' : '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'flex-end',
                                 zIndex: 2000,
-                                
-                            }}>
+                            }}
+                                onClick={handleOpen}
+                            >
+                                <Box sx={{
+                                    zIndex: 1900,
 
-                                <Hamburger multiplier={
-                                    isMobileScreens ? 0.7 : 1
-                                }
+                                }}>
+
+                                    <Hamburger multiplier={
+                                        isMobileScreens ? 0.7 : 1
+                                    }
 
 
-                                />
+                                    />
+                                </Box>
                             </Box>
-
                         </>
                     )}
                 </FlexBetween>
