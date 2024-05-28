@@ -17,6 +17,7 @@ import { Fab } from "@mui/material";
 import { BiArrowToTop } from "react-icons/bi";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Contact from "./components/Contact.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const App = () => {
   const isMobileScreens = useMediaQuery("(max-width: 600px)");
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           {/* Routes end here */}

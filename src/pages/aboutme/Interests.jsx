@@ -103,7 +103,7 @@ const Interests = () => {
                     <span className="about-highlight-text">Biology</span>, {" "}
                     <span className="about-highlight-text">History</span> {" "}- {" "}
                     the list goes on!
-                    Despite life&apos;s brevity, I believe there&apos;s ample time to delve into these diverse subjects which can help us to unravel the mystery of the universe.
+                    Despite life&apos;s brevity, I think there&apos;s ample time to delve into these diverse subjects which can help us to unravel the mystery of the universe.
                 </Typography>
             </Box>
         </Box>
