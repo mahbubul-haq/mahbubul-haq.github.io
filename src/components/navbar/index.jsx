@@ -150,7 +150,7 @@ const Navbar = () => {
                         }
                     >
                         {isNonMobileScreens ? 'Mahbubul Haque' : <img
-                            src="images/logo-mh-hexagon.svg"
+                            src="images/M.svg"
                             alt="MH"
                             style={{
                                 height: '2rem',

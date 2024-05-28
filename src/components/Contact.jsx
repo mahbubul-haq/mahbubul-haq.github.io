@@ -41,10 +41,8 @@ const profiles = [
     },
 ]
 
-const handleFocus = (e) => {
-    e.preventDefault();
-    // e.target.focus();
-}
+
+
 
 const Contact = () => {
 
@@ -52,7 +50,10 @@ const Contact = () => {
     const maxwidth700 = useMediaQuery('(max-width: 700px)');
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("Email sent successfully");
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
     const recaptchaRef = React.createRef();
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -76,6 +77,17 @@ const Contact = () => {
             setMessage("Failed to send email!");
             setOpen(true);
         }
+
+    }
+    const handleFocus = (e) => {
+        e.preventDefault();
+        if (isNonMobileScreens) return;
+        e.target.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+
 
     }
 
@@ -211,6 +223,7 @@ const Contact = () => {
                         required
                         name="message"
                         onFocus={handleFocus}
+
                     />
                     <ReCAPTCHA ref={recaptchaRef} sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY} theme="dark" />
                     <BtnPrimary
