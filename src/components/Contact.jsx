@@ -145,14 +145,14 @@ const Contact = () => {
                         +8801795450357
                     </Box>
                     <Box component="a"
-                        href="mailto:mdmahbubulhaque99@gmail.com"
+                        href="mailto:mahbubul.haque.1048@gmail.com"
                         sx={{
                             color: theme.palette.grey[400],
                             textDecoration: "none",
                             overflowWrap: "anywhere",
                         }}
                     >
-                        mdmahbubulhaque99@gmail.com
+                        mahbubul.haque.1048@gmail.com
                     </Box>
 
                     <Box sx={{

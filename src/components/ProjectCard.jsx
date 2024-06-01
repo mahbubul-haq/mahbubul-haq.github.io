@@ -83,6 +83,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                 {embed && projectInfo.embedLink ? (
                     <iframe
                         src={projectInfo.embedLink}
+                        
                         title={projectInfo.title}
                         style={{
                             width:
@@ -97,6 +98,8 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                             opacity: mode == "dark" ? 0.7 : 0.9,
                         }}
                         loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
                     />
                 ) : (
                     <img
