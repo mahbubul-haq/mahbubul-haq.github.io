@@ -303,7 +303,7 @@ export const portfolioProjects = [
                 text: "Github",
             },
             {
-                link: "https://mahbubul-haq.github.io/",
+                link: "https://learning-on.vercel.app",
                 text: "Live",
             },
         ],
