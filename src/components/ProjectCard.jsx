@@ -98,8 +98,9 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                             opacity: mode == "dark" ? 0.7 : 0.9,
                         }}
                         loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        // allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen;"
                     />
                 ) : (
                     <img
