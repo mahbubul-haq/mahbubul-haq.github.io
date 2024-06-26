@@ -92,10 +92,10 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                                     : "100%",
                             height: "100%",
                             border: "none",
-                            borderRadius: "0.6rem",
+                            borderRadius: "0.5rem",
                             aspectRatio: "16/9",
                             backgroundColor: theme.palette.common.black,
-                            opacity: mode == "dark" ? 0.7 : 0.9,
+                            opacity: mode == "dark" ? 0.8 : 0.9,
                         }}
                         loading="lazy"
                         // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -114,7 +114,8 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                                     : "100%",
                             aspectRatio: "16/9",
                             objectFit: "cover",
-                            opacity: mode == "dark" ? 0.5 : 0.7,
+                            opacity: mode == "dark" ? 0.6 : 0.8,
+                            borderRadius: "0.5rem",
                         }}
                         loading="lazy"
                     />
