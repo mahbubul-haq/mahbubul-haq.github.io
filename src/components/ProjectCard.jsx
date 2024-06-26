@@ -12,6 +12,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
     const theme = useTheme();
     const isMobileScreens = useMediaQuery("(max-width: 600px)");
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+    const minWidth1500 = useMediaQuery("(min-width: 1700px)");
     const maxwidth900 = useMediaQuery("(max-width: 900px)");
     const minWidth1400 = useMediaQuery("(min-width: 1400px)");
     const { mode } = useContext(MainContext);
@@ -47,7 +48,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                 overflow: "hidden",
             }}
         >
-            <Box
+            {/* <Box
                 sx={{
                     position: "absolute",
                     width: "100px",
@@ -73,11 +74,13 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                 >
                     {projectInfo.year}
                 </Typography>
-            </Box>
+            </Box> */}
             <Box
                 sx={{
                     width: projectsPage && isNonMobileScreens ? "50%" : "100%",
                     my: projectsPage ? "auto" : "0",
+                    mx: minWidth1500 ? "auto" : "0",
+                    textAlign: minWidth1500 ? "center" : "left"
                 }}
             >
                 {embed && projectInfo.embedLink ? (
@@ -86,7 +89,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                         
                         title={projectInfo.title}
                         style={{
-                            width:
+                            width: projectsPage && minWidth1500 ? "75%" : 
                                 projectsPage && isNonMobileScreens
                                     ? "90%"
                                     : "100%",
@@ -108,7 +111,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                         alt="random"
                         style={{
                             // width: "100%", height: "auto",
-                            width:
+                            width: projectsPage && minWidth1500 ? "75%" : 
                                 projectsPage && isNonMobileScreens
                                     ? "90%"
                                     : "100%",
@@ -125,7 +128,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                 sx={{
                     flexDirection: "column",
                     // height: "100%",
-                    gap: "2.6rem",
+                    gap: "2rem",
                     width: projectsPage && isNonMobileScreens ? "50%" : "100%",
                     "&&": {
                         alignItems: "flex-start",
@@ -150,13 +153,20 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                             fontWeight: 600,
                             minHeight: maxwidth900
                                 ? "auto"
-                                : minWidth1400
-                                    ? "3rem"
-                                    : "3rem",
+                                : projectsPage? "auto":  minWidth1400
+                                    ? "6rem"
+                                    : "6rem",
                         }}
                     >
-                        {projectInfo.title}
+                        {projectInfo.title} <span style={{
+                        fontWeight: "600",
+                        fontSize: "0.9rem",
+                        color: theme.palette.primary.main,
+                        marginTop: "1rem",
+                        display: "block",
+                    }}>{projectInfo.year}</span>
                     </Typography>
+                    
                     {projectsPage && (
                         <Box
                             sx={{
@@ -165,6 +175,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                                 gap: "1rem",
                                 ml: isNonMobileScreens ? "0.5rem" : "0.5rem",
                                 mt: "2rem",
+                                mb: "2rem",
                                 color: theme.palette.text.secondary,
                             }}
                         >
@@ -207,7 +218,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                             display: "flex",
                             gap: "2rem",
                             flexWrap: "wrap",
-                            minHeight: "4rem",
+                            minHeight: "3rem",
                             alignItems: "flex-end",
                         }}
                     >

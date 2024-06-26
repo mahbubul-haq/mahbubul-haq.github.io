@@ -307,7 +307,7 @@ export const portfolioProjects = [
                 text: "Live",
             },
         ],
-        year: 2024,
+        year: "2023-24",
         descriptionList: [
             "LearningOn provides a platform for publishing courses, blogs and tutoring services.",
             "Stripe payment gateway, jwt authentication, real time notification using socket.io, responsive design.",
