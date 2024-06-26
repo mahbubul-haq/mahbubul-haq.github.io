@@ -187,7 +187,7 @@ const SkillSection = () => {
                         className="skills-fill-gap-image"
                     >
 
-                        <img src="images/skill-section-image1.svg" alt="Skills Image" style={{ width: "100%", height: "auto" }} />
+                        <img src="images/skill-section-image4.svg" alt="Skills Image" style={{ width: "100%", height: "auto" }} />
                     </Box>
                     {/* } */}
                 </Box>

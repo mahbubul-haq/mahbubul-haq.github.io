@@ -90,7 +90,7 @@ const HeroSection = () => {
                         marginTop: "1rem",
                         transform: "scale(0)",
                         transition: "transform 0.5s",
-                        padding: 0,
+                        padding: 0
                     }}
                 />
             )}
