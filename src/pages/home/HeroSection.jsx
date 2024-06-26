@@ -79,7 +79,7 @@ const HeroSection = () => {
                 <img
                     loading="lazy"
                     className="hero-image-mobile"
-                    src="https://source.unsplash.com/random/800x600"
+                    src="images/profile-image-small-screen.svg"
                     alt="random"
                     style={{
                         width: "8rem",
@@ -90,6 +90,7 @@ const HeroSection = () => {
                         marginTop: "1rem",
                         transform: "scale(0)",
                         transition: "transform 0.5s",
+                        padding: 0,
                     }}
                 />
             )}

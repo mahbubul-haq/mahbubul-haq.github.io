@@ -80,7 +80,7 @@ const HomePage = () => {
                     }}>
                         <img
                             className="home-hero-image"
-                            src="images/sample.svg"
+                            src="images/profile-image-big-screen1.svg"
                             alt="random"
                             style={{
                                 width: "70%",
