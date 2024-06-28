@@ -108,7 +108,7 @@ const Navbar = () => {
 
         }}>
             <Box className="nav-background" sx={{
-                transition: 'all 0.3s',
+                transition: 'all 0s',
 
                 position: 'absolute',
                 height: '100%',

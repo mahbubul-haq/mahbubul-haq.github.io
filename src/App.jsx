@@ -16,7 +16,7 @@ import Projects from "./pages/projects/index.jsx";
 import { Fab } from "@mui/material";
 import { BiArrowToTop } from "react-icons/bi";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Contact from "./components/Contact.jsx";
+import Contact from "./components/contact/index.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 const App = () => {

@@ -55,6 +55,8 @@ export const themeSettings = (mode) => {
                         bubbleBottom: "#5F29D1",
                         homeCompetitive: "rgba(50, 50, 50, 0.9)",
                         codeforcesPurple: "#b200aa",
+                        contactLink: "#374151",
+                        contactLinkHover: "#303844",
                     },
                     common: {
                         black: "#000",
@@ -127,6 +129,8 @@ export const themeSettings = (mode) => {
                         bubbleBottom: "#5F29D1",
                         homeCompetitive: "rgba(6, 46, 95, 0.7)",
                         codeforcesPurple: "#b200aa",
+                        contactLink: "#5E22D9",
+                        contactLinkHover: "#4413A7",
                     },
                     common: {
                         black: "#000",
