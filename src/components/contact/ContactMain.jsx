@@ -65,6 +65,18 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                     alignItems: maxwidth850 ? "flex-start" : "flex-start",
                 }}
             >
+                {!maxwidth850 && (
+                    <Typography
+                        sx={{
+                            fontSize: "2rem",
+                            fontWeight: "500",
+                            color: theme.palette.grey[400],
+                            mb: "1rem",
+                        }}
+                    >
+                        &mdash; Contact Me
+                    </Typography>
+                )}
                 <FlexBetween
                     sx={{
                         gap: "1rem",
@@ -146,10 +158,13 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 fontSize: "1.5rem",
                                 transition: "color 0.3s, background 0.3s",
                                 "&:hover": {
-                                    backgroundColor: theme.palette.background.contactLinkHover,
+                                    backgroundColor:
+                                        theme.palette.background
+                                            .contactLinkHover,
                                 },
                                 padding: "1rem",
-                                backgroundColor: theme.palette.background.contactLink,
+                                backgroundColor:
+                                    theme.palette.background.contactLink,
 
                                 borderRadius: "50%",
                                 color:
@@ -228,7 +243,9 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                             width: "fit-content",
                             display: "flex",
                             alignItems: "center",
-                            alignSelf: maxwidth850 ? "flex-start" : "flex-start",
+                            alignSelf: maxwidth850
+                                ? "flex-start"
+                                : "flex-start",
                             gap: "0.7rem",
                             borderRadius: "0.5rem",
                             mt: "0rem",
