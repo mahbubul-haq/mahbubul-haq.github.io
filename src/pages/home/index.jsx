@@ -70,7 +70,7 @@ const HomePage = () => {
                         top: 0,
                         bottom: "0rem",
                         right: 0,
-                        background: mode === "dark"? 'rgba(0, 0, 0, 0)' : 'rgba(0, 0, 0, 0.1)',
+                        background: mode === "dark"? 'rgba(0, 0, 0, 0)' : 'rgba(0, 0, 0, 0)',
                         // clipPath: 'ellipse(94% 76% at 94% 50%)',
                         clipPath: 'polygon(34% 0, 100% 0%, 100% 100%, 0 100%)',
                         display: "flex",

@@ -48,7 +48,7 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                 width: "100%",
                 flexWrap: "wrap",
                 gap: maxwidth850 ? "5rem" : "0",
-                mt: maxwidth850 ? "-2rem" : 0,
+                mt: maxwidth850 ? "-1rem" : 0,
                 "&&": {
                     alignItems: "flex-start",
                     justifyContent: "flex-start",

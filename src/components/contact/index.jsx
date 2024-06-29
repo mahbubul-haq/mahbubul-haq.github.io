@@ -79,7 +79,7 @@ const Contact = () => {
                     style={{
                         color:
                             mode === "light"
-                                ? theme.palette.background.default
+                                ? theme.palette.secondary.main
                                 : theme.palette.grey[400],
                     }}
                 >

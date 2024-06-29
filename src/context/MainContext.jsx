@@ -5,7 +5,7 @@ export const MainContext = createContext();
 
 export const MainState = (props) => {
     const [page, setpage] = React.useState(localStorage.getItem("page") || "home-page");
-    const [mode, setmode] = React.useState(localStorage.getItem("mode") || "light");
+    const [mode, setmode] = React.useState(localStorage.getItem("mode") || "dark");
 
     const setMode = (mode) => {
         localStorage.setItem("mode", mode);
