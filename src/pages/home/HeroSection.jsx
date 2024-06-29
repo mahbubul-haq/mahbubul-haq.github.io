@@ -174,12 +174,12 @@ const HeroSection = () => {
                             },
                         }}
 
-                        onClick={(e) => {
+                        onClick={() => {
                             if (isNonMobileScreens) {
                                 window.open("/files/Resume - Mahbubul Haque.pdf", "_blank");
                             }
                             else {
-                                e.preventDefault();
+                                //e.preventDefault();
                                 scrollToContact();
                             }
                         }}

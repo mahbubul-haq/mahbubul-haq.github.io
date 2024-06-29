@@ -47,11 +47,15 @@ const Contact = () => {
     const handleFocus = (e) => {
         e.preventDefault();
         if (isNonMobileScreens) return;
-        e.target.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-        });
+
+        //e.target.blur();
+        setTimeout(() => {
+            e.target.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "center",
+            });
+        }, 300);
     };
 
     return (
