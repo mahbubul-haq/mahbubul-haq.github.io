@@ -11,36 +11,38 @@ import BtnPrimary from "../BtnPrimary";
 import { BsSend } from "react-icons/bs";
 import ReCAPTCHA from "react-google-recaptcha";
 import Typography from "@mui/material/Typography";
-import { useContext } from "react";
-import { MainContext } from "../../context/MainContext";
 
 const profiles = [
     {
         name: "LinkedIn",
         link: "https://www.linkedin.com/in/mahbubul-haque-807311189/",
         icon: <FaLinkedinIn />,
+        color: "#0077b5",
     },
     {
         name: "GitHub",
         link: "https://github.com/mahbubul-haq",
         icon: <FaGithub />,
+        color: "#ddd",
     },
     {
         name: "Codeforces",
         link: "https://codeforces.com/profile/F__",
         icon: <SiCodeforces />,
+        color: "#368bdc",
     },
     {
         name: "LeetCode",
         link: "https://leetcode.com/u/mahbubulhaque/",
         icon: <SiLeetcode />,
+        color: "#ffa116"
     },
 ];
 
 const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
     const maxwidth850 = useMediaQuery("(max-width: 850px)");
     const theme = useTheme();
-    const { mode } = useContext(MainContext);
+    // const { mode } = useContext(MainContext);
 
     return (
         <FlexBetween
@@ -165,12 +167,16 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 padding: "1rem",
                                 backgroundColor:
                                     theme.palette.background.contactLink,
+                                ///background: mode === "dark" ? theme.palette.grey[700] :  "#150438",
 
                                 borderRadius: "50%",
-                                color:
-                                    mode === "ligth"
-                                        ? theme.palette.text.secondary
-                                        : theme.palette.grey[100],
+                                // color:
+                                //     mode === "light"
+                                //         ? theme.palette.text.secondary
+                                //         : theme.palette.grey[100],
+                                color: profile.color,
+                                boxShadow: '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)',
+                                // border: `1px solid ${theme.palette.grey[500]}`
                             }}
                         >
                             {profile.icon}
