@@ -86,11 +86,11 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                 >
                     <Box
                         sx={{
-                            padding: "1rem",
+                            padding: "0rem",
                             borderRadius: "50%",
                             display: "flex",
-                            background: theme.palette.text.secondary,
-                            color: theme.palette.background.dark,
+                            background: "transparent",
+                            color: theme.palette.text.secondary,
                             aspectRatio: "1/1",
                         }}
                     >
@@ -114,11 +114,11 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                 >
                     <Box
                         sx={{
-                            padding: "1rem",
+                            padding: "0rem",
                             borderRadius: "50%",
                             display: "flex",
-                            background: theme.palette.text.secondary,
-                            color: theme.palette.background.dark,
+                            background: "transparent",
+                            color: theme.palette.text.secondary,
                             aspectRatio: "1/1",
                         }}
                     >
@@ -158,16 +158,17 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 // gap: "0.5rem",
                                 cursor: "pointer",
                                 fontSize: "1.5rem",
-                                transition: "color 0.3s, background 0.3s",
+                                transition: "color 0.3s, background 0.3s, transform 0.2s ease-out",
                                 "&:hover": {
-                                    backgroundColor:
-                                        theme.palette.background
-                                            .contactLinkHover,
+                                    // backgroundColor:
+                                    //     theme.palette.background
+                                    //         .contactLinkHover,
+                                    transform: "scale(1.2)",
                                 },
                                 padding: "1rem",
                                 backgroundColor:
                                     theme.palette.background.contactLink,
-                                ///background: mode === "dark" ? theme.palette.grey[700] :  "#150438",
+                                
 
                                 borderRadius: "50%",
                                 // color:

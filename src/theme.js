@@ -129,7 +129,7 @@ export const themeSettings = (mode) => {
                         bubbleBottom: "#5F29D1",
                         homeCompetitive: "rgba(6, 46, 95, 0.7)",
                         codeforcesPurple: "#b200aa",
-                        contactLink: "#180049",
+                        contactLink: "#000",
                         contactLinkHover: "#000",
                     },
                     common: {
