@@ -168,7 +168,6 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 padding: "1rem",
                                 backgroundColor:
                                     theme.palette.background.contactLink,
-                                
 
                                 borderRadius: "50%",
                                 // color:
@@ -176,7 +175,7 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 //         ? theme.palette.text.secondary
                                 //         : theme.palette.grey[100],
                                 color: profile.color,
-                                boxShadow: '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)',
+                                //boxShadow: '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)',
                                 // border: `1px solid ${theme.palette.grey[500]}`
                             }}
                         >
