@@ -1,16 +1,17 @@
-import FlexBetween from "../FlexBetween";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 import useTheme from "@mui/material/styles/useTheme";
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
-import { SiLeetcode, SiCodeforces } from "react-icons/si";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import StyledTextField from "../StyledTextField";
-import BtnPrimary from "../BtnPrimary";
-import { BsSend } from "react-icons/bs";
-import ReCAPTCHA from "react-google-recaptcha";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ReCAPTCHA from "react-google-recaptcha";
+import { BsSend } from "react-icons/bs";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { SiCodeforces, SiLeetcode } from "react-icons/si";
+import BtnPrimary from "../BtnPrimary";
+import FlexBetween from "../FlexBetween";
+import StyledTextField from "../StyledTextField";
+import "./Contact.css";
 
 const profiles = [
     {
@@ -222,8 +223,6 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                 {/* <StyledTextField placeholder="Subject"  name="subject" /> */}
                 <StyledTextField
                     placeholder="Message (required)"
-                    multiline
-                    rows={4}
                     InputProps={{
                         sx: {
                             color: theme.palette.grey[1000],
@@ -233,6 +232,19 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                     name="message"
                     onFocus={handleFocus}
                 />
+                {/* <textarea
+                    className="email-me-textarea"
+                    // style={{
+                    //     background: "transparent",
+                    //     border: "none",
+                    //     outline: "none"
+                    // }}
+                    rows={4}
+                    
+                    placeholder="Message (required)"
+                    name="message"
+                    onFocus={handleFocus}
+                /> */}
                 <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={import.meta.env.VITE_ReCAPTCHA_SITE_KEY}

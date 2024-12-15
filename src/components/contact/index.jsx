@@ -1,16 +1,15 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import FlexBetween from "../FlexBetween";
-import { FaRegCopyright } from "react-icons/fa6";
 import useTheme from "@mui/material/styles/useTheme";
+import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { FaRegCopyright } from "react-icons/fa6";
+import FlexBetween from "../FlexBetween";
 
-import { sendEmail } from "../../utilities/SendEmail";
-import React, { useState } from "react";
-import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import { useContext } from "react";
+import Snackbar from "@mui/material/Snackbar";
+import React, { useContext, useState } from "react";
 import { MainContext } from "../../context/MainContext";
+import { sendEmail } from "../../utilities/SendEmail";
 import ContactMain from "./ContactMain";
 
 const Contact = () => {
@@ -49,13 +48,13 @@ const Contact = () => {
         if (isNonMobileScreens) return;
 
         //e.target.blur();
-        setTimeout(() => {
-            e.target.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-                inline: "center",
-            });
-        }, 300);
+        // setTimeout(() => {
+        //     e.target.scrollIntoView({
+        //         behavior: "smooth",
+        //         block: "center",
+        //         inline: "center",
+        //     });
+        // }, 300);
     };
 
     return (
@@ -65,6 +64,7 @@ const Contact = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "4rem",
+                zIndex:500,
             }}
         >
             <Typography

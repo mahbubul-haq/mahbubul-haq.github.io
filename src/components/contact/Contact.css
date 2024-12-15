@@ -1,0 +1,32 @@
+.email-me-textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 3px #5CDB95B3;
+    padding: 0.8rem;
+    color: #D1D5DB;
+    font-size: 1rem;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0.25px;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    resize: none;
+    
+}
+
+.email-me-textarea:hover{
+    box-shadow: 0 1px 3px #5CDB95;
+}
+
+.email-me-textarea:focus {
+    box-shadow: none;
+    outline: 1px solid #5CDB95B3;
+}
+
+.email-me-textarea::placeholder,
+.email-me-textarea::-moz-placeholder,
+.email-me-textarea::-webkit-input-placeholder,
+.email-me-textarea:-moz-placeholder {
+    color: rgba(0, 0, 0, .23);
+}
+
