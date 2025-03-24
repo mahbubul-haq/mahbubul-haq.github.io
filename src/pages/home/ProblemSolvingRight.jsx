@@ -97,8 +97,12 @@ const ProblemSolvingRight = () => {
                 I possess extensive experience in Data Structures and Algorithms
                 (DSA) and problem-solving. As a competitive programmer, I
                 achieved the rank of {" "}
-                <span
-                    onClick={() => {
+                <a
+                    href="https://codeforces.com/profile/F__"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => {
+                        e.preventDefault();
                         window.open(
                             "https://codeforces.com/profile/F__",
                             "_blank"
@@ -109,11 +113,12 @@ const ProblemSolvingRight = () => {
                         fontWeight: 600,
                         letterSpacing: "0.2px",
                         cursor: "pointer",
+                        textDecoration: "none",
                         color: isNonMobileScreens ? theme.palette.text.primary : theme.palette.text.tertiary,
                     }}
                 >
                     Candidate Master (Purple Coder)
-                </span>{" "}
+                </a>{" "}
                 on Codeforces with a peak rating of <b>1914</b>.
                 <span
                     style={{
@@ -140,16 +145,21 @@ const ProblemSolvingRight = () => {
                 }}
             >
                 <FlexBetween
+                    component="a"
+                    href="https://github.com/mahbubul-haq/Data-Structures-And-Algorithms"
+                    target="_blank"
                     sx={{
                         width: "fit-content",
                         gap: "0.5rem",
                         color: theme.palette.secondary.link,
                         cursor: "pointer",
+                        textDecoration: "none",
                         "&:hover": {
                             color: theme.palette.secondary.linkHover,
                         },
                     }}
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         window.open(
                             "https://github.com/mahbubul-haq/Data-Structures-And-Algorithms",
                             "_blank"
@@ -222,7 +232,11 @@ const ProblemSolvingRight = () => {
                         // >
                         <Box
                             key={index}
-                            onClick={() => {
+                            component="a"
+                            href={profile.link}
+                            target="_blank"
+                            onClick={(e) => {
+                                e.preventDefault();
                                 window.open(profile.link, "_blank");
                             }}
                             sx={{
@@ -234,6 +248,7 @@ const ProblemSolvingRight = () => {
                                 display: "flex",
                                 gap: "0.5rem",
                                 alignItems: "center",
+                                textDecoration: "none",
                             }}
                             title={`View ${profile.name} profile`}
                         >

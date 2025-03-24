@@ -1,20 +1,15 @@
-import { AppBar, IconButton } from "@mui/material"
-import { Toolbar } from "@mui/material"
-import { Typography } from "@mui/material"
-import { Box } from "@mui/material"
-import FlexBetween from "../FlexBetween"
-import BtnPrimary from "../BtnPrimary"
-import { BsMoonStars } from "react-icons/bs"
-import { HiMiniSun } from "react-icons/hi2";
-import NavTab from "./NavTab"
+import { AppBar, Box, IconButton, Toolbar, Typography, useMediaQuery } from "@mui/material"
 import { useTheme } from "@mui/material/styles"
-import { useEffect } from "react"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { BsMoonStars } from "react-icons/bs"
+import { HiMiniSun } from "react-icons/hi2"
+import { useNavigate } from "react-router-dom"
 import { MainContext } from "../../context/MainContext"
-import { useMediaQuery } from "@mui/material"
+import BtnPrimary from "../BtnPrimary"
+import FlexBetween from "../FlexBetween"
 import Hamburger from "./Hamburger"
 import MobileNav from "./MobileNav"
-import { useNavigate } from "react-router-dom"
+import NavTab from "./NavTab"
 
 
 const Navbar = () => {
@@ -133,13 +128,18 @@ const Navbar = () => {
 
                 }}>
 
-                    <Typography variant='h3' sx={{
+                    <Typography variant='h3'
+                    component="a"
+                    href=""
+                     sx={{
                         fontWeight: 400,
                         fontSize: isNonMobileScreens ? '1.5rem' : '1.2rem',
                         cursor: 'pointer',
+                        textDecoration: 'none',
+                        color: theme.palette.text.primary,
                     }}
-                        onClick={() => {
-
+                        onClick={(e) => {
+                            e.preventDefault();
                             document.querySelector(".app-container").scrollTo(0, 0);
 
 
@@ -166,8 +166,11 @@ const Navbar = () => {
                             gap: '3rem',
                         }}>
                             <NavTab
-                                onClick={() => {
-
+                                component="a"
+                                href={window.location.origin + "/"}
+                                onClick={(e) => {
+                                   // e.preventDefault();
+                                    e.preventDefault();
                                     document.querySelector(".app-container").scrollTo(0, 0);
 
 
@@ -181,26 +184,33 @@ const Navbar = () => {
                                             width: page === 'home-page' ? '75%' : '0%',
                                         },
                                     },
+                                    textDecoration: 'none',
+                                    color: theme.palette.text.primary,
                                 }}>
 
 
                                 <Typography variant='menu'>Home Page</Typography>
                             </NavTab>
                             <NavTab
+                                component="a"
+                                href={window.location.origin + "/about"}
                                 sx={{
                                     "&&": {
                                         "&::before": {
                                             width: page === 'about-me' ? '75%' : '0%',
                                         },
                                     },
+                                    textDecoration: 'none',
+                                    color: theme.palette.text.primary,
                                 }}
-                                onClick={() => {
-
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     document.querySelector(".app-container").scrollTo(0, 0);
 
 
                                     setPage('about-me');
                                     navigate('/about');
+
                                 }}
                             >
 
@@ -208,15 +218,19 @@ const Navbar = () => {
                                 <Typography variant='menu'>About Me</Typography>
                             </NavTab>
                             <NavTab
+                                component="a"
+                                href={window.location.origin + "/projects"}
                                 sx={{
                                     "&&": {
                                         "&::before": {
                                             width: page === 'projects' ? '75%' : '0%',
                                         },
                                     },
+                                    textDecoration: 'none',
+                                    color: theme.palette.text.primary,
                                 }}
-                                onClick={() => {
-
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     document.querySelector(".app-container").scrollTo(0, 0);
 
 
@@ -229,9 +243,12 @@ const Navbar = () => {
                             </NavTab>
 
                             <BtnPrimary
+                            component="a"
+                            href=""
                                 onClick={(e) => {
-                                    e.preventDefault();
                                     scrollToContact();
+                                    e.preventDefault();
+                                    
 
                                 }}
                             >

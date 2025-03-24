@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
+import useTheme from "@mui/material/styles/useTheme";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import useTheme from "@mui/material/styles/useTheme";
-import { TbWorldCode } from "react-icons/tb";
-import { SiCodeforces, SiLeetcode } from "react-icons/si";
-import FlexBetween from "../../components/FlexBetween";
 import { useEffect } from "react";
 import { LuExternalLink } from "react-icons/lu";
+import { SiCodeforces, SiLeetcode } from "react-icons/si";
+import { TbWorldCode } from "react-icons/tb";
+import FlexBetween from "../../components/FlexBetween";
 
 
 const ProblemSolvingLeft = () => {
@@ -254,7 +254,10 @@ const ProblemSolvingLeft = () => {
             </FlexBetween>
 
             <Box
-                
+                component="a"
+                href="https://github.com/mahbubul-haq/MySolvedProblems"
+                target="_blank"
+
              sx={{
                 // border: "1px solid",
                 borderRadius: "0.25rem",
@@ -271,10 +274,12 @@ const ProblemSolvingLeft = () => {
                     outline: "1px solid",
                     
                 },
-                color: "#0A4900"
+                color: "#0A4900",
+                textDecoration: "none",
                 
             }}
-            onClick={() => {
+            onClick={(e) => {
+                e.preventDefault();
                 window.open("https://github.com/mahbubul-haq/MySolvedProblems", "_blank");
             }}
             >

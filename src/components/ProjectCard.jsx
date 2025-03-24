@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useTheme from "@mui/material/styles/useTheme";
-import FlexBetween from "./FlexBetween";
-import { LuExternalLink } from "react-icons/lu";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { MainContext } from "../context/MainContext";
 import { useContext } from "react";
 import { BiSolidRightArrow } from "react-icons/bi";
+import { LuExternalLink } from "react-icons/lu";
+import { MainContext } from "../context/MainContext";
+import FlexBetween from "./FlexBetween";
 
 const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
     const theme = useTheme();
@@ -225,14 +225,19 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                         {projectInfo.links.map((link, index) => (
                             <Box
                                 key={index}
+                                component="a"
+                                href={link.link}
+                                target="_blank"
                                 sx={{
                                     color: theme.palette.secondary.link,
                                     display: "flex",
                                     alignItems: "center",
                                     gap: "0.5rem",
                                     cursor: "pointer",
+                                    textDecoration: "none",
                                 }}
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     window.open(link.link, "_blank");
                                 }}
                             >

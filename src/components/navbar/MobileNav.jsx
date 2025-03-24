@@ -1,15 +1,14 @@
-import Box from "@mui/material/Box";
-import CustomDrawer from "./CustomDrawer";
-import useTheme from "@mui/material/styles/useTheme";
 import { Typography, useMediaQuery } from "@mui/material";
-import FlexBetween from "../FlexBetween";
+import Box from "@mui/material/Box";
+import useTheme from "@mui/material/styles/useTheme";
 import { useContext } from "react";
+import { LuDownload } from "react-icons/lu";
 import { MainContext } from "../../context/MainContext";
 import BtnPrimary from "../BtnPrimary";
-import { LuDownload } from "react-icons/lu";
+import FlexBetween from "../FlexBetween";
+import CustomDrawer from "./CustomDrawer";
 
-import { LiaToggleOnSolid } from "react-icons/lia";
-import { LiaToggleOffSolid } from "react-icons/lia";
+import { LiaToggleOffSolid, LiaToggleOnSolid } from "react-icons/lia";
 import { useNavigate } from "react-router-dom";
 
 const MobileNav = ({ open, setOpen, handleOpen }) => {
@@ -59,7 +58,10 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                             }}
                         >
                             <Typography
-                                onClick={() => {
+                                component="a"
+                                href={window.location.origin + "/"}
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setPage("home-page");
                                     navigate("/");
                                     setOpen(false);
@@ -86,12 +88,17 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
 
                                     borderRadius: "50px",
                                     padding: "0.8rem 1.2rem",
+                                    textDecoration: "none",
+                                    color: theme.palette.text.primary,
                                 }}
                             >
                                 Home Page
                             </Typography>
                             <Typography
-                                onClick={() => {
+                                component="a"
+                                href={window.location.origin + "/about"}
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setPage("about-me");
                                     navigate("/about");
                                     setOpen(false);
@@ -117,12 +124,18 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                             : "transparent",
                                     borderRadius: "50px",
                                     padding: "0.8rem 1.2rem",
+
+                                    textDecoration: "none",
+                                    color: theme.palette.text.primary,
                                 }}
                             >
                                 About Me
                             </Typography>
                             <Typography
-                                onClick={() => {
+                                component="a"
+                                href={window.location.origin + "/projects"}
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setPage("projects");
                                     navigate("/projects");
                                     setOpen(false);
@@ -148,6 +161,8 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                             : "transparent",
                                     borderRadius: "50px",
                                     padding: "0.8rem 1.2rem",
+                                    textDecoration: "none",
+                                    color: theme.palette.text.primary,
                                 }}
                             >
                                 Projects
@@ -155,6 +170,8 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
 
                             <Typography
                                 variant="menu"
+                                component="a"
+                                href=""
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setOpen(false);
@@ -192,6 +209,9 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                         /> */}
 
                         <BtnPrimary
+                            component="a"
+                            href={window.location.origin + "/files/Resume - Mahbubul Haque.pdf"}
+                            target="_blank"
                             sx={{
                                 width: "100%",
                                 mt: "3rem",
@@ -206,8 +226,11 @@ const MobileNav = ({ open, setOpen, handleOpen }) => {
                                     //     background: "#1f1f1f",
                                     // }
                                 },
+                                textDecoration: "none",
+                                color: theme.palette.text.secondary,
                             }}
-                            onClick={() => {
+                            onClick={(e) => {
+                                e.preventDefault();
                                 window.open(
                                     "files/Resume - Mahbubul Haque.pdf",
                                     "_blank"

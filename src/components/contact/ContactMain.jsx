@@ -150,7 +150,12 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                         <Box
                             key={index}
                             title={`Visit ${profile.name} profile`}
-                            onClick={() => {
+                            component="a"
+                            href={profile.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
                                 window.open(profile.link, "_blank");
                             }}
                             sx={{
@@ -178,6 +183,7 @@ const ContactMain = ({ handleSubmit, handleFocus, recaptchaRef }) => {
                                 color: profile.color,
                                 //boxShadow: '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)',
                                 // border: `1px solid ${theme.palette.grey[500]}`
+                                textDecoration: "none",
                             }}
                         >
                             {profile.icon}

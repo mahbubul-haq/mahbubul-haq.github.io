@@ -5,9 +5,8 @@ import FlexBetween from "../../components/FlexBetween";
 
 import { useMediaQuery } from "@mui/material";
 import useTheme from "@mui/material/styles/useTheme";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { MainContext } from "../../context/MainContext";
-import { useContext } from "react";
 
 const HeroSection = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
@@ -154,6 +153,9 @@ const HeroSection = () => {
                     }}
                 >
                     <BtnPrimary
+                        component="a"
+                        href={isNonMobileScreens ? "/files/Resume - Mahbubul Haque.pdf" : ""}
+                        target="_blank"
                         sx={{
                             "&&": {
                                 background: mode == "dark" ? "#ababab" : theme.palette.common.black,
@@ -172,9 +174,12 @@ const HeroSection = () => {
                                     background: mode === "dark" ? "#8f8f8f" : "#2f2f2f",
                                 },
                             },
+                            textDecoration: "none",
+
                         }}
 
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.preventDefault();
                             if (isNonMobileScreens) {
                                 window.open("/files/Resume - Mahbubul Haque.pdf", "_blank");
                             }
