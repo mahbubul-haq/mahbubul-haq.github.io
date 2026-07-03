@@ -30,7 +30,7 @@ export const skillsData = [
                 name: "HTML",
                 progress: 90,
             },
-            
+
         ],
     },
 
@@ -63,9 +63,14 @@ export const skillsData = [
                 progress: "85",
             },
             {
+                name: "React Query",
+                progress: 50
+            },
+            {
                 name: "socket.io",
                 progress: 80,
             },
+
             {
                 name: "Django",
                 progress: 70,
@@ -117,6 +122,18 @@ export const skillsData = [
                 name: "Stripe",
                 progress: 60,
             },
+            {
+                name: "Redis",
+                progress: 70,
+            },
+            {
+                name: "Cloudinary",
+                progress: 70,
+            },
+            {
+                name: "JWT",
+                progress: 60,
+            }
         ],
     },
     {
@@ -282,140 +299,145 @@ export const problemSolvingData = [
     },
 ];
 
-export const portfolioProjects = [
-    {
-        title: "LearningOn - Online Learning Platform with Courses, Blogs & Tutors",
-        imageFileName: "learningon-homepage.svg",
-        technologies: [
-            "React",
-            "Express",
-            "MongoDB",
-            "Material UI",
-            "CSS",
-            "Redux",
-            "NodeJs",
-            "Stripe",
-            "socket.io",
-        ],
-        links: [
-            {
-                link: "https://github.com/mahbubul-haq/LearningOn",
-                text: "Github",
-            },
-            {
-                link: "https://learning-on.vercel.app",
-                text: "Live",
-            },
-        ],
-        year: "2023-24",
-        descriptionList: [
-            "LearningOn provides a platform for publishing courses, blogs and tutoring services.",
-            "Stripe payment gateway, jwt authentication, real time notification using socket.io, responsive design.",
-        ],
-    },
+export const getPortfolioProjects = (mode) => {
+    return [
+        {
+            title: "LearningOn - Online Learning Platform",
+            imageFileName: mode == "dark" ? "learning-on-dark.png" : "learning-on-light.png",
+            technologies: [
+                "React",
+                "Express",
+                "MongoDB",
+                "Material UI",
+                "Redux",
+                "NodeJs",
+                "Stripe",
+                "socket.io",
+                "cloudinary",
+                "Redis",
+                "JWT",
+                "React Query",
+            ],
+            links: [
+                {
+                    link: "https://github.com/mahbubul-haq/LearningOn",
+                    text: "Github",
+                },
+                {
+                    link: "https://learning-on.vercel.app",
+                    text: "Live",
+                },
+            ],
+            year: "2023-26",
+            descriptionList: [
+                "LearningOn provides a platform for publishing courses, learning courses, attending quizzes, and getting certificates.",
+                "Stripe payment gateway, jwt authentication, real time notification using socket.io, responsive design, rate limiting using Redis, cloudinary for image hosting, react query for data fetching and caching.",
+            ],
+        },
 
-    {
-        title: "Personal Portfolio Website",
-        imageFileName: "portfolio-homepage.svg",
-        technologies: ["React", "Material UI", "CSS"],
-        links: [
-            
-            {
-                link: "https://github.com/mahbubul-haq/mahbubul-haq.github.io",
-                text: "Github",
-            },
-            {
-                link: "https://mahbubul-haq.github.io/",
-                text: "Live",
-            },
-        ],
-        year: 2024,
-        descriptionList: [
-            "My personal portfolio website. Contains my professional and academic experience.",
-            "Responsive design, dark mode, skills, projects, experience, resume, contact",
-        ],
-    },
+        {
+            title: "Personal Portfolio Website",
+            imageFileName: "portfolio-homepage.svg",
+            technologies: ["React", "Material UI", "CSS"],
+            links: [
 
-    {
-        title: "Travel Bug - Travel & Tourism Website",
-        imageFileName: "travel-bug-homepage.PNG",
-        embedLink: "https://www.youtube.com/embed/g-shwX9y4aI",
-        technologies: [
-            "React",
-            "Express",
-            "MongoDB",
-            "NodeJs",
-            "CSS",
-            "Stripe",
-            "JWT",
-        ],
+                {
+                    link: "https://github.com/mahbubul-haq/mahbubul-haq.github.io",
+                    text: "Github",
+                },
+                {
+                    link: "https://mahbubul-haq.github.io/",
+                    text: "Live",
+                },
+            ],
+            year: 2024,
+            descriptionList: [
+                "My personal portfolio website. Contains my professional and academic experience.",
+                "Responsive design, dark mode, skills, projects, experience, resume, contact",
+            ],
+        },
 
-        links: [
-            {
-                link: "https://github.com/mahbubul-haq/Travel-Bug-Airbnb",
-                text: "Github",
-            },
-            {
-                link: "https://youtu.be/g-shwX9y4aI",
-                text: "Youtube",
-            },
-        ],
-        year: 2022,
-        descriptionList: [
-            "It was a 3 member team project for Software Development Sessional course.",
-            "I contributed in ERD, Class Diagram, Backend, Frontend, Hosting(everything), Messaging.",
-        ],
-    },
-    {
-        title: "RIDER - Ride Sharing & Car Rental Website",
-        imageFileName: "rider-homepage.png",
-        embedLink: "https://www.youtube.com/embed/eiNzZp00KUg",
-        technologies: [
-            "Django",
-            "Oracle",
-            "Python",
-            "JavaScript",
-            "CSS",
-            "Bootstrap",
-            "Leaflet",
-        ],
-        links: [
-            {
-                link: "https://github.com/mahbubul-haq/RIDER-Ride-Sharing-and-Car-Rental-Service",
-                text: "Github",
-            },
-            {
-                link: "https://youtu.be/eiNzZp00KUg",
-                text: "Youtube",
-            },
-        ],
-        year: 2020,
-        descriptionList: [
-            "My project for Database Sessional course.",
-            "Map integration using Leaflet, GeoLocation, raw SQL queries, Oracle PL/SQL.",
-        ]
-    },
-    {
-        title: "Personal Portfolio Website - v1",
-        imageFileName: "portfolio-old-homepage.PNG",
-        technologies: ["React", "Bootstrap", "CSS"],
-        links: [
-            {
-                link: "https://github.com/mahbubul-haq/portfolio-website",
-                text: "Github",
-            },
-            {
-                link: "https://mahbubulhaque.netlify.app/",
-                text: "Live",
-            },
-        ],
-        year: 2022,
-        descriptionList: [
-            "Previous version of my personal portfolio website. Contains my professional and academic experience.",
-            "Responsive design, dark mode, resume, projects, experience, skills.",
-        ],
-    },
-];
+        {
+            title: "Travel Bug - Travel & Tourism Website",
+            imageFileName: "travel-bug-homepage.PNG",
+            embedLink: "https://www.youtube.com/embed/g-shwX9y4aI",
+            technologies: [
+                "React",
+                "Express",
+                "MongoDB",
+                "NodeJs",
+                "CSS",
+                "Stripe",
+                "JWT",
+            ],
+
+            links: [
+                {
+                    link: "https://github.com/mahbubul-haq/Travel-Bug-Airbnb",
+                    text: "Github",
+                },
+                {
+                    link: "https://youtu.be/g-shwX9y4aI",
+                    text: "Youtube",
+                },
+            ],
+            year: 2022,
+            descriptionList: [
+                "It was a 3 member team project for Software Development Sessional course.",
+                "I contributed in ERD, Class Diagram, Backend, Frontend, Hosting(everything), Messaging.",
+            ],
+        },
+        {
+            title: "RIDER - Ride Sharing & Car Rental Website",
+            imageFileName: "rider-homepage.png",
+            embedLink: "https://www.youtube.com/embed/eiNzZp00KUg",
+            technologies: [
+                "Django",
+                "Oracle",
+                "Python",
+                "JavaScript",
+                "CSS",
+                "Bootstrap",
+                "Leaflet",
+            ],
+            links: [
+                {
+                    link: "https://github.com/mahbubul-haq/RIDER-Ride-Sharing-and-Car-Rental-Service",
+                    text: "Github",
+                },
+                {
+                    link: "https://youtu.be/eiNzZp00KUg",
+                    text: "Youtube",
+                },
+            ],
+            year: 2020,
+            descriptionList: [
+                "My project for Database Sessional course.",
+                "Map integration using Leaflet, GeoLocation, raw SQL queries, Oracle PL/SQL.",
+            ]
+        },
+        {
+            title: "Personal Portfolio Website - v1",
+            imageFileName: "portfolio-old-homepage.PNG",
+            technologies: ["React", "Bootstrap", "CSS"],
+            links: [
+                {
+                    link: "https://github.com/mahbubul-haq/portfolio-website",
+                    text: "Github",
+                },
+                {
+                    link: "https://mahbubulhaque.netlify.app/",
+                    text: "Live",
+                },
+            ],
+            year: 2022,
+            descriptionList: [
+                "Previous version of my personal portfolio website. Contains my professional and academic experience.",
+                "Responsive design, dark mode, resume, projects, experience, skills.",
+            ],
+        },
+    ];
+}
 
 export const otherProjects = [
     {

@@ -1,19 +1,25 @@
-import { portfolioProjects, otherProjects } from "../../data/data";
+import { getPortfolioProjects, otherProjects } from "../../data/data";
 import Box from "@mui/material/Box";
 import ProjectCard from "../../components/ProjectCard";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import useTheme from "@mui/material/styles/useTheme";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MainContext } from "../../context/MainContext";
 import { useContext } from "react";
 
 const Projects = () => {
   const isMobileScreens = useMediaQuery("(max-width: 600px)");
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-  const { setPage } = useContext(MainContext);
+  const { setPage, mode } = useContext(MainContext);
+  const [portfolioProjects, setPortfolioProjects] = useState(getPortfolioProjects(mode));
 
   const theme = useTheme();
+
+  useEffect(() => {
+    const projects = getPortfolioProjects(mode);
+    setPortfolioProjects(projects);
+  }, [mode]);
 
   useEffect(() => {
     setPage("projects");
@@ -90,7 +96,7 @@ const Projects = () => {
           >
             Web Projects
           </Typography>
-          {portfolioProjects.map((projectInfo, index) => (
+          {portfolioProjects?.map((projectInfo, index) => (
             <Box
               className={`projects-element projects-portfolios-${index}`}
               key={index}

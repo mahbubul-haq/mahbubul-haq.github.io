@@ -15,7 +15,7 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
     const minWidth1500 = useMediaQuery("(min-width: 1700px)");
     const maxwidth900 = useMediaQuery("(max-width: 900px)");
     const minWidth1400 = useMediaQuery("(min-width: 1400px)");
-    const { mode } = useContext(MainContext);
+    const { mode, setLightboxImageSrc } = useContext(MainContext);
 
     // console.log(projectInfo);
 
@@ -119,6 +119,10 @@ const ProjectCard = ({ projectInfo, projectsPage = false, embed = false }) => {
                             objectFit: "cover",
                             opacity: mode == "dark" ? 0.6 : 0.8,
                             borderRadius: "0.5rem",
+                            cursor: "zoom-in",
+                        }}
+                        onClick={() => {
+                            setLightboxImageSrc(`images/${projectInfo.imageFileName}`);
                         }}
                         loading="lazy"
                     />

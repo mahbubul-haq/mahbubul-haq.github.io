@@ -3,8 +3,9 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ProjectCard from '../../components/ProjectCard';
 
-import { portfolioProjects } from '../../data/data';
-import { useEffect } from 'react';
+import { getPortfolioProjects } from '../../data/data';
+import { useEffect, useContext, useState } from 'react';
+import { MainContext } from '../../context/MainContext';
 
 
 const PortfolioProjects = () => {
@@ -13,7 +14,13 @@ const PortfolioProjects = () => {
   const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
   const maxwidth900 = useMediaQuery('(max-width: 900px)');
   const minWidth1400 = useMediaQuery('(min-width: 1400px)');
+  const { mode } = useContext(MainContext);
+  const [portfolioProjects, setPortfolioProjects] = useState(getPortfolioProjects(mode));
 
+  useEffect(() => {
+    const projects = getPortfolioProjects(mode);
+    setPortfolioProjects(projects);
+  }, [mode]);
 
   useEffect(() => {
 

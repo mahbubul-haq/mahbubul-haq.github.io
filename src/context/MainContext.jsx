@@ -4,8 +4,13 @@ import React from "react";
 export const MainContext = createContext();
 
 export const MainState = (props) => {
-    const [page, setpage] = React.useState(localStorage.getItem("page") || "home-page");
-    const [mode, setmode] = React.useState(localStorage.getItem("mode") || "dark");
+    const [page, setpage] = React.useState(() => {
+        return localStorage.getItem("page") || "home-page"
+        });
+    const [mode, setmode] = React.useState(() => {
+        return localStorage.getItem("mode") || "dark";
+    });
+    const [lightBoxImageSrc, setLightboxImageSrc] = React.useState(null);
 
     const setMode = (mode) => {
         localStorage.setItem("mode", mode);
@@ -27,7 +32,7 @@ export const MainState = (props) => {
       };
 
     return (
-        <MainContext.Provider value={{ page, setPage, mode, setMode, scrollToContact }}>
+        <MainContext.Provider value={{ page, setPage, mode, setMode, scrollToContact, lightBoxImageSrc, setLightboxImageSrc }}>
             {props.children}
         </MainContext.Provider>
     );

@@ -2,6 +2,13 @@ import { useEffect } from "react";
 import "./App.css";
 import Box from "@mui/material/Box";
 
+import Lightbox from "yet-another-react-lightbox";
+
+import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Download from "yet-another-react-lightbox/plugins/download";
+
 import Navbar from "./components/navbar/index.jsx";
 import HomePage from "./pages/home/index.jsx";
 import { themeSettings } from "./theme.js";
@@ -23,6 +30,7 @@ const App = () => {
   const isMobileScreens = useMediaQuery("(max-width: 600px)");
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const maxWidth700 = useMediaQuery("(max-width: 700px)");
+  const { lightBoxImageSrc, setLightboxImageSrc } = useContext(MainContext);
 
 
   const { mode } = useContext(MainContext);
@@ -128,6 +136,25 @@ const App = () => {
             </Fab>
           </Box>
         </Router>
+        <Lightbox
+          open={lightBoxImageSrc !== null}
+          close={() => setLightboxImageSrc(null)}
+          slides={
+            lightBoxImageSrc
+              ? [
+                {
+                  src: lightBoxImageSrc,
+                  download: lightBoxImageSrc,
+                },
+              ]
+              : []
+          }
+          plugins={[
+            Zoom,
+            Fullscreen,
+            Download,
+          ]}
+        />
       </Box>
     </ThemeProvider>
   );

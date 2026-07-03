@@ -6,9 +6,29 @@ import { GiCheckboxTree } from 'react-icons/gi';
 import { TbInputSearch, TbSchema } from 'react-icons/tb';
 import { FaGear } from 'react-icons/fa6';
 import { CgIfDesign } from 'react-icons/cg';
+import { SiCloudinary } from "react-icons/si";
+import { SiRedis } from "react-icons/si";
+import { SiReactquery } from "react-icons/si";
+import { SiJsonwebtokens } from "react-icons/si";
 
 
 const icons = {
+    "JWT": {
+        icon: <SiJsonwebtokens />,
+        color: "#000000",
+    },
+    "React Query": {
+        icon: <SiReactquery />,
+        color: "#FF4154",
+    },
+    "Redis": {
+        icon: <SiRedis />,
+        color: "#DC382D",
+    },
+    "Cloudinary": {
+        icon: <SiCloudinary />,
+        color: "#FF6D6D",
+    },
     "JavaScript": {
         icon: <SiJavascript />,
         color: "#D2B700",
